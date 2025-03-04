@@ -1,40 +1,40 @@
-# Java tuntiesimerkkejä
+# Java lesson examples
 
-Tänne julkaistaan Ohjelmointi 2 -kurssin tunnilla käytettyjä esimerkkejä.
+Here you can find the lesson examples used during the Programming 2 course.
 
-Tunti 1, Kertaus:
+Lesson 1, Recap:
 
 - [Tunti1](./src/main/java/tunti1/Tunti1.java)
 
-Tunti 2, Map:
+Lesson 2, Map:
 
 - [Tunti2, Map](./src/main/java/tunti2/Tunti2.java)
 - [Tunti2, Hashmap-esimerkki isolla datamäärällä](./src/main/java/tunti2/IsoDataMaara.java)
 
-Tunti 3, JUnit:
+Lesson 3, JUnit:
 
 - [Tunti3, Testattavat luokat](./src/main/java/tunti3)
 - [Tunti3, Testit](./src/test/java/tunti3)
 
-Tunti 4, Oliomallintaminen, perintä ja rajapinnat:
+Lesson 4, Object modelling, inheritance and interfaces:
 
 - [Tunti4, Esimerkit](./src/main/java/tunti4)
 
-Tunti 5, Streamit, lambdat ja optionalit:
+Lesson 5, Streams, lambdas and optionals:
 
 - [Tunti5, Esimerkit](./src/main/java/tunti5)
 
-Tunti 6, Tietokantayhteys javalla (JDBC):
+Lesson 6, Database connection with Java (JDBC):
 
 - [Tunti6, Esimerkit](./src/main/java/tunti6)
 
-Tunti 7, Tietorakenteet ja Algoritmit:
+Lesson 7, Data structures and algorithms:
 
 - [Tunti7, Bubble sort](./src/main/java/tunti7/BubbleSort.java)
 
 - [Tunti7, Wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise/)
 
-Tunti 8, Säikeet ja rekursio:
+Lesson 8, Threads and recursion:
 
 - [Tunti8, Säikeet](./src/main/java/tunti8/thread)
 
