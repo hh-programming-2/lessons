@@ -8,49 +8,46 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-/*
- * Tässä tiedostossa on esimerkkejä Map tietorakenteen käyttämisestä. Esimerkit löytyvät myös sivulta
- * https://ohjelmointi2.github.io/map/
- */
+// This file contains examples of using the Map data structure
 public class Lesson2 {
 
     public static void main(String[] args) {
 
-        // 1. Hajautustaulu
-        Map<String, String> postinumerot = new HashMap<String, String>();
+        // 1. Hash map
+        Map<String, String> postalCodes = new HashMap<String, String>();
 
-        postinumerot.put("00710", "Helsinki");
-        postinumerot.put("90014", "Oulu");
-        postinumerot.put("33720", "Tampere");
-        postinumerot.put("33014", "Tampere");
+        postalCodes.put("00710", "Helsinki");
+        postalCodes.put("90014", "Oulu");
+        postalCodes.put("33720", "Tampere");
+        postalCodes.put("33014", "Tampere");
         
-        System.out.println("1. Postinumero 00710: " + postinumerot.get("00710")); // tulostaa "Helsinki"
+        System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // prints "Helsinki"
 
-        // 2. Numeroiden käsitteleminen mapissa
-        Map<String, Integer> opintopisteet = new HashMap<String, Integer>();
+        // 2. Handling numbers in maps
+        Map<String, Integer> credits = new HashMap<String, Integer>();
 
-        // Lisätään arvoja tietyille avaimille:
-        opintopisteet.put("swd1tn001", 5);
-        opintopisteet.put("swd1tn002", 5);
+        // Adding values for keys
+        credits.put("swd1tn001", 5);
+        credits.put("swd1tn002", 5);
 
-        // Haetaan yksi arvo:
-        int pisteet = opintopisteet.get("swd1tn002");
-        System.out.println("2. Opintopisteet swd1tn002: " + pisteet); // 5
+        // Getting a value
+        int courseCredits = credits.get("swd1tn002");
+        System.out.println("2. Credits swd1tn002: " + courseCredits); // 5
         
-        Integer pisteetFeikki = opintopisteet.getOrDefault("feikkikurssi", 0);
-        System.out.println("2.1. Opintopisteet feikkikurssi: " + pisteetFeikki); // 0
+        Integer fakeCredits = credits.getOrDefault("fakecourse", 0);
+        System.out.println("2.1. Credits fakecourse: " + fakeCredits); // 0
 
-        // 3. Uuden arvon asettaminen
-        Map<String, String> numerot = new HashMap<>();
-        numerot.put("Uno", "Yksi");
-        numerot.put("Dos", "Zwei");
-        numerot.put("Uno", "Ein"); // korvaa aikaisemman arvon!
-        numerot.putIfAbsent("Dos", "Kaksi"); // ei korvaa mitään
-        numerot.replace("Tres", "Drei"); // ei lisää mitään
+        // 3. Setting a new value
+        Map<String, String> numbers = new HashMap<>();
+        numbers.put("Uno", "Yksi");
+        numbers.put("Dos", "Zwei");
+        numbers.put("Uno", "Ein"); // replaces the previous value!
+        numbers.putIfAbsent("Dos", "Kaksi"); // doesn't replace anything
+        numbers.replace("Tres", "Drei"); // does not add anything
 
-        System.out.println("3. Numerot: " + numerot);
+        System.out.println("3. Numerot: " + numbers);
 
-        // 4. Arvojen poistaminen (remove) ja tarkastaminen (containsKey)
+        // 4. Removing values (remove) and checking existence (containsKey)
         Map<String, String> countries = new HashMap<>();
         countries.put("Suomi", "Finland");
         countries.put("Ruotsi", "Sweden");
@@ -61,8 +58,8 @@ public class Lesson2 {
 
         System.out.println("4. Countries:" + countries);
 
-        // 5. Usean arvon asettaminen samalle avaimelle:
-        Map<String, List<String>> maat = new HashMap<>();
+        // 5. Setting multiple values for the same key
+        Map<String, List<String>> countryCities = new HashMap<>();
 
         List<String> fi = new ArrayList<String>();
         fi.add("Helsinki");
@@ -70,37 +67,37 @@ public class Lesson2 {
         fi.add("Vantaa");
 
         List<String> sv = new ArrayList<String>();
-        sv.add("Tukholma");
+        sv.add("Stockholm");
         sv.add("Visby");
 
-        maat.put("Suomi", fi);
-        maat.put("Ruotsi", sv);
+        countryCities.put("Finland", fi);
+        countryCities.put("Sweden", sv);
 
-        System.out.println("5. Maat:" + maat);
+        System.out.println("5. Citites:" + countryCities);
         
         fi.add("Tampere");
-        System.out.println("5.1. Maat, Tampere mukana:" + maat);
+        System.out.println("5.1. Citities including Tampere:" + countryCities);
 
-        // 6. Map:in koko sisällön läpikäynti
-        Set<String> avaimet = numerot.keySet();
+        // 6. Going through the map values
+        Set<String> keys = numbers.keySet();
         
-        // Käydään läpi kaikki avaimet:
-        for (String avain : avaimet) {
-            System.out.println("6.1 avain: " + avain);
+        // Go through all the keys
+        for (String key : keys) {
+            System.out.println("6.1 key: " + key);
         }
 
-        Collection<String> arvot = numerot.values();
+        Collection<String> values = numbers.values();
         
-        // Käydään läpi kaikki arvot:
-        for (String arvo : arvot) {
-            System.out.println("6.3 arvo: " + arvo);
+        // Go through all the values
+        for (String value : values) {
+            System.out.println("6.3 value: " + value);
         }
         
-        // Käydään läpi kaikki avain-arvo -parit:
-        // Set<Entry<String, String>> entrySet = numerot.entrySet();
-        for (Entry<String, String> avainArvoPari : numerot.entrySet()) {
-	        System.out.println("Avain: " + avainArvoPari.getKey());
-	        System.out.println("Arvo: " + avainArvoPari.getValue());
+        // Go through all key-value pairs
+        // Set<Entry<String, String>> entrySet = numbers.entrySet();
+        for (Entry<String, String> keyValuePair : numbers.entrySet()) {
+	        System.out.println("Key: " + keyValuePair.getKey());
+	        System.out.println("Value: " + keyValuePair.getValue());
         }
 
     }

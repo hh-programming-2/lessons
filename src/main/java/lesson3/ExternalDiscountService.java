@@ -5,7 +5,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-//Get the discount rate from an outside source. This is to be mocked in tests.
+// Get the discount rate from an outside source. This is to be mocked in tests.
 public class ExternalDiscountService implements DiscountService {
 
     @Override

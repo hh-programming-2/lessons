@@ -1,8 +1,8 @@
 package lesson4;
 
 /**
- * Tämän esimerkin tarkoituksena on havainnollistaa olioiden monimuotoisuutta ja
- * Dependency Injection -patternia.
+ * The purpose of this example is to demonstrate the diversity of objects and the usage of
+ * Dependency Injection pattern.
  */
 public class AirplaneConfig {
 
@@ -11,29 +11,31 @@ public class AirplaneConfig {
 
     public AirplaneConfig() {
     	
-    	// Konfiguroidaan superlentokone, laitetaan supermoottori tähän konfiguraatioon
+    	// Initialize a super plane which has a super engine
         superAirplane = new Airplane();
         Engine superEngine = new SuperEngine();
         superAirplane.setEngine(superEngine);
 
-    	// Konfiguroidaan halpa lentokone, laitetaan halpa moottori tähän konfiguraatioon
+    	// Initialize a cheap plane which has a cheap engine 
         cheapAirplane = new Airplane();
         Engine cheapEngine = new CheapEngine();
         cheapAirplane.setEngine(cheapEngine);
+
+        // "Composition over inheritance"
     }
 
 }
 
 class Airplane {
+    // Airplane just needs an Engine interface object, it is not supposed to know the implementation details
+	private Engine engine;
 
-	private Engine engine; // Pelkkä rajapinta riittää Lentokoneelle, sen ei kuulu tietää toteutusyksityiskohtia.
-
-    // Setter metodilla voidaan asettaa haluttu moottori lentokoneelle
+    // We can set any engine which implements the Engine interface using the setter method
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
-    // Lentokoneen tehtävä on osata lentäminen kokonaisuutena, moottori huolehtii omista yksityiskohdistaan. 
+    // Airplane's responsibility is to know how to a fly by starting and using the engine, the engine handles its own details
     private void fly() {
         engine.start();
         engine.useEngine();
@@ -49,11 +51,11 @@ interface Engine {
 class SuperEngine implements Engine {
 
     public void useEngine() {
-        // tee jotain superjuttuja
+        // Do some super stuff
     }
 
     public boolean start() {
-        // Tee supermoottorin käynnistämiseen tarvittavat toimet
+        // Do the required actions to start the super engine
         return false;
     }
 
@@ -62,11 +64,11 @@ class SuperEngine implements Engine {
 class CheapEngine implements Engine {
 
     public void useEngine() {
-        // aja hitaasti
+        // Dome some cheap stuff
     }
 
     public boolean start() {
-        // Tee halvan moottorin käynnistämiseen tarvittavat toimet
+        // Do the required actions to start the cheap engine
         return false;
     }
 

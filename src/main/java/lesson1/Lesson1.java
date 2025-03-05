@@ -3,7 +3,7 @@ package lesson1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tunti1 {
+public class Lesson1 {
 
     public static void main(String[] args) {
         // Examples of variables

@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Tämä esimerkki havainnollistaa samankokoisesta datamäärästä Hashmap
- * tietorakenteen ja ArrayListin eroja.
+ * This example demonstrate the difference between using the HashMap and ArrayList data structures
+ * with a large amount of data
  */
 public class LotsOfData {
 
@@ -17,29 +17,29 @@ public class LotsOfData {
         Map<String, Integer> hashMap = createHashMap(dataSize);
         List<String> list = createArrayList(dataSize);
 
-        // Mittaa aika hajautustaululle containsKey hakuun
+        // Calculates the time the containsKey (HashMap) search takes 
         long startTimeHashMap = System.currentTimeMillis();
-        boolean containsKeyHashMap = hashMap.containsKey("arvo_jota_ei_loydy");
+        boolean containsKeyHashMap = hashMap.containsKey("non_existing_key");
         long endTimeHashMap = System.currentTimeMillis();
         System.out.println("HashMap containsKey: " + containsKeyHashMap);
         System.out.println("HashMap search time: " + (endTimeHashMap - startTimeHashMap) + " milliseconds");
 
-        // Mittaa aika ArrayListille contains hakuun
+        // Calculates the time the contains (ArrayList) search takes
         long startTimeList = System.currentTimeMillis();
-        boolean containsList = list.contains("arvo_jota_ei_loydy");
+        boolean containsList = list.contains("non_existing_key");
         long endTimeList = System.currentTimeMillis();
         System.out.println("ArrayList contains: " + containsList);
         System.out.println("ArrayList search time: " + (endTimeList - startTimeList) + " milliseconds");
         
-        //Käytännössä ArrayList contains tekee siis tämän, eli käy tarvittaessa koko listan läpi löytääkseen vastauksen:
+        // In practice ArrayList's contains method goes through the whole list to find the answer
         for (String numero: list) {
-            if (numero.equals("arvo_jota_ei_loydy")) {
+            if (numero.equals("non_existing_key")) {
                 break;
             }
         }
     }
 
-    //Luodaan satunnaisia numeroarvoja sisältävä hajautustaulu
+    // Create a hash map containing random number values
     private static Map<String, Integer> createHashMap(int dataSize) {
         Map<String, Integer> hashMap = new HashMap<>(dataSize);
         Random random = new Random();
@@ -50,7 +50,7 @@ public class LotsOfData {
         return hashMap;
     }
 
-    //Luodaan satunnaisia numeroarvoja sisältävä Lista
+    // Create a list containing random number values
     private static List<String> createArrayList(int dataSize) {
         List<String> list = new ArrayList<>(dataSize);
         Random random = new Random();
