@@ -24,8 +24,8 @@ public class ShapeExample {
         }
 
         // Different shapes and casting
-        AbstractShape aCircle = (AbstractShape) Circle;
-        AbstractShape aRectangle = (AbstractShape) Rectangle;
+        AbstractShape aCircle = (AbstractShape) circle;
+        AbstractShape aRectangle = (AbstractShape) rectangle;
 
         int comparisonResult = aCircle.compareTo(aRectangle);
         if (comparisonResult < 0) {

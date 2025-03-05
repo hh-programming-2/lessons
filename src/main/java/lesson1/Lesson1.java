@@ -15,13 +15,14 @@ public class Lesson1 {
         // Examples of control structures
         if (isJavaFun) {
             System.out.println("Java is fun!");
-        } else if(number == 43) {
+        } else if (number == 43) {
             System.out.println("Java is also fun!");
         } else {
             System.out.println("Java is not fun?");
         }
 
         int dayOfWeek = 3;
+
         switch (dayOfWeek) {
             case 1:
                 System.out.println("It's Monday");
@@ -41,7 +42,7 @@ public class Lesson1 {
 
         // Examples of loops
         int[] numbersArray = { 1, 2, 3, 4, 5 };
-        
+
         for (int i = 0; i < numbersArray.length; i++) {
             System.out.print(numbersArray[i] + " ");
         }
@@ -84,7 +85,7 @@ public class Lesson1 {
         String str2 = "World";
         String str3 = str1 + ", " + str2;
         System.out.println(str3);
-        
+
         String text = "This is a sample text for demonstration.";
         String substring = "sample";
         int index = text.indexOf(substring);

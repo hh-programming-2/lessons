@@ -21,11 +21,11 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 - [Lesson4, Examples](./src/main/java/lesson4)
 
-<!--
 ## Lesson 5: Streams, lambdas and optionals
 
-- [Lesson5, Esimerkit](./src/main/java/lesson5)
+- [Lesson5, Examples](./src/main/java/lesson5)
 
+<!--
 ## Lesson 6: Database connection with Java (JDBC):
 
 - [Lesson6, Esimerkit](./src/main/java/lesson6)
