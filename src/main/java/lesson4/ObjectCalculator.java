@@ -1,25 +1,30 @@
 package lesson4;
 
 /**
- * Lasketaan oliomallinnuksen mukaan mallinnetulla oliolaskurilla lasku
- * (1+(2*(3+2))) = 11. Tarkoitus on havainnollistaa olioiden monimuotoisuutta ja
- * oliomallinnusta sekä tarjota vertailua muihin paradigmoihin. Huomionarvoista
- * on myös se, että tämä toteutus ei sisällä yhtään if lausetta tai for-looppia
- * toisin kuin imperatiivinen toteutus. Tästä voi myös huomata, että ongelman
- * mallintaminen olioiksi tuottaa aika paljon koodirivejä.
+ * We calculate the expression (1+(2*(3+2))) = 11 using an object-oriented counter
+ * modeled according to object modeling. The purpose is to illustrate the polymorphism
+ * of objects and object modeling, and to provide a comparison to other paradigms.
+ * It is also noteworthy that this implementation does not contain any if statements
+ * or for-loops, unlike the imperative implementation. This also shows that modeling
+ * the problem as objects produces quite a lot of lines of code.
  * 
- * Vrt. ImperatiivinenLaskuri.java
+ * See also: ImperativeCounter.java
  */
 public class ObjectCalculator {
 
     public static void main(final String[] args) {
-        int tulos = new Sum(new Id(1), new Mul(new Id(2), (new Sum(new Id(3), new Id(2))))).laske();
-        System.out.println("Summa = " + tulos);
+        // This solution is an example of "declarative programming"
+        // In imperative programming we tell the computer how to do things,
+        // whereas in declarative declarative programming, we focus on what we want to get from the computer
+        int result = new Sum(new Id(1), new Mul(new Id(2), (new Sum(new Id(3), new Id(2))))).calculate();
+        System.out.println("Result = " + result);
+
+        // Another example of declarative programming is SQL: "SELECT name FROM Person WHERE age >= 18"
     }
 }
 
 interface Operation {
-    public int laske();
+    public int calculate();
 }
 
 class Sum implements Operation {
@@ -32,8 +37,8 @@ class Sum implements Operation {
     }
 
     @Override
-    public int laske() {
-        return x1.laske() + x2.laske();
+    public int calculate() {
+        return x1.calculate() + x2.calculate();
     }
 
 }
@@ -48,8 +53,8 @@ class Mul implements Operation {
     }
 
     @Override
-    public int laske() {
-        return x1.laske() * x2.laske();
+    public int calculate() {
+        return x1.calculate() * x2.calculate();
     }
 
 }
@@ -63,7 +68,7 @@ class Id implements Operation {
     }
 
     @Override
-    public int laske() {
+    public int calculate() {
         return x1;
     }
 

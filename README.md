@@ -11,16 +11,17 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Lesson2, Map](./src/main/java/lesson2/Lesson2.java)
 - [Lesson2, Hash map example with a large amount of data](./src/main/java/lesson2/LotsOfData.java)
 
-<!--
 ## Lesson 3: JUnit
 
-- [Lesson3, Testattavat luokat](./src/main/java/lesson3)
-- [Lesson3, Testit](./src/test/java/lesson3)
+- [Lesson3, Classes under testing](./src/main/java/lesson3)
+- [Lesson3, Tests](./src/test/java/lesson3)
+
 
 ## Lesson 4: Object modelling, inheritance and interfaces
 
-- [Lesson4, Esimerkit](./src/main/java/lesson4)
+- [Lesson4, Examples](./src/main/java/lesson4)
 
+<!--
 ## Lesson 5: Streams, lambdas and optionals
 
 - [Lesson5, Esimerkit](./src/main/java/lesson5)

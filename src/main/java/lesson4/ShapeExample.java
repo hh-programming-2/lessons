@@ -5,49 +5,48 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Tämä esimerkki havainnollistaa olio-ohjelmoinnin käsitteitä Abstrakti-luokka,
- * super- ja instanceof
- * -avainsanat.
+ * This example illustrates the object-oriented programming concepts of Abstract class,
+ * super, and instanceof keywords.
  */
 public class ShapeExample {
     public static void main(String[] args) {
         Shape circle = new Circle(5.0);
         Shape rectangle = new Rectangle(4.0, 6.0);
 
-        System.out.println("Ympyrän pinta-ala: " + circle.calculateArea());
-        System.out.println("Suorakulmion pinta-ala: " + rectangle.calculateArea());
+        System.out.println("Circle area: " + circle.calculateArea());
+        System.out.println("Rectangle area: " + rectangle.calculateArea());
 
-        System.out.println("Ympyrä tulostettuna: " + circle);
-        System.out.println("Suorakulmio tulostettuna: " + rectangle);
+        System.out.println(": " + circle);
+        System.out.println("Rectangle as string: " + rectangle);
 
         if (circle instanceof Circle) {
-            System.out.println("Ympyrä on todella ympyrä");
+            System.out.println("The circle variable is an instance of the Circle class");
         }
 
-        // Verrataan muotoja, myös olioiden castaus
-        AbstractShape aYmpyra = (AbstractShape) Circle;
-        AbstractShape aSuorakulmio = (AbstractShape) Rectangle;
+        // Different shapes and casting
+        AbstractShape aCircle = (AbstractShape) Circle;
+        AbstractShape aRectangle = (AbstractShape) Rectangle;
 
-        int comparisonResult = aYmpyra.compareTo(aSuorakulmio);
+        int comparisonResult = aCircle.compareTo(aRectangle);
         if (comparisonResult < 0) {
-            System.out.println("Ympyrä on pienempi kuin Suorakulmio.");
+            System.out.println("Circle is smaller than the rectangle");
         } else if (comparisonResult > 0) {
-            System.out.println("Ympyrä on suurempi kuin Suorakulmio.");
+            System.out.println("Circleis larger than the rectangle");
         } else {
-            System.out.println("Ympyrä ja Suorakulmio ovat saman kokoisia.");
+            System.out.println("Circle and rectangle have the same size");
         }
 
-        List<AbstractShape> muodot = new ArrayList<>();
-        muodot.add(aYmpyra);
-        muodot.add(aSuorakulmio);
+        List<AbstractShape> shapes = new ArrayList<>();
+        shapes.add(aCircle);
+        shapes.add(aRectangle);
 
-        // Järjestetään Collections.sort:in avulla pienimmästä suurimpaan
-        Collections.sort(muodot);
+        // Let's sort the shapes from smallest to largest using the Collections.sort method
+        Collections.sort(shapes);
 
-        System.out.println("Muodot järjestyksessä: ");
+        System.out.println("Shapes sorted from smallest to largest: ");
 
-        for (AbstractShape muoto : muodot) {
-            System.out.println(muoto.calculateArea());
+        for (AbstractShape shape : shapes) {
+            System.out.println(shape.calculateArea());
         }
 
     }
@@ -79,10 +78,10 @@ abstract class AbstractShape implements Shape, Comparable<AbstractShape> {
 
     @Override
     public String toString() {
-        return "Laskettu: " + counter + " kertaa. \n\n";
+        return "Calculated: " + counter + " times. \n\n";
     }
 
-    // Comparable toteutus pinta-alan perusteella
+    // Comparable implementation based on the area of the shape
     @Override
     public int compareTo(AbstractShape other) {
         return Double.compare(this.calculateArea(), other.calculateArea());
@@ -90,22 +89,22 @@ abstract class AbstractShape implements Shape, Comparable<AbstractShape> {
 }
 
 class Circle extends AbstractShape {
-    private double sade;
+    private double radius;
 
-    public Circle(double sade) {
+    public Circle(double radius) {
         super();
-        this.sade = sade;
+        this.radius = radius;
     }
 
     @Override
     public double calculateArea() {
         increaseCounter();
-        return Math.PI * sade * sade;
+        return Math.PI * radius * radius;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "Sade: " + sade;
+        return super.toString() + "Sade: " + radius;
     }
 }
 

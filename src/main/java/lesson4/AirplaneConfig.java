@@ -1,7 +1,7 @@
 package lesson4;
 
 /**
- * The purpose of this example is to demonstrate the diversity of objects and the usage of
+ * The purpose of this example is to demonstrate interfaces and the usage of
  * Dependency Injection pattern.
  */
 public class AirplaneConfig {

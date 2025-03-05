@@ -7,68 +7,69 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * Tämän esimerkin tarkoituksena on havainnollistaa olioiden monimuotoisuutta ja
- * rajapintojen käyttämistä.
+ * The purpose of this example is to illustrate the polymorphism of objects and
+ * the use of interfaces.
  */
 public class ListExamples {
 
     public static void main(final String[] args) {
-        List<Integer> numeroLista = new LinkedList<>();
-        numeroLista.add(1);
-        numeroLista.add(2);
-        numeroLista.add(3);
-        numeroLista.add(1);
-        System.out.println(laskeEsiintymat(numeroLista));
+        List<Integer> numberList = new LinkedList<>();
+        numberList.add(1);
+        numberList.add(2);
+        numberList.add(3);
+        numberList.add(1);
+        System.out.println(countOccurences(numberList));
 
-        List<String> tekstiLista = new LinkedList<>();
-        tekstiLista.add("Pekka");
-        tekstiLista.add("Maija");
-        tekstiLista.add("Elina");
-        tekstiLista.add("Pekka");
-        System.out.println(laskeEsiintymat(tekstiLista));
+        List<String> textList = new LinkedList<>();
+        textList.add("Pekka");
+        textList.add("Maija");
+        textList.add("Elina");
+        textList.add("Pekka");
+        System.out.println(countOccurences(textList));
 
-        List<MyObject> omaLista = new LinkedList<>();
-        omaLista.add(new MyObject(1, "Volvo"));
-        omaLista.add(new MyObject(2, "Mersu"));
-        omaLista.add(new MyObject(3, "BMW"));
-        omaLista.add(new MyObject(4, "Volvo"));
-        System.out.println(laskeEsiintymat(omaLista));
+        List<MyObject> objectList = new LinkedList<>();
+        objectList.add(new MyObject(1, "Volvo"));
+        objectList.add(new MyObject(2, "Mersu"));
+        objectList.add(new MyObject(3, "BMW"));
+        objectList.add(new MyObject(4, "Volvo"));
+        System.out.println(countOccurences(objectList));
         
-        // Bonuksena vielä sorttaus Comparable rajapinnalla
-        Collections.sort(omaLista);
-        System.out.println("Aakkosjärjestetty autolista:  "+omaLista);
+        // Sorting using the Comparable interface
+        Collections.sort(objectList);
+        System.out.println("Aakkosjärjestetty autolista:  " + objectList);
 
     }
 
     /**
-     * 
+     * Counts the number of times each object is present in a list
      * 
      * @param list
-     * @return Metodi palauttaa Mapin, jossa on avaimena parametrina saadun Listan
-     *         objekti ja keynä lukumäärä kuinka monta samaa objektia listassa oli.
+     * @return The method returns a Map where the key is an object from the given List
+     *         and the value is the count of how many times the same object appeared in the list.
      */
-    private static <T> Map<T, Integer> laskeEsiintymat(List<T> list) {
-        Map<T, Integer> tulos = new HashMap<>();
+    private static <T> Map<T, Integer> countOccurences(List<T> list) {
+        Map<T, Integer> result = new HashMap<>();
         for (T object : list) {
-            if (tulos.containsKey(object)) {
-                tulos.put(object, tulos.get(object) + 1);
+            if (result.containsKey(object)) {
+                result.put(object, result.get(object) + 1);
             } else {
-                tulos.put(object, 1);
+                result.put(object, 1);
             }
         }
-        return tulos;
+        return result;
     }
 }
 
 /**
- * Lisätään esimerkkiin vielä oma objekti, jolla on id ja tekstikenttä ja
- * overridataan luokan hashcode ja equals-metodit siten, että pelkkä
- * tekstisisällön samankaltaisuus tarkoittaa samankaltaisuutta, sitten se
- * voidaan myös antaa mielekkääseen vertailuun laskeEsiintymat metodille.
+ * Let's add our own object to the example, which has an id and a text field, and
+ * override the class's hashcode and equals methods so that only the similarity
+ * of the text content means similarity. Then it can also be given for meaningful
+ * comparison to the countOccurences method.
  * 
- * Luokka toteuttaa myös Comparable rajapinnan, jolloin OmaObjekteja voidaan myös järjestää suhteessa toisiinsa.
- * Tässä tapauksessa järjestys tapahtuu text perusteella String-luokan omaa compare-toteutusta hyödyntäen.
- * Tämä käytännössä aiheuttaa MyObject järjestämisen aakkosjärjestykseen.
+ * The class also implements the Comparable interface, so MyObjects can also be
+ * sorted relative to each other. In this case, the sorting is done based on the
+ * text using the String class's own compare implementation.
+ * This practically causes MyObject to be sorted in alphabetical order.
  */
 class MyObject implements Comparable<MyObject> {
     private int id;

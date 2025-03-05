@@ -6,36 +6,36 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
- * Tämän esimerkin tarkoituksena on havainnollistaa olioiden monimuotoisuutta ja
- * rajapintojen käyttämistä.
+ * The purpose of this example is to illustrate the polymorphism of objects and
+ * the use of interfaces.
  */
 public class ListExampleWithoutCustomObject {
 
     public static void main(final String[] args) {
-        List<Integer> numeroLista = new LinkedList<>();
-        numeroLista.add(1);
-        numeroLista.add(2);
-        numeroLista.add(3);
-        numeroLista.add(1);
-        System.out.println(laskeEsiintymat(numeroLista));
+        List<Integer> numberList = new LinkedList<>();
+        numberList.add(1);
+        numberList.add(2);
+        numberList.add(3);
+        numberList.add(1);
+        System.out.println(countOccurences(numberList));
     }
 
     /**
-     * 
+     * Counts the number of times each object is present in a list
      * 
      * @param list
-     * @return Metodi palauttaa Mapin, jossa on avaimena parametrina saadun Listan
-     *         objekti ja keynä lukumäärä kuinka monta samaa objektia listassa oli.
+     * @return The method returns a Map where the key is an object from the given List
+     *         and the value is the count of how many times the same object appeared in the list.
      */
-    private static Map<Integer, Integer> laskeEsiintymat(List<Integer> list) {
-        Map<Integer, Integer> tulos = new HashMap<>();
+    private static Map<Integer, Integer> countOccurences(List<Integer> list) {
+        Map<Integer, Integer> result = new HashMap<>();
         for (Integer numero : list) {
-            if (tulos.containsKey(numero)) {
-                tulos.put(numero, tulos.get(numero) + 1);
+            if (result.containsKey(numero)) {
+                result.put(numero, result.get(numero) + 1);
             } else {
-                tulos.put(numero, 1);
+                result.put(numero, 1);
             }
         }
-        return tulos;
+        return result;
     }
 }

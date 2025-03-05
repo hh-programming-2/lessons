@@ -1,4 +1,4 @@
-package tunti3;
+package lesson3;
 
 import org.junit.jupiter.api.*;
 
