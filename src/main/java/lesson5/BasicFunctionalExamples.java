@@ -44,6 +44,7 @@ public class BasicFunctionalExamples {
 
         // Example 4. Using a stream and lambda function to find the maximum number
         int largestNumber = numbers.stream()
+                // Method reference syntax using the :: operator
                 .max(Integer::compareTo) // In an IntegerStream there are special methods such as max
                 .orElse(0); // It is possible that the stream does not return anything, so the result is of Optional type
         
@@ -75,23 +76,25 @@ public class BasicFunctionalExamples {
     }
 
     private static int countCitiesPopulationUsingForLoop(List<City> cities) {
-		int summa = 0;
-		for (City kaupunki: cities) {
-		    int asukasLuku = kaupunki.getPopulation();
-		    if (asukasLuku > 100_000) {
-		    	summa += asukasLuku;
+		int sum = 0;
+		for (City city: cities) {
+		    int population = city.getPopulation();
+		    if (population > 100_000) {
+		    	sum += population;
 		    }
 		}
-		return summa;
+		return sum;
     }
     
     private static int countCititesPopulationUsingStream(List<City> cities) {
-    	//Tämän esimerkin funktioiden tyypit havainnollistettu alla (ks. https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
-    	//Predicate<Boolean> predicate = kaupunki -> cities.get(0).getPopulation() > 100_000;
-    	//ToIntFunction<Kaupunki> func = Kaupunki::getPopulation;
+    	// The types of the lambda functions are displayed below (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
+    	// Predicate<Boolean> isLargeCity = city -> cities.get(0).getPopulation() > 100_000;
+    	// ToIntFunction<City> toPopulation = City::getPopulation;
         return cities.stream()
-                .filter((City kaupunki) -> {return kaupunki.getPopulation() > 100_000;})
-                .mapToInt(City::getPopulation) // Double colon method reference (ks. esim https://www.geeksforgeeks.org/double-colon-operator-in-java/)
+                .filter((City city) -> {
+                    return city.getPopulation() > 100_000;
+                })
+                .mapToInt(City::getPopulation) // Double colon method reference (https://www.geeksforgeeks.org/double-colon-operator-in-java/)
                 .sum();
     }
 }
