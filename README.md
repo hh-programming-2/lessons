@@ -1,4 +1,4 @@
-# Java lesson examples
+# Programming 2 lesson examples
 
 Here you can find the lesson examples used during the Programming 2 course.
 
