@@ -16,11 +16,12 @@ public class IDConsumerCallable implements Callable<Integer> {
         int id = 0;
 
         for (int i = 0; i < counter; i++) {
-            id = idg.nextID(); //Kasvatetaan id:tä säieturvallisesti koska nextID-metodi on synkronoitu, eli kaksi säiettä eivät voi kutsua sitä yhtä aikaa
+            // Increase id thread safely. Because nextID method is synchronized no two threads can call it at the same time
+            id = idg.nextID();
             //System.out.println("\t" + this.toString() + " " + id);
         }
 
-        System.out.println("Säie: "+this.toString() + " id tulos: " + id);
+        System.out.println("Thread: " + this.toString() + " id result: " + id);
         return id;
     }
 }

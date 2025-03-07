@@ -13,11 +13,10 @@ import lesson8.thread.helpers.IDGenerator;
 import lesson8.thread.helpers.IDGeneratorSync;
 
 /**
- * Esimerkki ExecutorService ja Callable, jossa threadi palauttaa tuloksen.
+ * Example of ExecutorService and Callable, where a thread returns a value.
  */
 public class CallableExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-    	
         int threadCount = 5;
         
         List<Callable<Integer>> threads = new ArrayList<>();
@@ -28,19 +27,23 @@ public class CallableExample {
         
         ExecutorService executor = Executors.newFixedThreadPool(threadCount);
 
-        List<Future<Integer>> futures = executor.invokeAll(threads); // Palautetaan futureja, eli lupaus arvosta tulevaisuudessa.
+        // The invokeAll method returns a list of "futures", which are promises of a return value at some point in the future
+        List<Future<Integer>> futures = executor.invokeAll(threads);
         		
         int resultId = 0;
+
         for (Future<Integer> future : futures) {
-            resultId = future.get(); // Future palautuu vasta kun Threadin suoritus on valmis, blokkaa pääthreadia siihen asti.
-            System.out.println("ID säikeen päättyessä: " + resultId);
+            // Future returns only once the thread execution is completed and blocks the main thread until then
+            resultId = future.get();
+            System.out.println("ID after the thread execution: " + resultId);
         }
-        // Executorin sulkeminen
+
+        // All threads have completed, close the executor
         executor.shutdown();
         
-        //Tarkistetaan Singleton IDGeneratorin lopputulos, jota eri säikeet ovat muokanneet.
+        // Check the end result of the singleton IDGenerator, which have been altered by all the threads
         IDGeneratorSync idGenerator = IDGeneratorSync.getIDGenerator();
         int finalId = idGenerator.getLastId();
-        System.out.println("Lopullinen ID: " + finalId);
+        System.out.println("Final ID: " + finalId);
     }
 }

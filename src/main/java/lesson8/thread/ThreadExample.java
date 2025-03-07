@@ -8,39 +8,41 @@ import lesson8.thread.helpers.IDConsumerCallable;
 import lesson8.thread.helpers.IDGenerator;
 import lesson8.thread.helpers.IDGeneratorSync;
 
-/**
- * Perusesimerkkejä säikeisiin liittyen
- */
+// Basic examples covering usage of threads
 public class ThreadExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        // Esimerkki 1: Singleton-luokka (IDGenerator), ei liity suoraan Threadeihin.
+        // Example 1: A singleton class (IDGenerator). Isn't exactly related to threads
         IDGenerator idg = IDGenerator.getIDGenerator();
         int id = idg.nextID();
         System.out.println("ID: " + id);
 
-        // Esimerkki 2: Säikeiden luominen ja nimien tulostaminen
-        Runnable run = () -> System.out.println("Säie käynnistetty: " + Thread.currentThread().getName());
-        System.out.println("Pääsäie: " + Thread.currentThread().getName());
+        // Example 2: Initialization of threads and printing their names
+        // Runnable object represents the operation performed in the thread
+        Runnable run = () -> System.out.println("Thread started: " + Thread.currentThread().getName());
+        System.out.println("Main thread: " + Thread.currentThread().getName());
+        
         Thread t = new Thread(run);
         t.start();
+    
         for (int i = 0; i < 5; i++) {
             new Thread(run).start();
         }
 
-        // Esimerkki 3: Runnable-rajapinnan toteuttava luokka
+        // Example 3: DemoThread lass implementing the Runnable interface
+        // We can use a lambda function or a class implementing the Runnable interface while initializing a Thread object
         Thread t3 = new Thread(new DemoThread());
         t3.start();
 
-        // Esimerkki 4: Viive ja säikeiden tilan tarkistus
+        // Example 4: Delay in main thread and checking the status of a thread
         while (t3.isAlive()) {
             try {
-                System.out.println("Pääsäie nukkuu");
-                Thread.sleep(100); //Pääsäie odottaa
+                System.out.println("Main thread is sleeping zzz...");
+                Thread.sleep(100); // Main thread waits 100 milliseconds
             } catch (InterruptedException e) {
             }
         }
 
-        System.out.println("Pääsäie: Säie 3 päättynyt");
+        System.out.println("Main thread: Thread 3 has been completed");
     }
 }
 
@@ -48,9 +50,9 @@ class DemoThread implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(200); // Sivusäie odottaa
+            Thread.sleep(200); // Side thread waits
         } catch (InterruptedException e) {
         }
-        System.out.println("Luokka ja säiemetodi: " + Thread.currentThread().getName());
+        System.out.println("Class and thread method: " + Thread.currentThread().getName());
     }
 }

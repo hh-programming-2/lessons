@@ -33,13 +33,10 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
 - [Wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise/)
 
-<!--
-## Lesson 8: Threads and recursion:
+## Lesson 8: Threads and recursion
 
-- [Lesson8, Säikeet](./src/main/java/lesson8/thread)
-
-- [Lesson8, Rekursio](./src/main/java/lesson8/rekursio/RekursioEsimerkki.java)
--->
+- [Threads](./src/main/java/lesson8/thread)
+- [Recursion](./src/main/java/lesson8/recursion/RecursionExample.java)
 
 ## License and authors
 
