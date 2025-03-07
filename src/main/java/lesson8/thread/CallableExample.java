@@ -15,7 +15,7 @@ import lesson8.thread.helpers.IDGeneratorSync;
 /**
  * Esimerkki ExecutorService ja Callable, jossa threadi palauttaa tuloksen.
  */
-public class CallableEsimerkki {
+public class CallableExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
     	
         int threadCount = 5;

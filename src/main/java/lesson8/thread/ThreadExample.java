@@ -11,7 +11,7 @@ import lesson8.thread.helpers.IDGeneratorSync;
 /**
  * Perusesimerkkejä säikeisiin liittyen
  */
-public class ThreadEsimerkkeja {
+public class ThreadExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         // Esimerkki 1: Singleton-luokka (IDGenerator), ei liity suoraan Threadeihin.
         IDGenerator idg = IDGenerator.getIDGenerator();
@@ -28,7 +28,7 @@ public class ThreadEsimerkkeja {
         }
 
         // Esimerkki 3: Runnable-rajapinnan toteuttava luokka
-        Thread t3 = new Thread(new DemoSäie());
+        Thread t3 = new Thread(new DemoThread());
         t3.start();
 
         // Esimerkki 4: Viive ja säikeiden tilan tarkistus
@@ -39,15 +39,16 @@ public class ThreadEsimerkkeja {
             } catch (InterruptedException e) {
             }
         }
+
         System.out.println("Pääsäie: Säie 3 päättynyt");
     }
 }
 
-class DemoSäie implements Runnable {
+class DemoThread implements Runnable {
     @Override
     public void run() {
         try {
-            Thread.sleep(200); //Sivusäie odottaa
+            Thread.sleep(200); // Sivusäie odottaa
         } catch (InterruptedException e) {
         }
         System.out.println("Luokka ja säiemetodi: " + Thread.currentThread().getName());

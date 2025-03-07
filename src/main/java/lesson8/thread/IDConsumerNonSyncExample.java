@@ -13,11 +13,11 @@ import lesson8.thread.helpers.IDGenerator;
  *  tämä tehdään IDGeneratorSync-luokan avulla tämän esimerkin kommentoiduissa osissa.
  */
 
-public class IDConsumerNonSyncEsimerkki implements Runnable {
+public class IDConsumerNonSyncExample implements Runnable {
 	
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		IDConsumerNonSyncEsimerkki idc1 = new IDConsumerNonSyncEsimerkki(5, false); //Jos nämä kasvattaa 5 -> 50, niin alkaa tulla virheitä,
-		IDConsumerNonSyncEsimerkki idc2 = new IDConsumerNonSyncEsimerkki(5, false); //eli ei tulekkaan välttämättä 100 viimeiseksi ID:ksi
+		IDConsumerNonSyncExample idc1 = new IDConsumerNonSyncExample(5, false); //Jos nämä kasvattaa 5 -> 50, niin alkaa tulla virheitä,
+		IDConsumerNonSyncExample idc2 = new IDConsumerNonSyncExample(5, false); //eli ei tulekkaan välttämättä 100 viimeiseksi ID:ksi
 		Thread t1 = new Thread(idc1);
 		Thread t2 = new Thread(idc2);
 		t1.start();
@@ -39,7 +39,7 @@ public class IDConsumerNonSyncEsimerkki implements Runnable {
     private int counter; // montako kertaan pyydetään uusi ID
     private boolean useDelay; // simuloidaanko kuormaa viiveellä
 
-    public IDConsumerNonSyncEsimerkki(int counter, boolean useDelay) {
+    public IDConsumerNonSyncExample(int counter, boolean useDelay) {
         this.counter = counter;
         this.useDelay = useDelay;
     }

@@ -9,14 +9,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import wordplay.io.DictionaryReader;
-import wordplay.io.NamesReader;
+import lesson7.wordplay.io.DictionaryReader;
+import lesson7.wordplay.io.NamesReader;
 
 /**
  * NOTE: This class needs this repository https://github.com/ohjelmointi2/wordplay-exercise 
  * to actually work and run 
  */
-public class NamesInDictionaryRatkaisu {
+public class NamesInDictionarySolution {
 
 	private static List<String> finnishNames = NamesReader.readFirstNames();
     private static List<String> finnishWords = DictionaryReader.readFinnishWords();
@@ -76,8 +76,8 @@ public class NamesInDictionaryRatkaisu {
         // Calculate duration
         Duration duration = Duration.between(startTime, endTime);
 
-        System.out.println("Yhteensä: " + count + " nimeä.");
-        System.out.println("Suoritusaika: " + duration.toMillis() + " ms.");        
+        System.out.println("Number of names: " + count + " names.");
+        System.out.println("Execution time: " + duration.toMillis() + " ms.");        
     }
     
     // Check if the given name is not part of any longer word in the dictionary

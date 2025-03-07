@@ -4,7 +4,7 @@ package lesson8.thread;
  * Tämä esimerkki havainnollistaa tyypillistä säikeiden käyttöä.
  * Suoritamme siis aikaavievän tehtävän taustalla.
  */
-public class TaustatehtavaEsimerkki {
+public class BackgroundJobExample {
     public static void main(String[] args) {
         System.out.println("Pääsäie: " + Thread.currentThread().getName());
 
