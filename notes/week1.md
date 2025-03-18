@@ -39,16 +39,20 @@
 
 - Let's start with some Java programming recap, before discussing more about version control
 - You can use any editor during the course
-- In the examples, I'll use Eclipse in the first few weeks and have a look at using VsCode later
+- In the examples, I'll use Eclipse in the first few weeks and have a look at using VSCode later
 - We will also have a look how to build and execute Java programs using command-line tools later on
 - Weekly session code examples
 - Week 1 examples:
-  1. Java projects consists of one or more Java files
+  1. Java projects consists of one or more Java file
   2. Java files have usually one class, which have methods
   3. The main method is a special method, which is execute once the Java program is ran
   4. Executing the Java program (main method)
-  5. In the first week you'll need to know the basics of variables, control structures (if statement), loops (for and while), lists, arrays, string handling and objects (e.g. defining your own class)
-  6. Go through examples in the main method
+  5. During this course our Java projects will be Gradle projects
+  6. Gradle is a Java build tool, which is required in more complicated projects having e.g. external libraries as dependencies
+  7. Build tools offer features such as compilation, execution, running automated tests and building an executable for the program (JAR)
+  8. Other quite commonly used Java build tool is Maven, which you'll probably face in later studies
+  9. In the first week you'll need to know the basics of variables, control structures (`if` statement), loops (`for` and `while` loops), lists, arrays, string handling and objects (e.g. defining your own class)
+  10. Go through examples in the main method
 
 ### Version control
 
