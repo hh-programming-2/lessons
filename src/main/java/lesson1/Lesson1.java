@@ -11,9 +11,10 @@ public class Lesson1 {
         double pi = 3.14;
         String message = "Hello, world!";
         boolean isJavaFun = true;
+        number = 55;
 
         // Examples of control structures
-        if (isJavaFun) {
+        if (number > 55) {
             System.out.println("Java is fun!");
         } else if (number == 43) {
             System.out.println("Java is also fun!");
@@ -22,7 +23,7 @@ public class Lesson1 {
         }
 
         int dayOfWeek = 3;
-
+            
         switch (dayOfWeek) {
             case 1:
                 System.out.println("It's Monday");
@@ -38,13 +39,23 @@ public class Lesson1 {
 
         int x = 5;
         // Example of ternary operator
-        int y = (x > 0) ? 1 : -1;
+        //int y = (x > 0) ? 1 : -1;
+        
+        int y = -1;
+        
+        if (x > 0) {
+        	y = 1;
+        }
 
         // Examples of loops
         int[] numbersArray = { 1, 2, 3, 4, 5 };
 
         for (int i = 0; i < numbersArray.length; i++) {
             System.out.print(numbersArray[i] + " ");
+        }
+        
+        for (int i = numbersArray.length - 1; i >= 0; i--) {
+        	System.out.print(numbersArray[i] + " ");
         }
 
         for (int num : numbersArray) {
@@ -59,17 +70,26 @@ public class Lesson1 {
 
         // Examples of methods
         int sum = add(3, 5);
+        int otherSum = add(10, 5);
         System.out.println("Sum: " + sum);
 
         // Examples of arrays and lists
         int[] array = { 1, 2, 3, 4, 5 };
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.remove(0);
+        
+        for (String n : list) {
+        	System.out.println(n);
+        }
 
         // Examples of object oriented programming
         Animal animal = new Animal("Elephant", 25);
+        Animal dog = new Animal("Dog", 9);
+        animal.getName(); // "Elephant"
+        dog.getName(); // "Dog"
         System.out.println("Name: " + animal.getName() + ", Age: " + animal.getWeight());
 
         // Example of exception handling
@@ -87,8 +107,15 @@ public class Lesson1 {
         System.out.println(str3);
 
         String text = "This is a sample text for demonstration.";
-        String substring = "sample";
+        String substring = "is";
         int index = text.indexOf(substring);
+        
+        System.out.println("Found in: " + index);
+        
+        if (index >= 0) {
+        	System.out.println("Found it!");
+        }
+        
         System.out.println("Index of \"" + substring + "\" in the text: " + index);
 
         String str = "Hello, World!";
