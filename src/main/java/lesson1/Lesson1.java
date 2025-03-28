@@ -11,10 +11,9 @@ public class Lesson1 {
         double pi = 3.14;
         String message = "Hello, world!";
         boolean isJavaFun = true;
-        number = 55;
 
         // Examples of control structures
-        if (number > 55) {
+        if (isJavaFun) {
             System.out.println("Java is fun!");
         } else if (number == 43) {
             System.out.println("Java is also fun!");
@@ -39,13 +38,8 @@ public class Lesson1 {
 
         int x = 5;
         // Example of ternary operator
-        //int y = (x > 0) ? 1 : -1;
-        
-        int y = -1;
-        
-        if (x > 0) {
-        	y = 1;
-        }
+        int y = (x > 0) ? 1 : -1;
+
 
         // Examples of loops
         int[] numbersArray = { 1, 2, 3, 4, 5 };
@@ -70,7 +64,6 @@ public class Lesson1 {
 
         // Examples of methods
         int sum = add(3, 5);
-        int otherSum = add(10, 5);
         System.out.println("Sum: " + sum);
 
         // Examples of arrays and lists
@@ -87,9 +80,6 @@ public class Lesson1 {
 
         // Examples of object oriented programming
         Animal animal = new Animal("Elephant", 25);
-        Animal dog = new Animal("Dog", 9);
-        animal.getName(); // "Elephant"
-        dog.getName(); // "Dog"
         System.out.println("Name: " + animal.getName() + ", Age: " + animal.getWeight());
 
         // Example of exception handling
@@ -105,7 +95,7 @@ public class Lesson1 {
         String str2 = "World";
         String str3 = str1 + ", " + str2;
         System.out.println(str3);
-
+        
         String text = "This is a sample text for demonstration.";
         String substring = "is";
         int index = text.indexOf(substring);
@@ -128,6 +118,9 @@ public class Lesson1 {
         stringBuilder.append("StringBuilder ");
         stringBuilder.append("example");
         System.out.println(stringBuilder.toString());
+        
+        // Same as this
+        String withoutStringBuilder = "Java " + "StrinBuilder " + "example"; 
     }
 
     // Examples of methods

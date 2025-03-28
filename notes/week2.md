@@ -33,3 +33,10 @@
 - The purpose of map data strucutre is to provide optimized way to add and retrieve a value based on a specific key
 - Week 2 examples in Visual Studio Code
 - Week 2 examples
+- "LotsOfData" example: demonstrates the difference between using the HashMap and ArrayList data structures
+- Some operations (e.g. checking if the data structure contains a value) is much more faster with HashMap => the purpose of HashMap is to support a fast way to:
+  1. Add value based on key
+  2. Get value based on key
+  3. Check if key exists in the hash map
+- The fast "lookups" makes hash map perfect data structure if we want to e.g. quickly retrieve some object based on an unique identifier (e.g. student based on student number)
+- Exercises: one exercise set in GitHub Classroom, "Map exercises"

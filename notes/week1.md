@@ -48,11 +48,14 @@
   3. The main method is a special method, which is execute once the Java program is ran
   4. Executing the Java program (main method)
   5. During this course our Java projects will be Gradle projects
-  6. Gradle is a Java build tool, which is required in more complicated projects having e.g. external libraries as dependencies
-  7. Build tools offer features such as compilation, execution, running automated tests and building an executable for the program (JAR)
-  8. Other quite commonly used Java build tool is Maven, which you'll probably face in later studies
-  9. In the first week you'll need to know the basics of variables, control structures (`if` statement), loops (`for` and `while` loops), lists, arrays, string handling and objects (e.g. defining your own class)
-  10. Go through examples in the main method
+  6. We can spot a Gradle project by the `build.gradle` file, which contains project specific configurations
+  7. Gradle is a Java build tool, which is required in more complicated projects having e.g. external libraries as dependencies
+  8. Build tools offer features such as building, dependency installation, packaging (JAR executable), and testing of the application
+  9. Gradle offers a command-line interface for these operations, which you can try in the exercises
+  10. The command-line interface is important for e.g. autmation of the mentioned tasks
+  11. Other quite commonly used Java build tool is Maven, which you'll probably face in later studies
+  12. In the first week you'll need to know the basics of variables, control structures (`if` statement), loops (`for` and `while` loops), lists, arrays, string handling and objects (e.g. defining your own class)
+  13. Go through examples in the main method
 
 ### Version control
 
