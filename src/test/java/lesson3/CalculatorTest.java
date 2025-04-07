@@ -13,11 +13,6 @@ class CalculatorTest {
         calculator = new Calculator();
     }
 
-    @AfterEach
-    void tearDown() {
-        calculator = null;
-    }
-
     @Test
     void testAdditionBasic() {
         assertEquals(5, calculator.add(2, 3));
@@ -113,6 +108,5 @@ class CalculatorTest {
 
         assertArrayEquals(expectedArray, resultArray);
     }
-
 }
 

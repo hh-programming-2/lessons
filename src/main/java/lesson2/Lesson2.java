@@ -95,10 +95,19 @@ public class Lesson2 {
         
         // Go through all key-value pairs
         // Set<Entry<String, String>> entrySet = numbers.entrySet();
+        System.out.println("7. Iterating key-value pairs with for loop:");
+
         for (Entry<String, String> keyValuePair : numbers.entrySet()) {
 	        System.out.println("Key: " + keyValuePair.getKey());
 	        System.out.println("Value: " + keyValuePair.getValue());
         }
 
+        // Other way of going through all key-value pairs using forEach method and an lamda function
+        System.out.println("8. Iterating key-value pairs with forEach method:");
+
+        numbers.forEach((key, value) -> {
+            System.out.println("Key: " + key);
+	        System.out.println("Value: " + value);
+        });
     }
 }
