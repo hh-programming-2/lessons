@@ -65,15 +65,15 @@ public class SteamExamples {
         return Optional.empty();*/ // Not found, return an empty Optional
    
 	    return persons.stream()
-	            .filter(person -> person.getName().equalsIgnoreCase(name))
+	            .filter(person -> person.name().equalsIgnoreCase(name))
 	            .findFirst();
     }
 
     // Example 3: Using streams, lambdas and Optional class to calculate the average age of persons
     public static double getAverageAge(List<Person> persons, int lowestAge) {
         OptionalDouble maybeAverage = persons.stream() // average method returns a OptionalDouble object
-                .filter(person -> person.getAge() > lowestAge) // Lambda functions filters out persons below the lowestAge limit
-        		.mapToDouble(person -> person.getAge()) // Here we could also use a method reference Person::getAge
+                .filter(person -> person.age() > lowestAge) // Lambda functions filters out persons below the lowestAge limit
+        		.mapToDouble(person -> person.age()) // Here we could also use a method reference Person::getAge
                 .average(); // The average method is available in the DoubleStream
 
         // If the maybeAverage optional doesn't have a value, default to 0
@@ -92,7 +92,7 @@ public class SteamExamples {
     // This is typical in web programming while we are displaying data in HTML format
     public static String createHtmlList(List<Person> persons) {
         return persons.stream()
-                .map(person -> "<li>Name: " + person.getName() + ", Age: " + person.getAge() + "</li>")
+                .map(person -> "<li>Name: " + person.name() + ", Age: " + person.age() + "</li>")
                 // Using Collectors.joining method to collect the result as a single string
                 .collect(Collectors.joining("\n", "<ul>", "</ul>"));
     }

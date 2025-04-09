@@ -1,27 +1,9 @@
 package lesson5.helpers;
 
-public class Person {
-    private String name;
-    private int age;
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+/**
+ * Records are like simple classes, with just attributes and automatically
+ * generated getter methods. The attributes of a record can't change, so records
+ * are "immutable".
+ */
+public record Person(String name, int age) {
 }
