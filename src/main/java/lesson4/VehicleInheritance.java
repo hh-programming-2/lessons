@@ -73,8 +73,8 @@ class Vehicle {
         System.out.println("Vehicle is stopping...");
     }
 
-    public void accelerate(int speedIncrease) {
-        speed += speedIncrease;
+    public void accelerate(int increase) {
+        speed += increase;
         System.out.println("Vehicle accelerated to " + speed + " km/h.");
     }
 

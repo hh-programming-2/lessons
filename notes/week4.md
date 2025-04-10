@@ -8,7 +8,7 @@
   - Bugs potentially lie in the min and max values, e.g. first and last date of year
   - The last date of year varies in leap years (365 on "normal" years and 366 on leap years)
   - The number of days in February varies in leap years (28 days on "normal" years and 29 in leap years)
-- 
+- Example implementation of `dayOfYear` using the `YearMonth` method
 
 ## Week 4
 
