@@ -1,5 +1,9 @@
 package lesson4;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * This example illustrates the object-oriented programming concepts of
  * inheritance, super class and instanceof keywords.
@@ -53,7 +57,7 @@ public class VehicleInheritance {
 
 // Super class, defines the basic attributes and methods of a vehicle
 class Vehicle {
-    int speed;
+    private int speed;
 
     public Vehicle(int speed) {
         this.speed = speed;
@@ -95,7 +99,7 @@ class Vehicle {
 // Sub class. Car is a vehicle, but it also has a model and is can honk
 class Car extends Vehicle {
     // Sub classes can have their own attributes
-    String model;
+    private String model;
 
     public Car(String model, int speed) {
         // Call the super class constructor and provide its parameters
@@ -139,16 +143,16 @@ class Bicycle extends Vehicle {
     @Override
     public void accelerate(int increase) {
         if (exceedsMaxSpeed(increase)) {
-            speed = 20;
+            this.setSpeed(20);
             System.out.println("Bicycles can't go that fast! Limiting speed increase.");
         }
 
-        speed += increase;
-        System.out.println("Bicycle accelerated to " + speed + " km/h.");
+        this.setSpeed(this.getSpeed() + increase);
+        System.out.println("Bicycle accelerated to " + this.getSpeed() + " km/h.");
     }
 
     // Private methods are only visible within the class
     private boolean exceedsMaxSpeed(int increase) {
-        return speed + increase > 20;
+        return this.getSpeed() + increase > 20;
     }
 }

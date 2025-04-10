@@ -64,14 +64,16 @@ public class GenericsListExample {
 
 /**
  * Let's add our own Student object to the example, which has an student number
- * and a name field, and override the class's hashcode and equals methods so
- * that only the similarity of the text content means similarity. Then it can
- * also be given for meaningful comparison to the countOccurences method.
+ * and a name field, and override the class's hashCode and equals methods so
+ * that only the similarity of the studentNumber attribute means similarity.
+ * Then it can also be given for meaningful comparison to the countOccurences
+ * method.
  * 
  * The class also implements the Comparable interface, so Student can also be
  * sorted relative to each other. In this case, the sorting is done based on the
- * text using the String class's own compare implementation.
- * This practically causes Student to be sorted in alphabetical order.
+ * studentNumber using the String class's own compare implementation.
+ * This practically causes Student to be sorted in alphabetical order based on
+ * the studentNumber.
  */
 class Student implements Comparable<Student> {
     private String studentNumber;

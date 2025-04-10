@@ -12,7 +12,7 @@
 
 ## Week 4
 
-### Inheritance basics
+### Interface basics
 
 - With interfaces we define common methods that the classes implementing the interface have.
 - Example: shapes Rectangle, Circle, Square. If we consider these shapes as classes, they each have an area and different way of calculating it
@@ -35,8 +35,6 @@
     - Be able to sort students based on the student number
   - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
   - `List<Integer>` is a nother example of generic class (list can store any kind of types)
-- Example `ObjectCalculator` vs `ImperativeCalculator`: using interfaces to simplify code
-- Example `AirplaneConfig`: usage of dependency inject with interfaces
 
 ### Inheritance basics
 
@@ -48,3 +46,15 @@
 ### Inheritance examples
 
 - Example: `VehicleInheritance`
+
+### Dependency injection
+
+- In programming we have design patterns which are reusable solutions to a common problem
+- Dependency injection is one design pattern which purpose to promote loose coupling between components and to make code more maintainable, testable, and flexible
+- Loose coupling means that components interact through clear, minimal interfaces and don’t know too much about each other
+- Example `AirplaneConfig`: usage of dependency injection with interfaces
+
+### Clean code using interfaces
+
+- Using objects and interfaces to refactor code
+- Example `ObjectCalculator` vs `ImperativeCalculator`: using interfaces to simplify code

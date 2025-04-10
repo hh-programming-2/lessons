@@ -9,7 +9,7 @@ import java.util.LinkedList;
  * The purpose of this example is to illustrate the polymorphism of objects and
  * the use of interfaces.
  */
-public class ListExampleWithoutCustomObject {
+public class SimpleListExample {
 
     public static void main(final String[] args) {
         List<Integer> numberList = new LinkedList<>();
