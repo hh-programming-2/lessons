@@ -28,16 +28,26 @@ public class GenericsListExample {
         System.out.println(countOccurences(textList));
 
         List<Student> students = new LinkedList<>();
-        students.add(new Student("123", "Kalle Ilves"));
-        students.add(new Student("456", "John Doe"));
-        students.add(new Student("123", "Kalle Ilves"));
-        students.add(new Student("789", "Mary Poppins"));
+        Student kalle = new Student("123", "Kalle Ilves");
+        Student john = new Student("456", "John Doe");
+        Student otherKalle = new Student("123", "Kalle Ilves");
+        Student mary = new Student("789", "Mary Poppins");
+
+        // The equals method check equality based on the studentNumber attribute
+        System.out.println("Are Kalle's the same?: " + kalle.equals(otherKalle));
+        // The compareteTo method comparas studentNumber attributes
+        System.out.println("Compare Kalle and John: " + kalle.compareTo(john));
+
+        students.add(kalle);
+        students.add(john);
+        students.add(otherKalle);
+        students.add(mary);
+
         System.out.println(countOccurences(students));
 
-        // Sorting using the Comparable interface
+        // Sorting using the Comparable interface's compareTo method
         Collections.sort(students);
         System.out.println("Students sorted by student number:  " + students);
-
     }
 
     /**
