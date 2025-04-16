@@ -9,17 +9,17 @@ import static java.util.stream.Collectors.*;
 
 import lesson5.helpers.Person;
 
-public class SteamExamples {
+public class StreamExamples {
 
     public static void main(String[] args) {
         List<String> carBrands = List.of("Volvo", "BMW", "Mersu", "Volvo");
         
         List<Person> persons = List.of(
-                new Person("Liisa", 25),
-                new Person("Ville", 30),
-                new Person("Kalle", 22),
-                new Person("Taina", 28),
-                new Person("Jere", 15)
+            new Person("Liisa", 25),
+            new Person("Ville", 30),
+            new Person("Kalle", 22),
+            new Person("Taina", 28),
+            new Person("Jere", 15)
         );
         
         // Example 1: 
