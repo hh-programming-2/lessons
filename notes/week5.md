@@ -16,3 +16,4 @@ TODO
 - Example: `BasicFunctionalExamples.java`
 - Records and `Person.java` example
 - Example: `StreamExamples.java`
+  - Optionals!

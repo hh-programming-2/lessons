@@ -4,12 +4,12 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 1: Recap
 
-- [Recap](./src/main/java/lesson1/Lesson1.java)
+- [Recap examples](./src/main/java/lesson1/Lesson1.java)
 
 ## Lesson 2: Map
 
-- [Map](./src/main/java/lesson2/Lesson2.java)
-- [Hash map example with a large amount of data](./src/main/java/lesson2/LotsOfData.java)
+- [Map examples](./src/main/java/lesson2/Lesson2.java)
+- [Performance comparison of ArrayList and HashMap](./src/main/java/lesson2/LotsOfData.java)
 
 ## Lesson 3: JUnit
 
@@ -18,11 +18,18 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 4: Object modelling, inheritance and interfaces
 
-- [Examples](./src/main/java/lesson4)
+- [Interface examples](./src/main/java/lesson4/ShapeInterface.java)
+- Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
+- [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
+- Using generic to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
 
 ## Lesson 5: Streams, lambdas and optionals
 
-- [Examples](./src/main/java/lesson5)
+- [Imperative and declarative programming](./src/main/java/lesson5/ImperativeDeclarative.java)
+- [Lambda expressions](./src/main/java/lesson5/FunctionalCalculator.java)
+- [Functional examples](./src/main/java/lesson5/BasicFunctionalExamples.java)
+- [Stream examples](./src/main/java/lesson5/StreamExamples.java)
+- [Records](./src/main/java/lesson5/helpers/Person.java)
 
 ## Lesson 6: Database connection with Java (JDBC)
 
