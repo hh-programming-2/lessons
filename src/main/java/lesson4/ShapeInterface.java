@@ -53,7 +53,7 @@ class Circle implements Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Radius: " + radius;
+        return "Radius: " + radius;
     }
 
     // Classes that implement a interface can have methods of their own
@@ -83,6 +83,6 @@ class Rectangle implements Shape {
 
     @Override
     public String toString() {
-        return super.toString() + "Width: " + width + " Height: " + height;
+        return "Width: " + width + " Height: " + height;
     }
 }
