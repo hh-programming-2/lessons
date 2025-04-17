@@ -3,6 +3,10 @@ package lesson5;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The purpose of this example is to demonstrate differences between imperative
+ * and declarative programming.
+ */
 public class ImperativeDeclarative {
     public static void main(String[] args) {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
@@ -22,7 +26,7 @@ public class ImperativeDeclarative {
         System.out.println(evenNumbersFromForLoop);
 
         /**
-         * Declrative solution: we describe the result, not the steps, and the
+         * Declarative solution: we describe the result, not the steps, and the
          * underlying system figures out the "how" for us
          */
         List<Integer> evenNumbersFromStream = numbers.stream()

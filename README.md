@@ -27,6 +27,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 - [Imperative and declarative programming](./src/main/java/lesson5/ImperativeDeclarative.java)
 - [Lambda expressions](./src/main/java/lesson5/FunctionalCalculator.java)
+- [Optional examples](./src/main/java/lesson5/OptionalExamples.java)
 - [Functional examples](./src/main/java/lesson5/BasicFunctionalExamples.java)
 - [Stream examples](./src/main/java/lesson5/StreamExamples.java)
 - [Records](./src/main/java/lesson5/helpers/Person.java)

@@ -12,8 +12,10 @@ TODO
 - On top being declarative, streams rely heavily on functional programming, which focuses on use of functions
 - Java supports definitions of simple functions with lambda expressions
 - Example: `FunctionalCalculator.java`
+- Example: `OptionalExamples.java`
+- Optional objects are commonly used in methods that either return some object or null
+- Optional communicates the possibility of a null (or "empty") value and provides methods for handling this case
 - Steams provide many useful methods for processing collections of data, for example filtering and mapping (transforming each value of the collection)
 - Example: `BasicFunctionalExamples.java`
 - Records and `Person.java` example
 - Example: `StreamExamples.java`
-  - Optionals!
