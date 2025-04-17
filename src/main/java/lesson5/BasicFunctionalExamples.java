@@ -54,7 +54,12 @@ public class BasicFunctionalExamples {
 
         // Example 5. Providing a lambda function as parameter for another function
         // In this case the function prints the square of each number
-        customForEach(numbers, n -> System.out.println("Neliö: " + (n * n)));
+        customForEach(numbers, n -> System.out.println("Square: " + (n * n)));
+
+        // Same as this:
+        numbers.forEach(n -> {
+            System.out.println("Square: " + (n * n));
+        });
 
         // Example 6. Using a stream and lambda function to calculate the sum of numbers
         int sum = numbers.stream()
@@ -94,11 +99,8 @@ public class BasicFunctionalExamples {
         // 100_000;
         // ToIntFunction<City> toPopulation = City::getPopulation;
         return cities.stream()
-                .filter((City city) -> {
-                    return city.getPopulation() > 100_000;
-                })
+                .filter((City city) -> city.getPopulation() > 100_000)
                 .mapToInt(City::getPopulation) // Double colon method reference
-                                               // (https://www.geeksforgeeks.org/double-colon-operator-in-java/)
                 .sum();
     }
 }

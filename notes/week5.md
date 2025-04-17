@@ -2,7 +2,17 @@
 
 ## Week 4 recap
 
-TODO
+- `Product` class
+  - `String.formatted` method
+- `Vehicle` class
+  - `constructor` and `super` call
+  - `toString` and call super class (`Product`) `toString` method
+- `WebShop` class
+  - `isVehicle` method vs. `isProduct` method
+- `Country` class
+  - `compareTo` method
+- `MarkdownExport` interface and implementing `Pizza` class
+- `Main` class (dependency injection)
 
 ## Week 5
 

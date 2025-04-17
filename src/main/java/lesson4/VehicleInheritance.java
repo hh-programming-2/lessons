@@ -1,9 +1,5 @@
 package lesson4;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * This example illustrates the object-oriented programming concepts of
  * inheritance, super class and instanceof keywords.
@@ -42,11 +38,11 @@ public class VehicleInheritance {
         // Is this specific vehicle object instance of the Car class?
         if (vehicle instanceof Car) {
             // We checked that vehicle is a Car object, safe to cast it
-            Car car = (Car)vehicle;
+            Car car = (Car) vehicle;
             System.out.println("It has four wheels, this vehicle is car");
             car.honk();
         } else if (vehicle instanceof Bicycle) {
-            Bicycle bike = (Bicycle)vehicle;
+            Bicycle bike = (Bicycle) vehicle;
             System.out.println("It has two wheels, this vehicle is a bike");
             bike.ringBell();
         } else {
@@ -139,7 +135,11 @@ class Bicycle extends Vehicle {
         }
     }
 
-    // We can override methods of the super class
+    /**
+     * We can override methods of the super class. The @Override annotation is an
+     * explicit way to express the desire to provide an implementation for an
+     * upper-level method. It helps e.g. to spot typos at compilation time.
+     */
     @Override
     public void accelerate(int increase) {
         if (exceedsMaxSpeed(increase)) {
