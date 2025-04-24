@@ -7,3 +7,4 @@ build
 .vscode
 .devcontainer
 /bin
+src/main/java/lesson6/data/db.sqlite
