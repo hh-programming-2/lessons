@@ -22,7 +22,7 @@ public class Lesson1 {
         }
 
         int dayOfWeek = 3;
-            
+
         switch (dayOfWeek) {
             case 1:
                 System.out.println("It's Monday");
@@ -40,16 +40,15 @@ public class Lesson1 {
         // Example of ternary operator
         int y = (x > 0) ? 1 : -1;
 
-
         // Examples of loops
         int[] numbersArray = { 1, 2, 3, 4, 5 };
 
         for (int i = 0; i < numbersArray.length; i++) {
             System.out.print(numbersArray[i] + " ");
         }
-        
+
         for (int i = numbersArray.length - 1; i >= 0; i--) {
-        	System.out.print(numbersArray[i] + " ");
+            System.out.print(numbersArray[i] + " ");
         }
 
         for (int num : numbersArray) {
@@ -73,9 +72,9 @@ public class Lesson1 {
         list.add("2");
         list.add("3");
         list.remove(0);
-        
+
         for (String n : list) {
-        	System.out.println(n);
+            System.out.println(n);
         }
 
         // Examples of object oriented programming
@@ -95,17 +94,17 @@ public class Lesson1 {
         String str2 = "World";
         String str3 = str1 + ", " + str2;
         System.out.println(str3);
-        
+
         String text = "This is a sample text for demonstration.";
         String substring = "is";
         int index = text.indexOf(substring);
-        
+
         System.out.println("Found in: " + index);
-        
+
         if (index >= 0) {
-        	System.out.println("Found it!");
+            System.out.println("Found it!");
         }
-        
+
         System.out.println("Index of \"" + substring + "\" in the text: " + index);
 
         String str = "Hello, World!";
@@ -118,9 +117,9 @@ public class Lesson1 {
         stringBuilder.append("StringBuilder ");
         stringBuilder.append("example");
         System.out.println(stringBuilder.toString());
-        
+
         // Same as this
-        String withoutStringBuilder = "Java " + "StrinBuilder " + "example"; 
+        String withoutStringBuilder = "Java " + "StrinBuilder " + "example";
     }
 
     // Examples of methods

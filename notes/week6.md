@@ -32,6 +32,7 @@
   - `PersonDAO` is an example of data access object design pattern (DAO). Other example of design pattern was the "dependency injection" pattern we covered with interfaces and inheritance
   - The goal of data access object pattern is to separate the low-level data accessing logic from high-level business logic (example `Lesson6.java`)
 - `PersonDAO.java` overall stuff:
+  - Java provides builtin Java Database Connectivity API (JDBC), which allows applications to connect to various types of SQL databases and perform different queries and updates from within Java code
   - In this example, we have code which communicates with an SQLite database
   - SQLite is a simple SQL database, which stores all data on single file on the computer where the program is executed on
   - It is a good choice of a databases for a single user applications, but not for multi user applications
