@@ -81,12 +81,12 @@ public class PersonDAO {
         List<Person> persons = new ArrayList<>();
         String query = "SELECT * FROM persons";
 
-        try (Statement lause = connection.createStatement();
-                ResultSet tulokset = lause.executeQuery(query)) {
-            while (tulokset.next()) {
-                int id = tulokset.getInt("id");
-                String name = tulokset.getString("name");
-                int age = tulokset.getInt("age");
+        try (Statement statement = connection.createStatement();
+                ResultSet results = statement.executeQuery(query)) {
+            while (results.next()) {
+                int id = results.getInt("id");
+                String name = results.getString("name");
+                int age = results.getInt("age");
                 persons.add(new Person(id, name, age));
             }
         } catch (SQLException e) {
