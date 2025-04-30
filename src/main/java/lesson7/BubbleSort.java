@@ -21,7 +21,7 @@ public class BubbleSort {
                 // Are the subsequent array values in wrong order?
                 if (arr[j] > arr[j + 1]) {
 
-                    // Vaihdetaan `j` ja `j+1` keskenään!
+                    // Switch `j` and `j+1`!
                     // In that case, switch the values between `j` and `j+1`
                     int temp = arr[j];
                     arr[j] = arr[j + 1];

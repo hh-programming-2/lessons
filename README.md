@@ -39,7 +39,8 @@ Here you can find the lesson examples used during the Programming 2 course.
 ## Lesson 7: Data structures and algorithms
 
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
-- [Wordplay-exercise](https://github.com/ohjelmointi2/wordplay-exercise/)
+- [Wordplay exercise solution](https://github.com/ohjelmointi2/wordplay-exercise/)
+- [Expanded Wordplay exercise solution](https://github.com/ohjelmointi2/ExpandedNamesInDictionarySolution.java)
 
 ## Lesson 8: Threads and recursion
 

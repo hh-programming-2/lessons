@@ -16,7 +16,7 @@ import lesson7.wordplay.io.NamesReader;
  * NOTE: This class needs this repository https://github.com/ohjelmointi2/wordplay-exercise 
  * to actually work and run 
  */
-public class NamesInDictionarySolution {
+public class ExpandedNamesInDictionarySolution {
 
 	private static List<String> finnishNames = NamesReader.readFirstNames();
     private static List<String> finnishWords = DictionaryReader.readFinnishWords();
