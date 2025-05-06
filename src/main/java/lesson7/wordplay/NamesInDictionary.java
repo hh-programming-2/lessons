@@ -5,7 +5,6 @@ import java.time.Instant;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -33,24 +32,7 @@ public class NamesInDictionary {
          * Good luck!
          */
 
-        
-        // Slow solution
-    
         Instant startTime = Instant.now();
-
-        for (String name : finnishNames) {
-            if (finnishWords.contains(name.toLowerCase())) {
-                // System.out.println(name);
-            }
-        }
-
-        Instant endTime = Instant.now();
-
-        System.out.println("Slow solution: " + Duration.between(startTime, endTime));
-
-        // Fast solution
-
-        startTime = Instant.now();
 
         // Convert all names to lowercase and make a set. The set will not contain
         // any duplicates nor blank strings, and is very fast to access.
@@ -79,7 +61,7 @@ public class NamesInDictionary {
         // size.
         List<String> result = wordSet
                 .stream()
-                .filter(w -> nameSet.contains(w))
+                .filter(word -> nameSet.contains(word))
                 .toList();
 
         /*
@@ -88,11 +70,12 @@ public class NamesInDictionary {
          * operation = O(n²)
          */
 
+        System.out.println(String.join("\n", result));
         System.out.println("There were " + result.size() + " names that are in dictionary:");
 
-        endTime = Instant.now();
+        Instant endTime = Instant.now();
 
-        System.out.println("Fast solution: " + Duration.between(startTime, endTime));
+        System.out.println("Execution time: " + Duration.between(startTime, endTime));
         /*
          * To sum up, all previous steps took a linear time relative to the size of the
          * program's input:
@@ -104,7 +87,5 @@ public class NamesInDictionary {
          * the input,
          * regardless of the constant factor.
          */
-        
-        // System.out.println(String.join("\n", result));
     }
 }

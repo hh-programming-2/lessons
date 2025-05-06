@@ -13,12 +13,12 @@ import lesson7.wordplay.io.DictionaryReader;
 import lesson7.wordplay.io.NamesReader;
 
 /**
- * NOTE: This class needs this repository https://github.com/ohjelmointi2/wordplay-exercise 
- * to actually work and run 
+ * This is an expanded version of the NamesInDictionary class used in the
+ * Wordplay lesson exercise.
  */
 public class ExpandedNamesInDictionarySolution {
 
-	private static List<String> finnishNames = NamesReader.readFirstNames();
+    private static List<String> finnishNames = NamesReader.readFirstNames();
     private static List<String> finnishWords = DictionaryReader.readFinnishWords();
 
     public static void main(String[] args) {
@@ -34,42 +34,41 @@ public class ExpandedNamesInDictionarySolution {
          * Try to make your program as efficient as possible. A good goal is to have
          * the program run in tenths of a second.
          * 
-         * NOTE: In this example implementation we have added the additional isAloneInDictionary
-         * functionality to present some algorithmic concepts, it's not really needed according
-         * to the task assignment.
-         *
+         * NOTE: In this example implementation we have added the additional
+         * isAloneInDictionary functionality to present some algorithmic concepts, it's
+         * not really needed according to the task assignment.
          */
-    	
+
         // Create a HashSet for efficient lookup
-        Set<String> dictionaryWords = new HashSet<>(finnishWords); //O(m)
-        
+        Set<String> dictionaryWords = new HashSet<>(finnishWords); // O(m)
+
         List<String> sortedFinnishWords = sortByLengthAscending(finnishWords);
 
         Set<String> processedNames = new HashSet<>(); // To store processed names
 
         int count = 0;
-        
+
         // Capture start timestamp
         Instant startTime = Instant.now();
         // Iterate through Finnish names
-        for (String name : finnishNames) { //O(n)
+        for (String name : finnishNames) { // O(n)
             // Convert name to lowercase for case-insensitive comparison
             String lowercaseName = name.toLowerCase();
 
             // Check if the lowercase name is in the dictionary
-            //if (finnishWords.contains(lowercaseName)) { //O(m)
-            if (dictionaryWords.contains(lowercaseName)) { //O(1)
-            	if (!processedNames.contains(lowercaseName)) { // O(1) check that no duplicates 
+            // if (finnishWords.contains(lowercaseName)) { //O(m)
+            if (dictionaryWords.contains(lowercaseName)) { // O(1)
+                if (!processedNames.contains(lowercaseName)) { // O(1) check that no duplicates
                     // Check also if the name is not part of any longer word
-                    if (isAloneInDictionary(lowercaseName, /*finnishWords*/ sortedFinnishWords)) {
-	                    System.out.println(name);
-	                    count++;
-	                    processedNames.add(lowercaseName); //O(h)
+                    if (isAloneInDictionary(lowercaseName, /* finnishWords */ sortedFinnishWords)) {
+                        System.out.println(name);
+                        count++;
+                        processedNames.add(lowercaseName); // O(h)
                     }
                 }
             }
         }
-        
+
         // Capture end timestamp
         Instant endTime = Instant.now();
 
@@ -77,12 +76,12 @@ public class ExpandedNamesInDictionarySolution {
         Duration duration = Duration.between(startTime, endTime);
 
         System.out.println("Number of names: " + count + " names.");
-        System.out.println("Execution time: " + duration.toMillis() + " ms.");        
+        System.out.println("Execution time: " + duration.toMillis() + " ms.");
     }
-    
+
     // Check if the given name is not part of any longer word in the dictionary
     private static boolean isAloneInDictionary(String name, List<String> dictionaryWordsAsc) {
-    	int startIndex = binarySearch(dictionaryWordsAsc, name.length()); //can be used if list sorted;
+        int startIndex = binarySearch(dictionaryWordsAsc, name.length()); // can be used if list sorted;
 
         for (int i = startIndex; i < dictionaryWordsAsc.size(); i++) {
             String word = dictionaryWordsAsc.get(i);
@@ -96,7 +95,8 @@ public class ExpandedNamesInDictionarySolution {
         return true;
     }
 
-    // Binary search to find the index of the first word with a length equal to or shorter than targetLength
+    // Binary search to find the index of the first word with a length equal to or
+    // shorter than targetLength
     // Binary search is O(log n), https://fi.wikipedia.org/wiki/Puolitushaku
     private static Integer binarySearch(List<String> list, int targetLength) {
         int left = 0;
@@ -116,7 +116,7 @@ public class ExpandedNamesInDictionarySolution {
         }
         return left;
     }
-    
+
     // Sort the list by length in ascending order
     private static List<String> sortByLengthAscending(List<String> list) {
         List<String> sortedList = new ArrayList<>(list);
@@ -124,7 +124,7 @@ public class ExpandedNamesInDictionarySolution {
 
         return sortedList;
     }
-    
+
     // Sort the list by length in ascending order with Collections.sort
     private static List<String> sortByLengthAscendingWithCollectionsSort(List<String> list) {
         List<String> sortedList = new ArrayList<>(list);
@@ -132,4 +132,3 @@ public class ExpandedNamesInDictionarySolution {
         return sortedList;
     }
 }
-
