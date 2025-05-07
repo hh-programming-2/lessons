@@ -34,7 +34,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 6: Database connection with Java (JDBC)
 
-- [Examples](./src/main/java/lesson6/Lesson6.java)
+- [Examples](./src/main/java/lesson6)
 
 ## Lesson 7: Data structures and algorithms
 
