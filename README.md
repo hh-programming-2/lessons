@@ -16,7 +16,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Classes under testing](./src/main/java/lesson3)
 - [Unit tests](./src/test/java/lesson3)
 
-## Lesson 4: Object modelling, inheritance and interfaces
+## Lesson 4: Object modelling, inheritance, and interfaces
 
 - [Interface examples](./src/main/java/lesson4/ShapeInterface.java)
 - Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
