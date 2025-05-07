@@ -40,7 +40,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
 - [Wordplay exercise solution](./src/main/java/lesson7/wordplay/NamesInDictionary.java)
-- [Expanded Wordplay exercise solution](https://github.com/ohjelmointi2/ExpandedNamesInDictionarySolution.java)
+- [Expanded Wordplay exercise solution](./src/main/java/lesson7/wordplay/ExpandedNamesInDictionarySolution.java)
 
 ## Lesson 8: Threads and recursion
 
