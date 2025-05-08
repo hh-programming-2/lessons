@@ -9,13 +9,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import lesson8.thread.helpers.IDConsumerCallable;
-import lesson8.thread.helpers.IDGenerator;
 import lesson8.thread.helpers.IDGeneratorSync;
 
 /**
- * Example of ExecutorService and Callable, where a thread returns a value.
+ * Example of thread pool with ExecutorService and Callable, where a thread returns a value.
  */
-public class CallableExample {
+public class ThreadPoolExample {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         int threadCount = 5;
         

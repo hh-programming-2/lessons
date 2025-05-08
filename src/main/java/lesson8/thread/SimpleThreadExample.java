@@ -4,7 +4,7 @@ package lesson8.thread;
  * This example demonstrate typical usage of threads.
  * We execute a time consuming task in the background without blocking the main thread.
  */
-public class BackgroundTaskExample {
+public class SimpleThreadExample {
     public static void main(String[] args) {
         System.out.println("Main thread: " + Thread.currentThread().getName());
 
