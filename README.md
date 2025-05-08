@@ -44,8 +44,11 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 8: Threads and recursion
 
-- [Threads](./src/main/java/lesson8/thread)
 - [Recursion](./src/main/java/lesson8/recursion/RecursionExample.java)
+- [Simple thread example](./src/main/java/lesson8/thread/SimpleThreadExample.java)
+- [Runnable interface example](./src/main/java/lesson8/thread/RunnableInterfaceThread.java)
+- [Thread safety example](./src/main/java/lesson8/thread/ThreadSafetyExample.java)
+- [Thread pool example](./src/main/java/lesson8/thread/ThreadPoolExample.java)
 
 ## License and authors
 
