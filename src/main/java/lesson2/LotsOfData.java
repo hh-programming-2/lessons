@@ -13,7 +13,7 @@ import java.util.Random;
 public class LotsOfData {
 
     public static void main(String[] args) {
-        int dataSize = 10000000;
+        int dataSize = 10_000_000;
         Map<String, Integer> hashMap = createHashMap(dataSize);
         List<String> list = createArrayList(dataSize);
 
