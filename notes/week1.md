@@ -16,7 +16,7 @@
 
 - We follow weekly schedule consisting of 8 weeks
 - Each week has different topics and a set of programming exercises
-- We have two weekly sessions. During the first session of the week we cover the theory of the new topics nad the second sessions is more hands-on programming lab session where we work on the exercises
+- We have two weekly sessions. During the first session of the week we cover the theory of the new topics and the second sessions is more hands-on programming lab session where we work on the exercises
 - Note the weekly deadlines!
 - Weekly sections describe the topics and the exercises. The exercise descriptions are in Moodle.
 - The first weeks exercises must be submitted before the deadline to confirm course participation!

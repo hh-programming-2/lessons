@@ -12,8 +12,14 @@ plugins {
 }
 
 java {
-    sourceCompatibility = 17
-    targetCompatibility = 17
+    // Prefer using the Gradle Java toolchain to request Java 21 for compilation and execution.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+
+    // Keep explicit compatibility values for tooling that still reads these properties.
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 compileJava {
@@ -37,7 +43,7 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.1.0'
     
     // Use JUnit Jupiter for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.+")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("org.mockito:mockito-core:4.0.0")
 }

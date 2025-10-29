@@ -15,6 +15,9 @@ public class Lesson2 {
 
         // 1. Hash map
         Map<String, String> postalCodes = new HashMap<String, String>();
+        // Note that key and value should be an object, not a primitive type (e.g. Integer and not int)!
+        // ❌ Map<int, String> badMap = new HashMap<int, String>();
+        // ✔️ Map<Integer, String> goodMap = new HashMap<Integer, String>();
 
         postalCodes.put("00710", "Helsinki");
         postalCodes.put("90014", "Oulu");
