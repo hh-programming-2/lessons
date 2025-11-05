@@ -2,8 +2,10 @@
 
 ## Week 1 recap
 
+https://github.com/hh-programming-2/warming-up-Kaltsoon
+
 - "Warm up" model solution
-- `StringBasics ` class:
+- `StringBasics` class:
   - `center` method
   - `centerMultiLine` method
 - `CollectionsBasics` class:

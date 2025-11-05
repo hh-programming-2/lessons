@@ -2,6 +2,8 @@
 
 ## Week 2 recap
 
+https://github.com/hh-programming-2/map-kaltsoon-1
+
 - `MapBasics` class:
   - `getPopulation` method: `Map.of()` vs. `map.put()`
   - `largestValue`: first get map values, then problem is reduced to "maximum value of a list"
