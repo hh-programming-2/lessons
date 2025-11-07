@@ -2,6 +2,8 @@
 
 ## Week 3 recap
 
+https://github.com/hh-programming-2/junit-Kaltsoon-1
+
 - `PriceFormatter` class: potential bugs and corresponding tests
 - `dayOfYear` method:
   - Potential issues of leap year and number of days in each month
@@ -25,7 +27,7 @@
   - `Shape` interface's methods don't define the implementation itself, just the method names, parameters and return types
   - Implementation of the methods is done by the classes which implement the interface
 - Example `SimpleListExample` vs. `GenericsListExample`: usage of `Comparable` interface
-  - The `Comparable` interface provides the methods for equality checks (`equals`), comparasion for sorting `compareTo` and hash code definition to use object as map key (`hashCode`)
+  - The `Comparable` interface provides comparison using the `compareTo` method. This is useful for e.g. sorting, which is based on comparing the orde of items on a list.
   - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
   - Simple example `SimpleListExample` only supports list of integers
   - Example `CenericsListExample` supports any type of list containing objects of class which implements the `Comparable` interface
