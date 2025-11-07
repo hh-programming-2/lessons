@@ -29,11 +29,11 @@ public class SimpleListExample {
      */
     private static Map<Integer, Integer> countOccurences(List<Integer> list) {
         Map<Integer, Integer> result = new HashMap<>();
-        for (Integer numero : list) {
-            if (result.containsKey(numero)) {
-                result.put(numero, result.get(numero) + 1);
+        for (Integer number : list) {
+            if (result.containsKey(number)) {
+                result.put(number, result.get(number) + 1);
             } else {
-                result.put(numero, 1);
+                result.put(number, 1);
             }
         }
         return result;
