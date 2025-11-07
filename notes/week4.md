@@ -30,21 +30,6 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 - The `Comparable` interface is one of Java's ready-made interfaces. It provides comparison using the `compareTo` method. This is useful for e.g. sorting, which is based on comparing the orde of items on a list
 - If we want to be able to sort objects of our own class in a meaningful way, the class needs to implement the `Comparable` interface  
 - `SortingStudents` example
-- Generics example, `SimpleListExample` vs. `GenericsListExample`:
-  - TODO
-
-
-- : usage of `Comparable` interface
-  
-  - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
-  - Simple example `SimpleListExample` only supports list of integers
-  - Example `CenericsListExample` supports any type of list containing objects of class which implements the `Comparable` interface
-  - We implement methods `equals`, `hashCode` and `compareTo` in a `Student` class in order to:
-    - Be able to check if if two students are equal (based on student number)
-    - Be able to use a `Student` object a key in map
-    - Be able to sort students based on the student number
-  - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
-  - `List<Integer>` is a nother example of generic class (list can store any kind of types)
 
 ### Inheritance basics
 
@@ -56,6 +41,18 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 ### Inheritance examples
 
 - Example: `VehicleInheritance`
+
+### Generics
+
+- Generics example, `SimpleListExample` vs. `GenericsListExample`:  
+  - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
+  - Simple example `SimpleListExample` only supports list of integers
+  - Example `CenericsListExample` supports any type of list
+  - We implement methods `equals`, `hashCode` in a `Student` class in order to:
+    - Be able to check if if two students are equal (based on student number)
+    - Be able to use a `Student` object a key in map
+  - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
+- The benefit of generic methods is reusability
 
 ### Dependency injection
 
