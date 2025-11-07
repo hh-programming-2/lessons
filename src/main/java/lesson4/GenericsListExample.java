@@ -2,13 +2,12 @@ package lesson4;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
  * The purpose of this example is to illustrate the polymorphism of objects and
- * the use of interfaces.
+ * generic methods.
  */
 public class GenericsListExample {
 
@@ -35,8 +34,6 @@ public class GenericsListExample {
 
         // The equals method check equality based on the studentNumber attribute
         System.out.println("Are Kalle's the same?: " + kalle.equals(otherKalle));
-        // The compareteTo method comparas studentNumber attributes
-        System.out.println("Compare Kalle and John: " + kalle.compareTo(john));
 
         students.add(kalle);
         students.add(john);
@@ -44,10 +41,6 @@ public class GenericsListExample {
         students.add(mary);
 
         System.out.println(countOccurences(students));
-
-        // Sorting using the Comparable interface's compareTo method
-        Collections.sort(students);
-        System.out.println("Students sorted by student number:  " + students);
     }
 
     /**
@@ -80,14 +73,8 @@ public class GenericsListExample {
  * that only the similarity of the studentNumber attribute means similarity.
  * Then it can also be given for meaningful comparison to the countOccurences
  * method.
- * 
- * The class also implements the Comparable interface, so Student can also be
- * sorted relative to each other. In this case, the sorting is done based on the
- * studentNumber using the String class's own compare implementation.
- * This practically causes Student to be sorted in alphabetical order based on
- * the studentNumber.
  */
-class Student implements Comparable<Student> {
+class Student {
     private String studentNumber;
     private String name;
 
@@ -117,10 +104,5 @@ class Student implements Comparable<Student> {
 
     public String getStudentNumber() {
         return this.studentNumber;
-    }
-
-    @Override
-    public int compareTo(Student other) {
-        return this.studentNumber.compareTo(other.studentNumber);
     }
 }
