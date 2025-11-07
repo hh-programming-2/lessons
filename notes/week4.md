@@ -26,8 +26,16 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 - Example `ShapeInterface`: simple usage of interfaces
   - `Shape` interface's methods don't define the implementation itself, just the method names, parameters and return types
   - Implementation of the methods is done by the classes which implement the interface
-- Example `SimpleListExample` vs. `GenericsListExample`: usage of `Comparable` interface
-  - The `Comparable` interface provides comparison using the `compareTo` method. This is useful for e.g. sorting, which is based on comparing the orde of items on a list.
+  - Interfaces provide reusability to the code: we can implement methods that operate on objects implementing an interface so it can use objects from many classes
+- The `Comparable` interface is one of Java's ready-made interfaces. It provides comparison using the `compareTo` method. This is useful for e.g. sorting, which is based on comparing the orde of items on a list
+- If we want to be able to sort objects of our own class in a meaningful way, the class needs to implement the `Comparable` interface  
+- `SortingStudents` example
+- Generics example, `SimpleListExample` vs. `GenericsListExample`:
+  - TODO
+
+
+- : usage of `Comparable` interface
+  
   - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
   - Simple example `SimpleListExample` only supports list of integers
   - Example `CenericsListExample` supports any type of list containing objects of class which implements the `Comparable` interface

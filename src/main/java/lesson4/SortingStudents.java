@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 /**
  * The purpose of this example is to illustrate the use of the Comparable
- * interface.
+ * interface to be able to sort objects of our class.
  */
 public class SortingStudents {
     public static void main(final String[] args) {

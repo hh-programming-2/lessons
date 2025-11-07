@@ -22,7 +22,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Comparable interface](./src/main/java/lesson4/SortingStudents.java)
 - Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
 - [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
-- Using a generic method to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
+- Using generic methods to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
 
 ## Lesson 5: Streams, lambdas and optionals
 
