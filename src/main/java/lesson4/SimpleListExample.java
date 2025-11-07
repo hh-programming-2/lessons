@@ -28,6 +28,8 @@ public class SimpleListExample {
      *         and the value is the count of how many times the same object appeared in the list.
      */
     private static Map<Integer, Integer> countOccurences(List<Integer> list) {
+        // The parameter type is List<Integer>, but we don't actually need to know the
+        // type of the list item to perform these hash map operations
         Map<Integer, Integer> result = new HashMap<>();
         for (Integer number : list) {
             if (result.containsKey(number)) {

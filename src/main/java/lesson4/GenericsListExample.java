@@ -60,6 +60,8 @@ public class GenericsListExample {
      *         in the list.
      */
     private static <T> Map<T, Integer> countOccurences(List<T> list) {
+        // Now the method accepts any kind of list, so it is called a generic method.
+        // This makes the method much more reusable
         Map<T, Integer> result = new HashMap<>();
         for (T object : list) {
             if (result.containsKey(object)) {

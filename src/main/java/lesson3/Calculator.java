@@ -30,10 +30,11 @@ public class Calculator {
      * integer should be 1.
      * 
      * Examples:
+     * factorial(-1) = 1
      * factorial(0) = 1
      * factorial(1) = 1
-     * factorial(4) = 24
-     * factorial(-1) = 1
+     * factorial(3) = 1 * 2 * 3 = 6
+     * factorial(4) = 1 * 2 * 3 * 4 = 24
      */
     public int factorial(int a) {
         // TODO
