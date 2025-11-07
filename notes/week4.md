@@ -37,6 +37,7 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 - With inheritance we can inherit attributes and methods from another classes
 - Sub classes that inherit a class receives super class attributes and method's along with their implementations
 - Sub classes can then override the super class method to provide a different implementation for a specific method
+- The benefit of inheritance is avoiding duplicate code and promoting reusability
 
 ### Inheritance examples
 
