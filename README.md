@@ -13,8 +13,8 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 3: JUnit
 
-- [Classes under testing](./src/main/java/lesson3)
-- [Unit tests](./src/test/java/lesson3)
+- Unit testing basics with jUnit: [Calculator](./src/main/java/lesson3/Calculator.java) class with [CalculatorTest](./src/test/java/lesson3/CalculatorTest.java) test class
+- Integration testing: [ShoppingCart](./src/main/java/lesson3/ShoppingCart.java) and [ShoppingCartApp](./src/main/java/lesson3/ShoppingCartApp.java) with [ShoppingCartTest](./src/test/java/lesson3/ShoppingCartTest.java) and [ShoppingCartTestWithMockito](./src/test/java/lesson3/ShoppingCartTestWithMockito.java) test classes
 
 ## Lesson 4: Object modelling, inheritance, and interfaces
 
