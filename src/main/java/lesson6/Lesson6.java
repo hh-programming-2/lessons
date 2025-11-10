@@ -42,8 +42,17 @@ public class Lesson6 {
             System.out.println("Person has been deleted");
         }
 
-        // Fin all persons again after the delete and print them
+        // Find all persons again after the delete and print them
         System.out.println("All persons after the delete:");
+        personDAO.findAllPersons().forEach(System.out::println);
+
+        // SQL Injection (https://en.wikipedia.org/wiki/SQL_injection)
+        String maliciousUserInput = "Pekka";
+        // Let's assume that the maliciousUserInput can be determined by the user
+        // What if maliciousUserInput would have value of "Maija' OR '1' = '1" ?
+        personDAO.deletePersonByNameUNSAFE(maliciousUserInput);
+
+        System.out.println("All persons after the malicious operation:");
         personDAO.findAllPersons().forEach(System.out::println);
 
         // Clear the database table by deleting all persons

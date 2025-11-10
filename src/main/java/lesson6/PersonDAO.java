@@ -43,13 +43,13 @@ public class PersonDAO {
                     age INTEGER NOT NULL
                 )
                 """;
-        
+
         /*
          * String mySQLQuery = """
          * CREATE TABLE IF NOT EXISTS persons (
-         *     id INT  PRIMARY KEY AUTO_INCREMENT,
-         *     name VARCHAR(255) NOT NULL,
-         *     age INT NOT NULL
+         * id INT PRIMARY KEY AUTO_INCREMENT,
+         * name VARCHAR(255) NOT NULL,
+         * age INT NOT NULL
          * )
          * """;
          */
@@ -141,6 +141,18 @@ public class PersonDAO {
 
     public void deleteAllPersons() {
         String sql = "DELETE FROM persons";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deletePersonByNameUNSAFE(String name) {
+        // DANGER! We should ALWAYS use ? to assign query variables
+        // This allows the user to exploit the SQL Injection attack https://en.wikipedia.org/wiki/SQL_injection
+        String sql = "DELETE FROM persons WHERE name = '" + name + "'";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.executeUpdate();
