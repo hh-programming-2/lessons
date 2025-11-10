@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 /**
  * The purpose of this example is to illustrate the use of the Comparable
- * interface to be able to sort objects of our class.
+ * interface to be able to sort objects of our own class.
  */
 public class SortingStudents {
     public static void main(final String[] args) {
@@ -51,7 +51,7 @@ class Student implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return this.getStudentNumber();
+        return this.name + " (" + this.getStudentNumber() + ")";
     }
 
     public String getStudentNumber() {
@@ -61,12 +61,12 @@ class Student implements Comparable<Student> {
     /**
      * The compareTo method returns the following:
      * - 0 if this object matches the other object
-     * - integer larger than 0 if the object is greater than the other object
-     * - integer less than 0 if the object is less than the other object
+     * - integer larger than 0 if this object is greater than the other object
+     * - integer less than 0 if this object is less than the other object
      */
     @Override
     public int compareTo(Student other) {
-        // We can simply use the compareTo implementation of Integer here
+        // We can simply use the compareTo implementation of String class here
         return this.studentNumber.compareTo(other.studentNumber);
     }
 }

@@ -56,14 +56,14 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
   - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
 - The benefit of generic methods is reusability
 
+### Clean code using interfaces
+
+- Using objects and interfaces to refactor code
+- Example `ObjectCalculator` vs `ImperativeCalculator`: using interfaces to simplify code
+
 ### Dependency injection
 
 - In programming we have design patterns which are reusable solutions to a common problem
 - Dependency injection is one design pattern which purpose to promote loose coupling between components and to make code more maintainable, testable, and flexible
 - Loose coupling means that components interact through clear, minimal interfaces and don’t know too much about each other
 - Example `AirplaneConfig`: usage of dependency injection with interfaces
-
-### Clean code using interfaces
-
-- Using objects and interfaces to refactor code
-- Example `ObjectCalculator` vs `ImperativeCalculator`: using interfaces to simplify code
