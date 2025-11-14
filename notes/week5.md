@@ -1,5 +1,7 @@
 # Week 5
 
+https://github.com/hh-programming-2/interfaces-and-inheritance-Kaltsoon
+
 ## Week 4 recap
 
 - `Product` class

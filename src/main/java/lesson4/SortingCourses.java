@@ -69,6 +69,6 @@ class Course implements Comparable<Course> {
     @Override
     public int compareTo(Course other) {
         // We can simply use the compareTo implementation of Integer class here
-        return this.credits.compareTo(other.credits);
+        return this.name.compareTo(other.name);
     }
 }

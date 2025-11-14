@@ -120,7 +120,7 @@ class Car extends Vehicle {
  * ring its bell. Bicycle can't accelarate above 20 km/h.
  */
 class Bicycle extends Vehicle {
-    boolean hasBell;
+    private boolean hasBell;
 
     public Bicycle(boolean hasBell, int speed) {
         super(speed);

@@ -36,8 +36,8 @@ public class ImperativeDeclarative {
         System.out.println(evenNumbersFromStream);
 
         // What does this piece of code do?
-        List<String> mysteryList = numbers.stream()
-                .map((number) -> "*".repeat(number))
+        List<Integer> mysteryList = numbers.stream()
+                .map((number) -> number * number)
                 .toList();
 
         // System.out.println(mysteryList);
