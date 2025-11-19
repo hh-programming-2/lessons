@@ -25,7 +25,10 @@ public class FunctionalCalculator {
          * value. BiFunction type of lambda functions have two parameters
          */
         BiFunction<Integer, Integer, Integer> sum = (x1, x2) -> x1 + x2;
-        BiFunction<Integer, Integer, Integer> mul = (x1, x2) -> x1 * x2;
+        // We can use brackets to implement multi line lambda functions
+        BiFunction<Integer, Integer, Integer> mul = (x1, x2) -> {
+            return x1 * x2;
+        };
 
         int sumOfNumbers = sum.apply(2, 4);
         System.out.println("2 + 4 = " + sumOfNumbers);

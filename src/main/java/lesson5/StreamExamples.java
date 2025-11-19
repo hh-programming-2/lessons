@@ -50,8 +50,10 @@ public class StreamExamples {
     // Example 1: Usage of streams and lambdas to get the lengths of strings
     public static List<Integer> getLengthsOfStrings(List<String> strings) {
         return strings.stream()
-                .map(String::length)
+                // Or .map(String::length) in short
+                .map(value -> value.length())
                 // Collect the results using the Collectors.toList method
+                // Same as .toList()
                 .collect(Collectors.toList()); 
     }
     
@@ -66,14 +68,18 @@ public class StreamExamples {
    
 	    return persons.stream()
 	            .filter(person -> person.name().equalsIgnoreCase(name))
+                // Take the first object from the stream
 	            .findFirst();
     }
 
     // Example 3: Using streams, lambdas and Optional class to calculate the average age of persons
     public static double getAverageAge(List<Person> persons, int lowestAge) {
-        OptionalDouble maybeAverage = persons.stream() // average method returns a OptionalDouble object
-                .filter(person -> person.age() > lowestAge) // Lambda functions filters out persons below the lowestAge limit
-        		.mapToDouble(person -> person.age()) // Here we could also use a method reference Person::getAge
+        // average method returns a OptionalDouble object
+        OptionalDouble maybeAverage = persons.stream() 
+                // This filters out persons below the lowestAge limit
+                .filter(person -> person.age() > lowestAge)
+                // Here we could also use a method reference Person::getAge
+        		.mapToDouble(person -> person.age())
                 .average(); // The average method is available in the DoubleStream
 
         // If the maybeAverage optional doesn't have a value, default to 0
