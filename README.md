@@ -24,7 +24,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
 - Using generic methods to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
 
-## Lesson 5: Streams, lambdas and optionals
+## Lesson 5: Streams, lambdas, and optionals
 
 - [Imperative and declarative programming](./src/main/java/lesson5/ImperativeDeclarative.java)
 - [Lambda expressions](./src/main/java/lesson5/FunctionalCalculator.java)
@@ -35,7 +35,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 6: Database connection with Java (JDBC)
 
-- [Examples](./src/main/java/lesson6)
+- [PersonDAO](./src/main/java/lesson6/PersonDAO.java) class and [examples](./src/main/java/lesson6/Lesson6.java)
 
 ## Lesson 7: Data structures and algorithms
 
@@ -53,6 +53,6 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## License and authors
 
-These materials were originally developed by Ohto Rainio and Teemu Havulinna. The original version has been translated to English and modified by Kalle Ilves. The materials are licensed under the [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+These materials were originally developed by Ohto Rainio and Teemu Havulinna. The original version has been translated into English and modified by Kalle Ilves. The materials are licensed under the [Creative Commons BY-NC-SA license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 The implementation of the materials utilized the ChatGPT 3.5 language model.
