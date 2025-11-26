@@ -30,8 +30,8 @@ public class BasicFunctionalExamples {
         // Example 2. Using a stream and lambda function to filter out odd numbers
         List<Integer> evenNumbers = numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .collect(Collectors.toList()); // Stream must be "collected", in order it to be "executed", that is
-                                               // evaluated
+                // Stream must be "collected", in order it to be "executed", that is evaluated
+                .collect(Collectors.toList());
 
         System.out.println("Even numbers: " + evenNumbers);
 

@@ -27,8 +27,8 @@ public class PersonDAO {
 
     private Connection getConnection() throws SQLException {
         // Define the connection string for the database
-        String url = "jdbc:sqlite:src/main/java/lesson6/data/db.sqlite"; // SQLLite will automatically create a database
-                                                                         // file, but the folder must exist
+        // SQLLite will automatically create a database file, but the folder must exist
+        String url = "jdbc:sqlite:src/main/java/lesson6/data/db.sqlite";
         // String mySQLUrl =
         // "jdbc:mysql://localhost:3306/my_database?user=myUser&password=myPassword";
 
@@ -151,7 +151,8 @@ public class PersonDAO {
 
     public void deletePersonByNameUNSAFE(String name) {
         // DANGER! We should ALWAYS use ? to assign query variables
-        // This allows the user to exploit the SQL Injection attack https://en.wikipedia.org/wiki/SQL_injection
+        // This allows the user to exploit the SQL Injection attack
+        // https://en.wikipedia.org/wiki/SQL_injection
         String sql = "DELETE FROM persons WHERE name = '" + name + "'";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
