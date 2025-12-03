@@ -2,6 +2,8 @@
 
 ## Week 6 recap
 
+https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
+
 - `AlbumDAO` class `getAlbumsByArtist` method: filtering in database vs filtering in the application (e.g. using streams):
   - Bandwith, memory usage, filtering performance
 
@@ -22,6 +24,7 @@
 - It tells you how the performance of an algorithm scales as the size of the input grows.
 - For example List's `contains` method time complexity is O(n) (linear). In worst case we have to go through each item on the list
 - HashMap's `containsKey` method time complexity is O(1) (constant). We just need to perform two constant time operations, whic are hash code generation and getting item in array index
+- Examples: AlgorithmTimeComplexity.java
 
 ## Bubble sort
 

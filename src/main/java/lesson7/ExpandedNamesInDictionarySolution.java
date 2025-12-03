@@ -97,7 +97,7 @@ public class ExpandedNamesInDictionarySolution {
 
     // Binary search to find the index of the first word with a length equal to or
     // shorter than targetLength
-    // Binary search is O(log n), https://fi.wikipedia.org/wiki/Puolitushaku
+    // Binary search is O(log n), https://en.wikipedia.org/wiki/Binary_search
     private static Integer binarySearch(List<String> list, int targetLength) {
         int left = 0;
         int right = list.size() - 1;

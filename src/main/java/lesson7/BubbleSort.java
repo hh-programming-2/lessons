@@ -10,13 +10,13 @@ public class BubbleSort {
 
     // Bubble sort sorts the provided integer array into ascending order
     public static void bubbleSort(int[] arr) {
-        int n = arr.length;
+        int arrayLength = arr.length;
 
         // The outer loop takes care of going through each index in the array
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < arrayLength - 1; i++) {
             // The inner loop compares subsequent array value and switch their order
             // if they are in incorrect order (larger value is before the smaller value)
-            for (int j = 0; j < n - i - 1; j++) {
+            for (int j = 0; j < arrayLength - i - 1; j++) {
 
                 // Are the subsequent array values in wrong order?
                 if (arr[j] > arr[j + 1]) {
