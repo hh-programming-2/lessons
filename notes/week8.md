@@ -2,6 +2,8 @@
 
 ## Week 7 recap
 
+https://github.com/hh-programming-2/sorting-and-filtering-Kaltsoon-1
+
 - `Sorting` class:
   - `sortPostsByPublishedDate` method:
     - In this method, we needed to implement a sort algorithm ourselves to do the sorting
@@ -52,7 +54,7 @@
 - For example if we need to call two methods A and B, where execution time of A is 2 seconds and execution time of B is 3 seconds, the total execution time is 5 seconds
 - It is however also possible to execute operations in different cores in parrallel, so that methods A and B are executed concurrently. In this case the total execution time would only be 3 seconds
 - This kind of parallel computation in different cores is implemented using threads
-- `BackgroundTaskExample` class:
+- `SimpleThreadExample` class:
   - A Java program is always executed in main thread
   - The main thread can spawn multiple child threads, which can perform any kind of computation
   - We can define the child thread's operation using a lambda function like in `backgroundTask`
