@@ -14,19 +14,20 @@
 
 ## Schedule
 
-- We follow weekly schedule consisting of 8 weeks
+- We follow a weekly schedule consisting of 8 weeks
 - Each week has different topics and a set of programming exercises
 - We have two weekly sessions. During the first session of the week we cover the theory of the new topics and the second sessions is more hands-on programming lab session where we work on the exercises
 - Note the weekly deadlines!
 - Weekly sections describe the topics and the exercises. The exercise descriptions are in Moodle.
-- The first weeks exercises must be submitted before the deadline to confirm course participation!
+- The first week's exercises must be submitted before the deadline to confirm course participation!
 
 ## Assesment
 
-- Assesment is based on points from the weekly exercises and attendance
+- Assessment is based on points from the weekly exercises and attendance
 - At least 50% session attendance is required to pass the course
 - The preliminary grade formula can be found in the course material
-- Getting 0.5 points out of 5 points a week on average is enough for passing grade
+- 5 exercise points can be earned from each week. The total of 8 points is enough for a passing grade
+- Submissions made after the weekly deadline won't earn points
 
 ## Week 1 topic
 
