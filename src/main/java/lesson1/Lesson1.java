@@ -8,7 +8,7 @@ public class Lesson1 {
     public static void main(String[] args) {
         // Examples of variables
         int number = 42;
-        double pi = 3.14;
+        double pi = 3.1415;
         String message = "Hello, world!";
         boolean isJavaFun = true;
 
