@@ -19,7 +19,7 @@ public class Lesson2 {
         // ❌ Map<int, String> badMap = new HashMap<int, String>();
         // ✔️ Map<Integer, String> goodMap = new HashMap<Integer, String>();
 
-        postalCodes.put("00710", "Helsinki");
+        postalCodes.put("00720", "Helsinki");
         postalCodes.put("90014", "Oulu");
         postalCodes.put("33720", "Tampere");
         postalCodes.put("33014", "Tampere");

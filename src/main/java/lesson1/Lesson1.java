@@ -21,7 +21,7 @@ public class Lesson1 {
             System.out.println("Java is not fun?");
         }
 
-        int dayOfWeek = 3;
+        int dayOfWeek = 4;
 
         switch (dayOfWeek) {
             case 1:
