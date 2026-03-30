@@ -12,10 +12,28 @@ import java.util.Set;
 public class Lesson2 {
 
     public static void main(String[] args) {
+        /*
+         * "A data structure is a collection of data values, the relationships among
+         * them, and the functions or operations that can be applied to the data."
+         */
 
-        // 1. Hash map
+        // Array: primitive data structure of fixed size for storing items in order
+        String[] namesArray = new String[2];
+        namesArray[0] = "Kalle";
+        namesArray[1] = "Elina";
+
+        // ArrayList: data structure of dynamic size for storing items in order
+        List<String> namesList = new ArrayList<>();
+        namesList.add("Kalle");
+        namesList.add("Elina");
+        namesList.add("Pekka");
+        // ArrayList provides many operations, such as containment check
+        namesList.contains("Kalle");
+
+        // HashMap: data structure for storing (key, value) pairs
         Map<String, String> postalCodes = new HashMap<String, String>();
-        // Note that key and value should be an object, not a primitive type (e.g. Integer and not int)!
+        // Note that key and value should be an object, not a primitive type (e.g.
+        // Integer and not int)!
         // ❌ Map<int, String> badMap = new HashMap<int, String>();
         // ✔️ Map<Integer, String> goodMap = new HashMap<Integer, String>();
 
@@ -23,10 +41,10 @@ public class Lesson2 {
         postalCodes.put("90014", "Oulu");
         postalCodes.put("33720", "Tampere");
         postalCodes.put("33014", "Tampere");
-        
+
         System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // prints "Helsinki"
 
-        // 2. Handling numbers in maps
+        // Handling numbers in maps
         Map<String, Integer> credits = new HashMap<String, Integer>();
 
         // Adding values for keys
@@ -36,11 +54,11 @@ public class Lesson2 {
         // Getting a value
         int courseCredits = credits.get("swd1tn002");
         System.out.println("2. Credits swd1tn002: " + courseCredits); // 5
-        
+
         Integer fakeCredits = credits.getOrDefault("fakecourse", 0);
         System.out.println("2.1. Credits fakecourse: " + fakeCredits); // 0
 
-        // 3. Setting a new value
+        // Setting a new value
         Map<String, String> numbers = new HashMap<>();
         numbers.put("Uno", "Yksi");
         numbers.put("Dos", "Zwei");
@@ -50,7 +68,7 @@ public class Lesson2 {
 
         System.out.println("3. Numerot: " + numbers);
 
-        // 4. Removing values (remove) and checking existence (containsKey)
+        // Removing values (remove) and checking existence (containsKey)
         Map<String, String> countries = new HashMap<>();
         countries.put("Suomi", "Finland");
         countries.put("Ruotsi", "Sweden");
@@ -61,7 +79,7 @@ public class Lesson2 {
 
         System.out.println("4. Countries:" + countries);
 
-        // 5. Setting multiple values for the same key
+        // Setting multiple values for the same key
         Map<String, List<String>> countryCities = new HashMap<>();
 
         List<String> fi = new ArrayList<String>();
@@ -77,40 +95,41 @@ public class Lesson2 {
         countryCities.put("Sweden", sv);
 
         System.out.println("5. Citites:" + countryCities);
-        
+
         fi.add("Tampere");
         System.out.println("5.1. Citities including Tampere:" + countryCities);
 
-        // 6. Going through the map values
+        // Going through the map values
         Set<String> keys = numbers.keySet();
-        
+
         // Go through all the keys
         for (String key : keys) {
             System.out.println("6.1 key: " + key);
         }
 
         Collection<String> values = numbers.values();
-        
+
         // Go through all the values
         for (String value : values) {
             System.out.println("6.3 value: " + value);
         }
-        
+
         // Go through all key-value pairs
         // Set<Entry<String, String>> entrySet = numbers.entrySet();
         System.out.println("7. Iterating key-value pairs with for loop:");
 
         for (Entry<String, String> keyValuePair : numbers.entrySet()) {
-	        System.out.println("Key: " + keyValuePair.getKey());
-	        System.out.println("Value: " + keyValuePair.getValue());
+            System.out.println("Key: " + keyValuePair.getKey());
+            System.out.println("Value: " + keyValuePair.getValue());
         }
 
-        // Other way of going through all key-value pairs using forEach method and an lamda function
+        // Other way of going through all key-value pairs using forEach method and an
+        // lamda function
         System.out.println("8. Iterating key-value pairs with forEach method:");
 
         numbers.forEach((key, value) -> {
             System.out.println("Key: " + key);
-	        System.out.println("Value: " + value);
+            System.out.println("Value: " + value);
         });
     }
 }

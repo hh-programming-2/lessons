@@ -26,6 +26,7 @@ https://github.com/hh-programming-2/warming-up-Kaltsoon
 - What data structures do we know so far? (array, array list, linked list)
   - Array list data structure is to store many items in a specific order
   - Operations: get item in index (array, array list), add item, remove item in index
+- Example: Set data structure is similar to array list, but doesn't have any duplicate items
 - Map is a data structure which stores data as key-value pairs
 - A key is usually a string or integer value, but technically it could be anything, even an object
 - A value related to the key can be anything, e.g. string, integer, or object

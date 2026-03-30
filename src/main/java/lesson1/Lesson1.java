@@ -8,7 +8,7 @@ public class Lesson1 {
     public static void main(String[] args) {
         // Examples of variables
         int number = 42;
-        double pi = 3.1415;
+        double pi = 3.14;
         String message = "Hello, world!";
         boolean isJavaFun = true;
 
@@ -21,7 +21,7 @@ public class Lesson1 {
             System.out.println("Java is not fun?");
         }
 
-        int dayOfWeek = 4;
+        int dayOfWeek = 3;
 
         switch (dayOfWeek) {
             case 1:
