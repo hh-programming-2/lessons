@@ -42,7 +42,8 @@ public class Lesson2 {
         postalCodes.put("33720", "Tampere");
         postalCodes.put("33014", "Tampere");
 
-        System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // prints "Helsinki"
+        System.out.println("1. postalCodes:" + postalCodes);
+        System.out.println("1.1. Postal code 00710: " + postalCodes.get("00710")); // prints "Helsinki"
 
         // Handling numbers in maps
         Map<String, Integer> credits = new HashMap<String, Integer>();
@@ -52,7 +53,7 @@ public class Lesson2 {
         credits.put("swd1tn002", 5);
 
         // Getting a value
-        int courseCredits = credits.get("swd1tn002");
+        int courseCredits = credits.get("swd1tn001");
         System.out.println("2. Credits swd1tn002: " + courseCredits); // 5
 
         Integer fakeCredits = credits.getOrDefault("fakecourse", 0);
@@ -66,7 +67,7 @@ public class Lesson2 {
         numbers.putIfAbsent("Dos", "Kaksi"); // doesn't replace anything
         numbers.replace("Tres", "Drei"); // does not add anything
 
-        System.out.println("3. Numerot: " + numbers);
+        System.out.println("3. Numbers: " + numbers);
 
         // Removing values (remove) and checking existence (containsKey)
         Map<String, String> countries = new HashMap<>();
@@ -99,26 +100,25 @@ public class Lesson2 {
         fi.add("Tampere");
         System.out.println("5.1. Citities including Tampere:" + countryCities);
 
-        // Going through the map values
+        // Going through the keys of a map
         Set<String> keys = numbers.keySet();
 
-        // Go through all the keys
         for (String key : keys) {
-            System.out.println("6.1 key: " + key);
+            System.out.println("6.1. key: " + key);
         }
 
+        // Go through the values of a map
         Collection<String> values = numbers.values();
 
-        // Go through all the values
         for (String value : values) {
-            System.out.println("6.3 value: " + value);
+            System.out.println("6.2. value: " + value);
         }
 
-        // Go through all key-value pairs
-        // Set<Entry<String, String>> entrySet = numbers.entrySet();
+        // Go through the key-value pairs of a map
+        Set<Entry<String, String>> entrySet = numbers.entrySet();
         System.out.println("7. Iterating key-value pairs with for loop:");
 
-        for (Entry<String, String> keyValuePair : numbers.entrySet()) {
+        for (Entry<String, String> keyValuePair : entrySet) {
             System.out.println("Key: " + keyValuePair.getKey());
             System.out.println("Value: " + keyValuePair.getValue());
         }
