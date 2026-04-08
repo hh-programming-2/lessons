@@ -5,15 +5,15 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class ShoppingCartTestWithMockito {
+class DiscountShoppingCartTestWithMockito {
 
-    private ShoppingCart cart;
+    private DiscountShoppingCart cart;
     private DiscountService discountService;
 
     @BeforeEach
     void setUp() {
         discountService = mock(DiscountService.class);
-        cart = new ShoppingCart(discountService);
+        cart = new DiscountShoppingCart(discountService);
     }
 
     @AfterEach

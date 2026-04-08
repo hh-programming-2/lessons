@@ -1,38 +1,38 @@
 package lesson3;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class ShoppingCartTest {
-
+public class ShoppingCartTest {
     private ShoppingCart cart;
-    private DiscountService discountService;
 
     @BeforeEach
     void setUp() {
-    	//Mock implementation of DiscountService
-        discountService = new TestDiscountService();
-        cart = new ShoppingCart(discountService);
+        cart = new ShoppingCart();
     }
 
-    @AfterEach
-    void tearDown() {
-        cart = null;
-        discountService = null;
-    }
+	@Test
+	void testAddItemAddsNonExistingItem() {
+        // TODO
+	}
 
     @Test
-    void testCalculateTotalWithManualTestImplementation() {
-    	
-        cart.addItem("Laptop", 1000.0);
-        cart.addItem("Phone", 500.0);
+	void testAddItemDoesNotAddExistingItem() {
+        // TODO
+	}
 
-        double total = cart.calculateTotal();
+	@Test
+	void testCalculateTotalReturnsTotalWhenCartHasItems() {
+        // TODO
+	}
 
-        // Assert cart total x 10% discount is correct 
-        // The third param 0.001 is the precision required in equality check.
-        assertEquals(1350, total, 0.001);
-    }
+    @Test
+	void testCalculateTotalReturnsZeroWhenCartHasNoItems() {
+        // TODO
+	}
+
+    @Test
+	void testCalculateTotalReturnsDiscountTotalWhenCartHasFourItems() {
+        // TODO
+	}
 }
-

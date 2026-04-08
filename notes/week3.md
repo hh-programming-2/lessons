@@ -47,6 +47,7 @@ https://github.com/hh-programming-2/map-kaltsoon-1
   - Different scenarios are commonly calling the method with different parameters and expecting certain return value
   - The name of a test method starts with "test" followed by something that describes the scenario, e.g. `testAdditionWithNegative`
   - Go through each test method
-  - Tests are supposed to spot programming mistakes => `division` method has a mistake
-  - Check test output for `substract` method => fix the problem
+  - Tests are supposed to spot programming mistakes => `division` method has a mistake (missing `double` type cast)
+  - Check test output for `division` method => fix the problem
   - Implement `factorial` method with tests (`testFactorialWhenZeroThenReturnsOne`, `testFactorialWhenOneThenReturnsOne`, `testFactorialWhenLargerThanOneThenReturnsCorrect`, `testFactorialWhenNegativeThenReturnsOne`)
+- `ShoppingCart` and `ShoppingCartTest` examples

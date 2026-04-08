@@ -4,26 +4,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCart {
+    // Item name is key and price is the value, e.g. ("chips", 2.5)
     private Map<String, Double> items;
-    private DiscountService discountService;
 
-    public ShoppingCart(DiscountService discountService) {
+    public ShoppingCart() {
         this.items = new HashMap<>();
-        this.discountService = discountService;
     }
 
-    public void addItem(String itemName, double price) {
-        items.put(itemName, price);
+    // Gets the price of the given item
+    public double getPrice(String itemName) {
+        return this.items.get(itemName);
     }
 
+    /*
+     * Adds an item to the cart without replacing the current item.
+     * If the item already exists in the cart, this method does nothing.
+     * Returns true if the item didn't already exist in the cart and false
+     * otherwise.
+     */
+    public boolean addItem(String itemName, double price) {
+        // TODO
+        return false;
+    }
+
+    /*
+     * Calculates the total price of the cart.
+     * Buying more than 3 items comes with 50% discount of the total price.
+     */
     public double calculateTotal() {
-        double totalBeforeDiscount = items.values().stream().mapToDouble(Double::doubleValue).sum();
-        double discount = discountService.calculateDiscount(totalBeforeDiscount);
-        return totalBeforeDiscount - discount;
-    }
-
-    //You can also inject the DiscountService with setter
-    public void setDiscountService(DiscountService discountService) {
-        this.discountService = discountService;
+        // TODO
+        return 0;
     }
 }
