@@ -1,5 +1,6 @@
 package lesson3;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,8 +24,12 @@ public class ShoppingCart {
      * otherwise.
      */
     public boolean addItem(String itemName, double price) {
-        // TODO
-        return false;
+        if (this.items.containsKey(itemName)) {
+            return false;
+        }
+
+        this.items.put(itemName, price);
+        return true;
     }
 
     /*
@@ -32,7 +37,18 @@ public class ShoppingCart {
      * Buying more than 3 items comes with 50% discount of the total price.
      */
     public double calculateTotal() {
-        // TODO
-        return 0;
+        Collection<Double> prices = this.items.values();
+        
+        double total = 0;
+
+        for (Double price : prices) {
+            total += price;
+        }
+
+        if (this.items.size() > 3) {
+            return total * 0.5;
+        }
+  
+        return total;
     }
 }

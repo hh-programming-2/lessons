@@ -15,6 +15,7 @@ class CalculatorTest {
 
     @Test
     void testAdditionBasic() {
+        // calculator.add(2, 3) == 5
         assertEquals(5, calculator.add(2, 3));
     }
     
@@ -107,6 +108,32 @@ class CalculatorTest {
         int[] resultArray = {calculator.add(0, 1), calculator.add(1, 1), calculator.add(1, 2)};
 
         assertArrayEquals(expectedArray, resultArray);
+    }
+
+    /*
+     * Calculate factorial of the given integer. Factorial of a negative
+     * integer should be 1.
+     * 
+     * Examples:
+     * factorial(-1) = 1
+     * factorial(0) = 1
+     * factorial(1) = 1
+     * factorial(3) = 1 * 2 * 3 = 6
+     * factorial(4) = 1 * 2 * 3 * 4 = 24
+     */
+    @Test
+    void testFactorialWithNegativeNumberReturnsOne() {
+        assertEquals(1, calculator.factorial(-5));
+    }
+
+    @Test
+    void testFactorialWithZeroReturnsOne() {
+        assertEquals(1, calculator.factorial(0));
+    }
+
+    @Test
+    void testFactorialWithBiggerNumberReturnsCorrectValue() {
+        assertEquals(24, calculator.factorial(4));
     }
 }
 

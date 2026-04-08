@@ -1,5 +1,7 @@
 package lesson3;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,26 +15,36 @@ public class ShoppingCartTest {
 
 	@Test
 	void testAddItemAddsNonExistingItem() {
-        // TODO
+        assertEquals(true, this.cart.addItem("milk", 1.5));
 	}
 
     @Test
 	void testAddItemDoesNotAddExistingItem() {
-        // TODO
+        this.cart.addItem("milk", 1.5);
+        assertEquals(false, this.cart.addItem("milk", 1.5));
 	}
 
 	@Test
 	void testCalculateTotalReturnsTotalWhenCartHasItems() {
-        // TODO
+        this.cart.addItem("milk", 1.5);
+        this.cart.addItem("beer", 10);
+        this.cart.addItem("chips", 2.5);
+
+        assertEquals(14, this.cart.calculateTotal());
 	}
 
     @Test
 	void testCalculateTotalReturnsZeroWhenCartHasNoItems() {
-        // TODO
+        assertEquals(0, this.cart.calculateTotal());
 	}
 
     @Test
 	void testCalculateTotalReturnsDiscountTotalWhenCartHasFourItems() {
-        // TODO
+        this.cart.addItem("milk", 1.5);
+        this.cart.addItem("beer", 10);
+        this.cart.addItem("chips", 2.5);
+        this.cart.addItem("candy", 1);
+
+        assertEquals(7.5, this.cart.calculateTotal());
 	}
 }
