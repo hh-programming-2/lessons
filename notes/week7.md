@@ -25,6 +25,9 @@ https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
 - For example List's `contains` method time complexity is O(n) (linear). In worst case we have to go through each item on the list
 - HashMap's `containsKey` method time complexity is O(1) (constant). We just need to perform two constant time operations, whic are hash code generation and getting item in array index
 - Examples: AlgorithmTimeComplexity.java
+  - What does each algorithm do? What is the time complexity of the algorithms?
+- Example: MaximumDifferenceAlgorithm.java
+  - Provide two implementations for the problem and compare the execution time.
 
 ## Bubble sort
 

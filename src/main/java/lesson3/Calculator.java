@@ -18,7 +18,7 @@ public class Calculator {
         if (b == 0) {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
-        return a / (double)b;
+        return a / b;
     }
 
     public String addWithCurrency(int a, int b) {
@@ -33,21 +33,11 @@ public class Calculator {
      * factorial(-1) = 1
      * factorial(0) = 1
      * factorial(1) = 1
-     * factorial(3) = 1 * 2 * 3 = 6
      * factorial(4) = 1 * 2 * 3 * 4 = 24
      */
     public int factorial(int a) {
-        if (a <= 0) {
-            return 1;
-        }
-        
-        int currentValue = 1;
-
-        for(int i = 1; i <= a; i++) {
-            currentValue = currentValue * i;
-        }
-
-        return currentValue;
+        // TODO
+        return -1;
     }
 
     public static void main(String[] args) {

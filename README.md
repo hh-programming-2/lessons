@@ -8,7 +8,8 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 2: Map
 
-- [Map examples](./src/main/java/lesson2/Lesson2.java)
+- Basic usage of the map data structure: [Map examples](./src/main/java/lesson2/Lesson2.java)
+- Applying the map data structure: [CourseGrading](./src/main/java/lesson2/CourseGrading.java) class and [CourseGradingApp](./src/main/java/lesson2/CourseGradingApp.java) application
 - [Performance comparison of ArrayList and HashMap](./src/main/java/lesson2/LotsOfData.java)
 
 ## Lesson 3: JUnit
@@ -41,6 +42,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 ## Lesson 7: Data structures and algorithms
 
 - [Simple algorithms and time complexity analysis](./src/main/java/lessons7/AlgorithmTimeComplexity.java)
+- [Performance comparison of different algorithms for the same problem](./src/main/java/lessons7/AlgorithmTimeComplexity.java)
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
 - [Wordplay exercise solution](./src/main/java/lesson7/wordplay/NamesInDictionary.java)
 - [Expanded Wordplay exercise solution](./src/main/java/lesson7/wordplay/ExpandedNamesInDictionarySolution.java)

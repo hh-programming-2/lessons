@@ -13,38 +13,34 @@ public class ShoppingCartTest {
         cart = new ShoppingCart();
     }
 
-	@Test
-	void testAddItemAddsNonExistingItem() {
-        assertEquals(true, this.cart.addItem("milk", 1.5));
-	}
+    @Test
+    void testAddItemAddsNonExistingItem() {
+        // TODO: adding a NON-EXISTING item should return true
+    }
 
     @Test
-	void testAddItemDoesNotAddExistingItem() {
-        this.cart.addItem("milk", 1.5);
-        assertEquals(false, this.cart.addItem("milk", 1.5));
-	}
-
-	@Test
-	void testCalculateTotalReturnsTotalWhenCartHasItems() {
-        this.cart.addItem("milk", 1.5);
-        this.cart.addItem("beer", 10);
-        this.cart.addItem("chips", 2.5);
-
-        assertEquals(14, this.cart.calculateTotal());
-	}
+    void testAddItemDoesNotAddExistingItem() {
+        // TODO: adding a EXISTING item should return false
+    }
 
     @Test
-	void testCalculateTotalReturnsZeroWhenCartHasNoItems() {
-        assertEquals(0, this.cart.calculateTotal());
-	}
+    void testCalculateTotalReturnsTotalWithoutDiscountWithThreeItems() {
+        /*
+         * TODO: calculating the total of a card with three items returns the price
+         * WITHOUT discount
+         */
+    }
 
     @Test
-	void testCalculateTotalReturnsDiscountTotalWhenCartHasFourItems() {
-        this.cart.addItem("milk", 1.5);
-        this.cart.addItem("beer", 10);
-        this.cart.addItem("chips", 2.5);
-        this.cart.addItem("candy", 1);
+    void testCalculateTotalReturnsZeroWhenCartHasNoItems() {
+        // TODO: calculating the total of a card WITHOUT items should yield zero
+    }
 
-        assertEquals(7.5, this.cart.calculateTotal());
-	}
+    @Test
+    void testCalculateTotalReturnsDiscountTotalWhenCartHasFourItems() {
+        /*
+         * TODO: calculating the total of a card with four items returns the price
+         * WITH discount
+         */
+    }
 }

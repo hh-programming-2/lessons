@@ -149,6 +149,16 @@ public class PersonDAO {
         }
     }
 
+    public List<Person> findPersonsOlderThan(int age) {
+        // TODO
+        return List.of();
+    }
+
+    public Optional<Person> findOldestPerson() {
+        // TODO
+        return Optional.empty();
+    }
+
     public void deletePersonByNameUNSAFE(String name) {
         // DANGER! We should ALWAYS use ? to assign query variables
         // This allows the user to exploit the SQL Injection attack
