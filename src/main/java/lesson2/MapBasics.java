@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 // This file contains examples of using the Map data structure
-public class Lesson2 {
+public class MapBasics {
 
     public static void main(String[] args) {
         /*

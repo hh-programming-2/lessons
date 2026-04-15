@@ -8,14 +8,14 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 2: Map
 
-- Basic usage of the map data structure: [Map examples](./src/main/java/lesson2/Lesson2.java)
+- Basic usage of the map data structure: [MapBasics](./src/main/java/lesson2/MapBasics.java)
 - Applying the map data structure: [CourseGrading](./src/main/java/lesson2/CourseGrading.java) class and [CourseGradingApp](./src/main/java/lesson2/CourseGradingApp.java) application
 - [Performance comparison of ArrayList and HashMap](./src/main/java/lesson2/LotsOfData.java)
 
 ## Lesson 3: JUnit
 
 - Unit testing basics with jUnit: [Calculator](./src/main/java/lesson3/Calculator.java) class with [CalculatorTest](./src/test/java/lesson3/CalculatorTest.java) test class
-- Unit testing a more complex class: [ShoppingCart](./src/main/java/lesson3/ShoppingCart.java) class with [ShoppingCart](./src/test/java/lesson3/ShoppingCart.java) test class
+- Unit testing a class: [ShoppingCart](./src/main/java/lesson3/ShoppingCart.java) class with [ShoppingCartTest](./src/test/java/lesson3/ShoppingCartTest.java) test class
 - Integration testing: [DiscountShoppingCart](./src/main/java/lesson3/DiscountShoppingCart.java) and [DiscountShoppingCartApp](./src/main/java/lesson3/DiscountShoppingCartApp.java) with [DiscountShoppingCartTest](./src/test/java/lesson3/DiscountShoppingCartTest.java) and [DiscountShoppingCartTestWithMockito](./src/test/java/lesson3/DiscountShoppingCartTestWithMockito.java) test classes
 
 ## Lesson 4: Object modelling, inheritance, and interfaces
