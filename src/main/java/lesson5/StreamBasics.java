@@ -45,10 +45,10 @@ public class StreamBasics {
         System.out.println("City names with population under 500 000: " + cityNames);
 
         // Example 4: Reusing streams
+        Stream<City> largeCitiesStream = cities.stream().filter(city -> city.getPopulation() > 100_000);
 
-        // TODO: Create a stream of large cities (population over 100 000)
-        // 1) Get list of names of large cities
-        // 2) Get list of populations of large cities
+        List<String> largeCityNames = largeCitiesStream.map(city -> city.getName()).toList();
+        List<Integer> largeCityPopulations = largeCitiesStream.map(city -> city.getPopulation()).toList();
 
         // Example 5. Using a stream and lambda function to find the maximum number
         int largestNumber = numbers.stream()
