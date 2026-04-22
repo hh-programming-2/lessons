@@ -1,5 +1,7 @@
 package lesson6;
 
+import java.util.List;
+
 import lesson6.helpers.Person;
 
 /** 
@@ -8,18 +10,28 @@ import lesson6.helpers.Person;
  * 
  * For this example, remember to include the SQLLite-driver to the build.grade file and "Refresh gradle project" (eclipse)
  */
-public class Lesson6 {
+public class DAOBasics {
     public static void main(String[] args) {
         // Initialize PersonDAO object
         PersonDAO personDAO = new PersonDAO();
 
         // Add persons to the database
         personDAO.addPerson(new Person("Maija", 25));
-        personDAO.addPerson(new Person("Pekka", 30));
+        personDAO.addPerson(new Person("Pekka", 45));
+        personDAO.addPerson(new Person("Kalle", 33));
 
         // Find all persons in the database and print them
         System.out.println("All persons:");
         personDAO.findAllPersons().forEach(System.out::println);
+
+        // Find all persons in age range 30-50
+        List<Person> oldPersons = personDAO.findPersonsInAgeRange(30, 50);
+        System.out.println("Persons in age range 30-50:");
+        System.out.println(oldPersons);
+
+        // Count persons
+        Integer personsCount = personDAO.countPersons();
+        System.out.println("Persons in age range 30-50: " + personsCount);
 
         // Update person information in the database
         Person personToUpdate = personDAO.findPersonByName("Maija").orElse(null);
@@ -44,15 +56,6 @@ public class Lesson6 {
 
         // Find all persons again after the delete and print them
         System.out.println("All persons after the delete:");
-        personDAO.findAllPersons().forEach(System.out::println);
-
-        // SQL Injection (https://en.wikipedia.org/wiki/SQL_injection)
-        String maliciousUserInput = "Pekka";
-        // Let's assume that the maliciousUserInput can be determined by the user
-        // What if maliciousUserInput would have value of "Maija' OR '1' = '1" ?
-        personDAO.deletePersonByNameUNSAFE(maliciousUserInput);
-
-        System.out.println("All persons after the malicious operation:");
         personDAO.findAllPersons().forEach(System.out::println);
 
         // Clear the database table by deleting all persons

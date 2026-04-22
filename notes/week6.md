@@ -51,6 +51,6 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - Before starting to send database queries to a database we need to establish a database connection. Database servers can be located in e.g. different country and the connection is like the "pipe" between our computer and the database server
   - Making sure that database tables are created
   - Examples of database queries
-  - Implementation of methods `findPersonsOlderThan` and `findOldestPerson`
+  - Implementation of methods `findPersonsInAgeRange` and `countPersons`
   - SQL Injection and the `deletePersonByNameUNSAFE`
     - We should never directly assign variable into the SQL query so that the user won't be able to execute SQL statements (e.g. deleting more rows than desired)

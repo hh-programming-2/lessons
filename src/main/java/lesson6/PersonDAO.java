@@ -44,16 +44,6 @@ public class PersonDAO {
                 )
                 """;
 
-        /*
-         * String mySQLQuery = """
-         * CREATE TABLE IF NOT EXISTS persons (
-         * id INT PRIMARY KEY AUTO_INCREMENT,
-         * name VARCHAR(255) NOT NULL,
-         * age INT NOT NULL
-         * )
-         * """;
-         */
-
         try (Statement statement = connection.createStatement()) {
             statement.execute(query);
         }
@@ -149,14 +139,14 @@ public class PersonDAO {
         }
     }
 
-    public List<Person> findPersonsOlderThan(int age) {
-        // TODO
+    public List<Person> findPersonsInAgeRange(int minAge, int maxAge) {
+        // TODO: Find persons, whose age is in the provided range
         return List.of();
     }
 
-    public Optional<Person> findOldestPerson() {
-        // TODO
-        return Optional.empty();
+    public Integer countPersons() {
+        // TODO: Count the total numbers of persons
+        return 0;
     }
 
     public void deletePersonByNameUNSAFE(String name) {
