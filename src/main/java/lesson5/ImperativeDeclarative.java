@@ -11,12 +11,12 @@ public class ImperativeDeclarative {
     public static void main(String[] args) {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
-        List<Integer> evenNumbersFromForLoop = new ArrayList<>();
-
         /**
          * Imperative solution: we tell the computer step by step how to achieve the
          * desired outcome
          */
+        List<Integer> evenNumbersFromForLoop = new ArrayList<>();
+
         for (Integer number : numbers) {
             if (number % 2 == 0) {
                 evenNumbersFromForLoop.add(number);

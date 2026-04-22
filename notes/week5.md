@@ -35,6 +35,6 @@ https://github.com/hh-programming-2/interfaces-and-inheritance-Kaltsoon
 - Most common operations are map (replace each object in the stream) and filter (choose which objects are kept in the stream using a condition)
 - Finally, _terminal operation_ creates a stream output. These operations are also called "collectors", they collect the stream into e.g. a list or a single average value or maximum value of the stream
 - Steams provide many useful methods for processing collections of data, for example filtering and mapping (transforming each value of the collection)
-- Example: `BasicFunctionalExamples.java`
+- Example: `StreamBasics.java`
 - Records and `Person.java` example
 - Example: `StreamExamples.java`
