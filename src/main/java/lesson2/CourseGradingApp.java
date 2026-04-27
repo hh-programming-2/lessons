@@ -15,6 +15,6 @@ public class CourseGradingApp {
         System.out.println(programming2.getStudentGrade("9999")); // should be null
 
         System.out.println("Printing the average:");
-        System.out.println(programming2.getAverageGrade()); // should be 3.25
+        System.out.println(programming2.getAverageGrade()); // should be (4+3+5+1)/4 = 3.25
     }
 }

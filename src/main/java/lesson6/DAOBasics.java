@@ -15,6 +15,9 @@ public class DAOBasics {
         // Initialize PersonDAO object
         PersonDAO personDAO = new PersonDAO();
 
+        // Clear the database table by deleting all persons
+        personDAO.deleteAllPersons();
+
         // Add persons to the database
         personDAO.addPerson(new Person("Maija", 25));
         personDAO.addPerson(new Person("Pekka", 45));
@@ -28,10 +31,6 @@ public class DAOBasics {
         List<Person> oldPersons = personDAO.findPersonsInAgeRange(30, 50);
         System.out.println("Persons in age range 30-50:");
         System.out.println(oldPersons);
-
-        // Count persons
-        Integer personsCount = personDAO.countPersons();
-        System.out.println("Persons in age range 30-50: " + personsCount);
 
         // Update person information in the database
         Person personToUpdate = personDAO.findPersonByName("Maija").orElse(null);
@@ -57,9 +56,6 @@ public class DAOBasics {
         // Find all persons again after the delete and print them
         System.out.println("All persons after the delete:");
         personDAO.findAllPersons().forEach(System.out::println);
-
-        // Clear the database table by deleting all persons
-        personDAO.deleteAllPersons();
         
         // Finally, close the database connection
         personDAO.close();

@@ -18,7 +18,7 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - `person.name()` vs. `person.getName()`: record's generated methods
 - `PizzaStreams`:
   - `getPizzasWithAnyOfToppings`: using helper method in the stream
-  - `sortPizzasByPrice`: using the `sorted` method to sort a stream 
+  - `sortPizzasByPrice`: using the `sorted` method to sort a stream
 
 ## Week 6
 
@@ -33,12 +33,13 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - E.g. with the `addPerson` method we are only interested that we can add a `Person` object to database somehow, we don't need to know the details => "ignorance is bliss"
   - `PersonDAO` is an example of data access object design pattern (DAO). Other example of design pattern was the "dependency injection" pattern we covered with interfaces and inheritance
   - The goal of data access object pattern is to separate the low-level data accessing logic from high-level business logic (example `Lesson6.java`)
-- `PersonDAO.java` overall stuff:
+- JDBC basics
   - Java provides builtin Java Database Connectivity API (JDBC), which allows applications to connect to various types of SQL databases and perform different queries and updates from within Java code
   - The idea of JDBC API is to provide standard functionality e.g. related to executing database queries and reading the query results
   - **Application -> JDBC API -> Driver manager -> Database Driver (e.g. MySQL, SQLite, or PostgreSQL)**
   - In this example, we have code which communicates with an SQLite database
   - SQLite is a simple SQL database, which stores all data on single file on the computer where the program is executed on
+    - Show `db.sqlite` file in filetree
   - It is a good choice of a databases for a single user applications, but not for multi user applications
   - In order to connect an SQLite database from a Java application, we need a driver program for it
   - The driver program implements the operations we need to communicate with the database, e.g. send database queries and receive the data
@@ -46,11 +47,43 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - Using external dependencies in Java applications is very common
   - These dependencies are installed and managed by Gradle
   - All we need to know is define our dependencies in the `build.gradle` file. Then, we can access the dependencies in the code
-  - Usually we have a separate DAO class for each table in the database. The DAO class is responsible for operations related to that specific table
 - `PersonDAO.java` code examples:
+  - Usually we have a separate DAO class for each table in the database. The DAO class is responsible for operations related to that specific table
   - Before starting to send database queries to a database we need to establish a database connection. Database servers can be located in e.g. different country and the connection is like the "pipe" between our computer and the database server
   - Making sure that database tables are created
-  - Examples of database queries
-  - Implementation of methods `findPersonsInAgeRange` and `countPersons`
+    - Show that the table is created in SQLLite: `usql db.sqlite` and command `\d` for listing tables
+  - Example of `findAllPersons`
+  - Example of `addPerson`
+    - Show in `usql` how rows are added to the database `SELECT * from persons;`
+  - Examples of other database queries
+  - Implementation of methods `findPersonsInAgeRange`
+
+    ```java
+    public List<Person> findPersonsInAgeRange(int minAge, int maxAge) {
+        List<Person> persons = new ArrayList<>();
+        String query = "SELECT * FROM persons WHERE age >= ? AND age <= ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setInt(1, minAge);
+            preparedStatement.setInt(2, maxAge);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+
+                persons.add(new Person(id, name, age));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return persons;
+    }
+    ```
+
   - SQL Injection and the `deletePersonByNameUNSAFE`
     - We should never directly assign variable into the SQL query so that the user won't be able to execute SQL statements (e.g. deleting more rows than desired)

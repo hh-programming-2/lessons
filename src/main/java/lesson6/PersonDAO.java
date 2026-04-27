@@ -49,16 +49,46 @@ public class PersonDAO {
         }
     }
 
+    public List<Person> findAllPersons() {
+        List<Person> persons = new ArrayList<>();
+        String query = "SELECT * FROM persons";
+
+        // createStatement method can throw SQLException, so we'll catch that with a
+        // try/catch block
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // We iterate the result rows until there is no longer the next row
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+    
+                persons.add(new Person(id, name, age));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return persons;
+    }
+
     public int addPerson(Person person) {
         // ? symbols are variables for the database query
         String query = "INSERT INTO persons (name, age) VALUES (?, ?)";
 
-        // We will use the PreparedStatement object, which avoids SQL injections
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        try {
+            // We will use the PreparedStatement object, to use query variables and avoid
+            // SQL injection
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
             // Set a value for query variables in the specific index. This will replace the
             // ? in the database query
             preparedStatement.setString(1, person.getName()); // Index starts from 1!
             preparedStatement.setInt(2, person.getAge());
+
+            // executeUpdate method is used to perform write operations (e.g. inserts or
+            // updates)
             int rowCount = preparedStatement.executeUpdate();
             return rowCount;
         } catch (SQLException e) {
@@ -67,51 +97,38 @@ public class PersonDAO {
         }
     }
 
-    public List<Person> findAllPersons() {
-        List<Person> persons = new ArrayList<>();
-        String query = "SELECT * FROM persons";
-
-        try (Statement statement = connection.createStatement();
-                ResultSet results = statement.executeQuery(query)) {
-            while (results.next()) {
-                int id = results.getInt("id");
-                String name = results.getString("name");
-                int age = results.getInt("age");
-                persons.add(new Person(id, name, age));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return persons;
-    }
-
-    // Find person by name
     public Optional<Person> findPersonByName(String name) {
         String query = "SELECT * FROM persons WHERE name = ?";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, name);
+        try {
+            PreparedStatement prepareStatement = connection.prepareStatement(query);
+            prepareStatement.setString(1, name);
 
-            try (ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    int id = resultSet.getInt("id");
-                    int age = resultSet.getInt("age");
-                    return Optional.of(new Person(id, name, age));
-                }
+            ResultSet resultSet = prepareStatement.executeQuery();
+
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int age = resultSet.getInt("age");
+                return Optional.of(new Person(id, name, age));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        // No results rows for the query, so we'll return an empty optional
         return Optional.empty();
     }
 
     public void updatePerson(Person person) {
-        String sql = "UPDATE persons SET name = ?, age = ? WHERE id = ?";
+        String query = "UPDATE persons SET name = ?, age = ? WHERE id = ?";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
             preparedStatement.setString(1, person.getName());
             preparedStatement.setInt(2, person.getAge());
             preparedStatement.setInt(3, person.getId());
+
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,10 +136,13 @@ public class PersonDAO {
     }
 
     public void deletePerson(int id) {
-        String sql = "DELETE FROM persons WHERE id = ?";
+        String query = "DELETE FROM persons WHERE id = ?";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
             preparedStatement.setInt(1, id);
+
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -130,23 +150,20 @@ public class PersonDAO {
     }
 
     public void deleteAllPersons() {
-        String sql = "DELETE FROM persons";
+        String query = "DELETE FROM persons";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.executeUpdate();
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     public List<Person> findPersonsInAgeRange(int minAge, int maxAge) {
-        // TODO: Find persons, whose age is in the provided range
+        // TODO: Find all persons whose age is above or equal to minAge and below or
+        // equal to maxAge
         return List.of();
-    }
-
-    public Integer countPersons() {
-        // TODO: Count the total numbers of persons
-        return 0;
     }
 
     public void deletePersonByNameUNSAFE(String name) {
@@ -155,7 +172,8 @@ public class PersonDAO {
         // https://en.wikipedia.org/wiki/SQL_injection
         String sql = "DELETE FROM persons WHERE name = '" + name + "'";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
