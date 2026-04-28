@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import lesson6.helpers.Person;
+import lesson6.helpers.Country;
 
 /**
- * This DAO class for person related database operations. The data is presented
- * as Person objects.
+ * This DAO class handles country related database operations. The data is
+ * presented as Country objects.
  */
-public class PersonDAO {
+public class CountryDAO {
     private Connection connection;
 
-    public PersonDAO() {
+    public CountryDAO() {
         // In the constructor we establish database connection and initialize the
         // database table
         try {
@@ -37,21 +37,24 @@ public class PersonDAO {
 
     private void createTable() throws SQLException {
         String query = """
-                CREATE TABLE IF NOT EXISTS persons (
+                CREATE TABLE IF NOT EXISTS countries (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL UNIQUE,
-                    age INTEGER NOT NULL
+                    population INTEGER NOT NULL
                 )
                 """;
 
-        try (Statement statement = connection.createStatement()) {
+        try {
+            Statement statement = connection.createStatement();
             statement.execute(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
-    public List<Person> findAllPersons() {
-        List<Person> persons = new ArrayList<>();
-        String query = "SELECT * FROM persons";
+    public List<Country> findAllCountries() {
+        List<Country> countries = new ArrayList<>();
+        String query = "SELECT * FROM countries";
 
         // createStatement method can throw SQLException, so we'll catch that with a
         // try/catch block
@@ -63,20 +66,20 @@ public class PersonDAO {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int age = resultSet.getInt("age");
-    
-                persons.add(new Person(id, name, age));
+                int population = resultSet.getInt("population");
+
+                countries.add(new Country(id, name, population));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return persons;
+        return countries;
     }
 
-    public int addPerson(Person person) {
+    public int addCountry(Country country) {
         // ? symbols are variables for the database query
-        String query = "INSERT INTO persons (name, age) VALUES (?, ?)";
+        String query = "INSERT INTO countries (name, population) VALUES (?, ?)";
 
         try {
             // We will use the PreparedStatement object, to use query variables and avoid
@@ -84,8 +87,8 @@ public class PersonDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             // Set a value for query variables in the specific index. This will replace the
             // ? in the database query
-            preparedStatement.setString(1, person.getName()); // Index starts from 1!
-            preparedStatement.setInt(2, person.getAge());
+            preparedStatement.setString(1, country.getName()); // Index starts from 1!
+            preparedStatement.setInt(2, country.getPopulation());
 
             // executeUpdate method is used to perform write operations (e.g. inserts or
             // updates)
@@ -97,8 +100,8 @@ public class PersonDAO {
         }
     }
 
-    public Optional<Person> findPersonByName(String name) {
-        String query = "SELECT * FROM persons WHERE name = ?";
+    public Optional<Country> findCountryByName(String name) {
+        String query = "SELECT * FROM countries WHERE name = ?";
 
         try {
             PreparedStatement prepareStatement = connection.prepareStatement(query);
@@ -108,8 +111,9 @@ public class PersonDAO {
 
             if (resultSet.next()) {
                 int id = resultSet.getInt("id");
-                int age = resultSet.getInt("age");
-                return Optional.of(new Person(id, name, age));
+                int population = resultSet.getInt("population");
+
+                return Optional.of(new Country(id, name, population));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,15 +123,15 @@ public class PersonDAO {
         return Optional.empty();
     }
 
-    public void updatePerson(Person person) {
-        String query = "UPDATE persons SET name = ?, age = ? WHERE id = ?";
+    public void updateCountry(Country country) {
+        String query = "UPDATE countries SET name = ?, population = ? WHERE id = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setString(1, person.getName());
-            preparedStatement.setInt(2, person.getAge());
-            preparedStatement.setInt(3, person.getId());
+            preparedStatement.setString(1, country.getName());
+            preparedStatement.setInt(2, country.getPopulation());
+            preparedStatement.setInt(3, country.getId());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -135,8 +139,8 @@ public class PersonDAO {
         }
     }
 
-    public void deletePerson(int id) {
-        String query = "DELETE FROM persons WHERE id = ?";
+    public void deleteCountry(int id) {
+        String query = "DELETE FROM countries WHERE id = ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -149,8 +153,8 @@ public class PersonDAO {
         }
     }
 
-    public void deleteAllPersons() {
-        String query = "DELETE FROM persons";
+    public void deleteAllCountries() {
+        String query = "DELETE FROM countries";
 
         try {
             Statement statement = connection.createStatement();
@@ -160,17 +164,17 @@ public class PersonDAO {
         }
     }
 
-    public List<Person> findPersonsInAgeRange(int minAge, int maxAge) {
-        // TODO: Find all persons whose age is above or equal to minAge and below or
-        // equal to maxAge
+    public List<Country> findCountriesInPopulationRange(int minPopulation, int maxPopulation) {
+        // TODO: Find countries that have population larger or equal to minPopulation,
+        // and less than or equal to maxPopulation
         return List.of();
     }
 
-    public void deletePersonByNameUNSAFE(String name) {
+    public void deleteCountryByNameUNSAFE(String name) {
         // DANGER! We should ALWAYS use ? to assign query variables
         // This allows the user to exploit the SQL Injection attack
         // https://en.wikipedia.org/wiki/SQL_injection
-        String sql = "DELETE FROM persons WHERE name = '" + name + "'";
+        String sql = "DELETE FROM countries WHERE name = '" + name + "'";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

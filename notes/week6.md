@@ -52,31 +52,32 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - Before starting to send database queries to a database we need to establish a database connection. Database servers can be located in e.g. different country and the connection is like the "pipe" between our computer and the database server
   - Making sure that database tables are created
     - Show that the table is created in SQLLite: `usql db.sqlite` and command `\d` for listing tables
-  - Example of `findAllPersons`
-  - Example of `addPerson`
+  - Example of `findAllCountries`
+  - Example of `addCountry`
     - Show in `usql` how rows are added to the database `SELECT * from persons;`
   - Examples of other database queries
-  - Implementation of methods `findPersonsInAgeRange`
+  - Implementation of methods `findCountriesInPopulationRange`
 
     ```java
-    public List<Person> findPersonsInAgeRange(int minAge, int maxAge) {
+    public List<Person> findCountriesInPopulationRange(int minPopulation, int maxPopulation) {
         List<Person> persons = new ArrayList<>();
-        String query = "SELECT * FROM persons WHERE age >= ? AND age <= ?";
+        String query = "SELECT * FROM countries WHERE population >= ? AND population <= ?";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
-            preparedStatement.setInt(1, minAge);
-            preparedStatement.setInt(2, maxAge);
+            preparedStatement.setInt(1, minPopulation);
+            preparedStatement.setInt(2, maxPopulation);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
-                int age = resultSet.getInt("age");
+                String name = resultSet.getString("capital");
+                int population = resultSet.getInt("population");
 
-                persons.add(new Person(id, name, age));
+                persons.add(new Country(id, name, capital, population));
             }
         } catch (SQLException e) {
             e.printStackTrace();

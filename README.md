@@ -37,7 +37,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 6: Database connection with Java (JDBC)
 
-- [PersonDAO](./src/main/java/lesson6/PersonDAO.java) class and [examples](./src/main/java/lesson6/DAOBasics.java)
+- [CountryDAO](./src/main/java/lesson6/CountryDAO.java) class and [examples](./src/main/java/lesson6/DAOBasics.java)
 - [SQL Injection](./src/main/java/lesson6/SQLInjection.java)
 
 ## Lesson 7: Data structures and algorithms

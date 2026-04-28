@@ -1,19 +1,19 @@
 package lesson6;
 
-import lesson6.helpers.Person;
+import lesson6.helpers.Country;
 
 public class SQLInjection {
     public static void main(String[] args) {
-        PersonDAO personDAO = new PersonDAO();
+        CountryDAO countryDAO = new CountryDAO();
 
-        personDAO.deleteAllPersons();
+        countryDAO.deleteAllCountries();
 
-        personDAO.addPerson(new Person("Maija", 25));
-        personDAO.addPerson(new Person("Pekka", 45));
-        personDAO.addPerson(new Person("Kalle", 33));
+        countryDAO.addCountry(new Country("Finland", 5_600_000));
+        countryDAO.addCountry(new Country("Sweden", 10_500_000));
+        countryDAO.addCountry(new Country("Norway", 5_500_000));
 
-        System.out.println("All persons:");
-        personDAO.findAllPersons().forEach(System.out::println);
+        System.out.println("All countries:");
+        countryDAO.findAllCountries().forEach(System.out::println);
 
         /*
          * SQL Injection (https://en.wikipedia.org/wiki/SQL_injection):
@@ -21,12 +21,12 @@ public class SQLInjection {
          * applications, in which malicious SQL statements are inserted into an entry
          * field for execution"
          */
-        String maliciousUserInput = "Pekka";
+        String maliciousUserInput = "Sweden";
         // Let's assume that the maliciousUserInput can be determined by the user
-        // What if maliciousUserInput would have value of "Maija' OR '1' = '1" ?
-        personDAO.deletePersonByNameUNSAFE(maliciousUserInput);
+        // What if maliciousUserInput would have value of "Finland' OR '1' = '1" ?
+        countryDAO.deleteCountryByNameUNSAFE(maliciousUserInput);
 
-        System.out.println("All persons after the malicious operation:");
-        personDAO.findAllPersons().forEach(System.out::println);
+        System.out.println("All countries after the malicious operation:");
+        countryDAO.findAllCountries().forEach(System.out::println);
     }
 }
