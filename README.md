@@ -43,7 +43,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 ## Lesson 7: Data structures and algorithms
 
 - [Simple algorithms and time complexity analysis](./src/main/java/lesson7/AlgorithmTimeComplexity.java)
-- [Performance comparison of different algorithms for the same problem](./src/main/java/lesson7/AlgorithmTimeComplexity.java)
+- [Performance comparison of different algorithms for the same problem](./src/main/java/lesson7/MaximumDifferenceAlgorithm.java)
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
 - [Wordplay exercise solution](./src/main/java/lesson7/wordplay/NamesInDictionary.java)
 - [Expanded Wordplay exercise solution](./src/main/java/lesson7/wordplay/ExpandedNamesInDictionarySolution.java)
