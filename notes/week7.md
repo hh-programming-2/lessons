@@ -20,10 +20,12 @@ https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
   - Constant time
   - Linear time
   - Exponential time
+- Comparison: https://chatgpt.com/share/69fb0e53-2858-8327-adad-0e54139a0eff
 - We use the "big O" notation do describe upper bound of an algorithm's running time in terms of the input size (n)
 - It tells you how the performance of an algorithm scales as the size of the input grows.
-- For example List's `contains` method time complexity is O(n) (linear). In worst case we have to go through each item on the list
-- HashMap's `containsKey` method time complexity is O(1) (constant). We just need to perform two constant time operations, whic are hash code generation and getting item in array index
+- `constains` vs. `containsKey`: https://gist.github.com/Kaltsoon/b7346bcf4556e39d3c697059a7a3e09e
+  - For example List's `contains` method time complexity is O(n) (linear). In worst case we have to go through each item on the list
+  - HashMap's `containsKey` method time complexity is O(1) (constant). We just need to perform two constant time operations, whic are hash code generation and getting item in array index
 - Examples: AlgorithmTimeComplexity.java
   - What does each algorithm do? What is the time complexity of the algorithms?
 - Example: MaximumDifferenceAlgorithm.java
@@ -38,9 +40,11 @@ https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
 - Usually algorithms are described as high level "pseudo code", e.g. https://en.wikipedia.org/wiki/Bubble_sort#Implementation
 - Bubble sort is one famous such algorithm for sorting an array
 - Other sorting algorithms are e.g. merge sort and quick sort. These two are more performant than Bubble sort, but a bit more complicated
+  - https://chatgpt.com/share/69fb0cc0-1a04-832a-b7a0-935fef6de188
 - So there's usually more than one way to solve a problem, some solutions might be much more performant than others
 - It is also quite common that some solutions have "trade-offs", e.g. sacrificing storage space to gain execution speed
 - Example: `BubbleSort.java`
+  - Visualization: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
 
 ## Wordplay exercise
 
