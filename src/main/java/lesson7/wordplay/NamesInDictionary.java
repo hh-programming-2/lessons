@@ -84,8 +84,7 @@ public class NamesInDictionary {
          * In Big-O notation we are estimating how the function grows relative to the
          * input size.
          * Therefore O(3n) can be expressed as O(n), as both grow linearly relative to
-         * the input,
-         * regardless of the constant factor.
+         * the input, regardless of the constant factor.
          */
     }
 }

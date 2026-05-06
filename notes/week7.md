@@ -48,6 +48,8 @@ https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
 
 ## Wordplay exercise
 
+https://github.com/ohjelmointi2/wordplay-exercise
+
 - Let's have a look the Wordplay exercise which demontstrates ways to measure code perfomance and some an exercise to practice implementing a performant solution to a problem
 - In the first part we have a performance comparison between ArrayList's and LinkedList's operations
 - In the second part we have a problem where we need to implement a performant solution. The key in the second part is to use a data structure, which provides perfomant operations for what we need to solve the problem
