@@ -40,7 +40,8 @@ https://github.com/hh-programming-2/sql-databases-Kaltsoon-1
 - Usually algorithms are described as high level "pseudo code", e.g. https://en.wikipedia.org/wiki/Bubble_sort#Implementation
 - Bubble sort is one famous such algorithm for sorting an array
 - Other sorting algorithms are e.g. merge sort and quick sort. These two are more performant than Bubble sort, but a bit more complicated
-  - https://chatgpt.com/share/69fb0cc0-1a04-832a-b7a0-935fef6de188
+  - https://en.wikipedia.org/wiki/Sorting_algorithm
+  - https://chatgpt.com/share/6a041c4f-3574-832f-b211-8d8e1c13d71c
 - So there's usually more than one way to solve a problem, some solutions might be much more performant than others
 - It is also quite common that some solutions have "trade-offs", e.g. sacrificing storage space to gain execution speed
 - Example: `BubbleSort.java`

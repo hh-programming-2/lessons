@@ -5,12 +5,14 @@
 https://github.com/hh-programming-2/sorting-and-filtering-Kaltsoon-1
 
 - `Sorting` class:
+  - `sortUsersByRegistrationDate`: sorting with streams
   - `sortPostsByPublishedDate` method:
     - In this method, we needed to implement a sort algorithm ourselves to do the sorting
-    - Possible algorithms:
+    - Possible algorithms https://en.wikipedia.org/wiki/Sorting_algorithm:
       - Bubble sort: O(n^2) worst case
       - Quick sort: O(n^2) worst case (e.g. already sorted array and pivot as first elemenet), but O(n * log(n)) average
       - Merge sort: O(n * log(n)) worst case
+      - https://chatgpt.com/share/6a041c4f-3574-832f-b211-8d8e1c13d71c
     - Model solution uses the Quick sort algorithm:
       - Quick sort is an example of recursive approach where the method is calling itself to solve the problem
       - In quick sort we choose a pivot item from the list and split the original list into two new lists: left list contains items less than pivot and right list contains items greater than pivot
@@ -48,7 +50,7 @@ https://github.com/hh-programming-2/sorting-and-filtering-Kaltsoon-1
 ### Concurrency and threads
 
 - The operations, e.g. arithmetic operations are performed on the computer's central processing unit (CPU)
-- CPU's commonly have multiple cores, e.g. my laptop's CPU has 10 cores
+- CPU's commonly have multiple cores, e.g. my laptop's CPU has 16 cores
 - Each program's operation is performed in one of the core's of the CPU
 - By default the whole program is executed on a single core, meaning that the operations executed sequential, one after another
 - For example if we need to call two methods A and B, where execution time of A is 2 seconds and execution time of B is 3 seconds, the total execution time is 5 seconds
@@ -57,7 +59,7 @@ https://github.com/hh-programming-2/sorting-and-filtering-Kaltsoon-1
 - `SimpleThreadExample` class:
   - A Java program is always executed in main thread
   - The main thread can spawn multiple child threads, which can perform any kind of computation
-  - We can define the child thread's operation using a lambda function like in `backgroundTask`
+  - We can create the child thread's operation using a lambda function like in `backgroundTask`
   - A `Thread` object can be created using the lambda function and started by calling its `start` method
   - Starting the child thread doesn't block the main thread
   - The main thread continuous immediately after calling the `start` method, no matter how time consuming the child thread's computation is
