@@ -2,7 +2,7 @@ package lesson4;
 
 /**
  * This example illustrates the object-oriented programming concepts of
- * inheritance, super class and instanceof keywords.
+ * inheritance, super class, and instanceof keywords.
  */
 public class VehicleInheritance {
     public static void main(String[] args) {
@@ -23,7 +23,10 @@ public class VehicleInheritance {
         myCar.accelerate(50);
         myBike.accelerate(5);
 
-        // The isFasterThan method accepts any class which inherits the Vehicle class
+        // Note that we can create an instance of the superclass as well
+        Vechicle basicVehicle = new Vehicle(1);
+
+        // The isFasterThan method accepts any class that inherits the Vehicle class
         System.out.println("Bike is faster?: " + isFasterThan(myBike, myCar));
 
         inspectVehicle(myCar);
@@ -35,9 +38,9 @@ public class VehicleInheritance {
     }
 
     public static void inspectVehicle(Vehicle vehicle) {
-        // Is this specific vehicle object instance of the Car class?
+        // Is this specific vehicle object an instance of the Car class?
         if (vehicle instanceof Car) {
-            // We checked that vehicle is a Car object, safe to cast it
+            // We checked that the vehicle is a Car object, safe to cast it
             Car car = (Car) vehicle;
             System.out.println("It has four wheels, this vehicle is car");
             car.honk();
@@ -86,27 +89,27 @@ class Vehicle {
         this.speed = newSpeed;
     }
 
-    // Protected methods are only visible to the super class and sub classes
+    // Protected methods are only visible to the superclass and subclasses
     protected boolean isMoving() {
         return speed > 0;
     }
 }
 
-// Sub class. Car is a vehicle, but it also has a model and is can honk
+//Subclass. A car is a vehicle, but it also has a model and can honk
 class Car extends Vehicle {
-    // Sub classes can have their own attributes
+    //Subclasses can have their own attributes
     private String model;
 
     public Car(String model, int speed) {
         // Call the super class constructor and provide its parameters
         super(speed);
-        // Set car specific attributes
+        // Set car-specific attributes
         this.model = model;
     }
 
     // Sub classes can have their own methods
     public void honk() {
-        // We can call a protected method from a sub class
+        // We can call a protected method from a subclass
         if (this.isMoving()) {
             System.out.println(model + " is honking: Beep beep!");
         } else {
@@ -116,8 +119,8 @@ class Car extends Vehicle {
 }
 
 /**
- * Sub class. Bicycle is a vehicle, but it halso might have a bell and it can
- * ring its bell. Bicycle can't accelarate above 20 km/h.
+ * Subclass. A bicycle is a vehicle, but it also might have a bell, and it can
+ * ring its bell. The bicycle can't accelerate above 20 km/h.
  */
 class Bicycle extends Vehicle {
     private boolean hasBell;
@@ -136,9 +139,9 @@ class Bicycle extends Vehicle {
     }
 
     /**
-     * We can override methods of the super class. The @Override annotation is an
+     * We can override methods of the superclass. The @Override annotation is an
      * explicit way to express the desire to provide an implementation for an
-     * upper-level method. It helps e.g. to spot typos at compilation time.
+     * upper-level method. It helps, e.g., to spot typos at compilation time.
      */
     @Override
     public void accelerate(int increase) {
