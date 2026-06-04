@@ -35,6 +35,8 @@ public class ShapeInterface {
 
 // The Shape interface specifies common methods for all shapes (circle, rectangle, triangle, etc.)
 interface Shape {
+    // Note that interfaces don't have attributes or a constructor!
+    
     // Class that implements this Shape interface needs to provide implementation for ALL of its methods!
     double calculateArea();
     double calculatePerimeter();
