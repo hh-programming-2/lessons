@@ -8,6 +8,8 @@ public class ShapeInterface {
     public static void main(String[] args) {
         Shape circle = new Circle(5.0);
         Shape rectangle = new Rectangle(4.0, 6.0);
+        // Note that we can't create an instance of an interface!
+        // Shape randomShape = new Shape();
 
         System.out.println("Circle area: " + circle.calculateArea());
         System.out.println("Rectangle area: " + rectangle.calculateArea());
@@ -20,6 +22,8 @@ public class ShapeInterface {
         System.out.println("Total perimeter: " + totalPerimeter(circle, rectangle));
     }
 
+    // We don't need to know the exact class of the shape; it is enough that it implements the Shape interface
+    // => The method becomes much more reusable in the code
     public static boolean isLargerThan(Shape a, Shape b) {
         return a.calculateArea() > b.calculateArea();
     }
@@ -29,7 +33,11 @@ public class ShapeInterface {
     }
 }
 
+// The Shape interface specifies common methods for all shapes (circle, rectangle, triangle, etc.)
 interface Shape {
+    // Note that interfaces don't have attributes or a constructor!
+    
+    // Class that implements this Shape interface needs to provide implementation for ALL of its methods!
     double calculateArea();
     double calculatePerimeter();
 }
@@ -56,7 +64,7 @@ class Circle implements Shape {
         return "Radius: " + radius;
     }
 
-    // Classes that implement a interface can have methods of their own
+    // Classes that implement an interface can have methods of their own
     public double getDiameter() {
         return 2 * radius;
     }
