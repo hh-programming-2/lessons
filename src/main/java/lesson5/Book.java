@@ -1,4 +1,4 @@
-package lesson5.helpers;
+package lesson5;
 
 /**
  * Records are like simple classes, with attributes and automatically
@@ -7,5 +7,9 @@ package lesson5.helpers;
  * 
  * Further reading: https://www.baeldung.com/java-record-keyword
  */
-public record Person(String name, int age) {
+public record Book(String title, String author, int pages) {
+    // We can define methods for records as well
+    public boolean isLongerThan(Book other) {
+        return this.pages() > other.pages(); 
+    }
 }

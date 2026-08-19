@@ -4,7 +4,10 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 1: Recap
 
-- [Recap examples](./src/main/java/lesson1/Lesson1.java)
+- Control statements: [ControlStatements](./src/main/java/lesson1/ControlStatements.java)
+- Strings: [Strings](./src/main/java/lesson1/Strings.java)
+- Arrays and lists: [ArraysAndLists](./src/main/java/lesson1//ArraysAndLists.java)
+- Classes and objects: [ClassesAndObjects](./src/main/java/lesson1/ClassesAndObjects.java)
 
 ## Lesson 2: Map
 
@@ -16,24 +19,24 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 - Unit testing basics with jUnit: [Calculator](./src/main/java/lesson3/Calculator.java) class with [CalculatorTest](./src/test/java/lesson3/CalculatorTest.java) test class
 - Unit testing a class: [ShoppingCart](./src/main/java/lesson3/ShoppingCart.java) class with [ShoppingCartTest](./src/test/java/lesson3/ShoppingCartTest.java) test class
-- Integration testing: [DiscountShoppingCart](./src/main/java/lesson3/DiscountShoppingCart.java) and [DiscountShoppingCartApp](./src/main/java/lesson3/DiscountShoppingCartApp.java) with [DiscountShoppingCartTest](./src/test/java/lesson3/DiscountShoppingCartTest.java) and [DiscountShoppingCartTestWithMockito](./src/test/java/lesson3/DiscountShoppingCartTestWithMockito.java) test classes
+- ⭐ Bonus: Integration testing: [DiscountShoppingCart](./src/main/java/lesson3/DiscountShoppingCart.java) and [DiscountShoppingCartApp](./src/main/java/lesson3/DiscountShoppingCartApp.java) with [DiscountShoppingCartTest](./src/test/java/lesson3/DiscountShoppingCartTest.java) and [DiscountShoppingCartTestWithMockito](./src/test/java/lesson3/DiscountShoppingCartTestWithMockito.java) test classes
 
 ## Lesson 4: Object modelling, inheritance, and interfaces
 
 - Implementing our own interface: [Shape interface example](./src/main/java/lesson4/ShapeInterface.java)
 - Using Java's ready-made interfaces: [Comparable interface](./src/main/java/lesson4/SortingCourses.java)
-- Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
 - [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
-- Using generic methods to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
+- Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
+- ⭐ Bonus: Using generic methods to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
 
 ## Lesson 5: Streams, lambdas, and optionals
 
 - [Imperative and declarative programming](./src/main/java/lesson5/ImperativeDeclarative.java)
 - [Lambda expressions](./src/main/java/lesson5/FunctionalCalculator.java)
 - [Optional examples](./src/main/java/lesson5/OptionalExamples.java)
-- [Stream basics](https://github.com/hh-programming-2/lessons/blob/lesson5/src/main/java/lesson5/StreamBasics.java)
+- [Stream basics](./src/main/java/lesson5/StreamBasics.java)
 - [Stream examples](./src/main/java/lesson5/StreamExamples.java)
-- [Records](./src/main/java/lesson5/helpers/Person.java)
+- ⭐ Bonus: [Records](./src/main/java/lesson5/helpers/Person.java)
 
 ## Lesson 6: Database connection with Java (JDBC)
 
@@ -46,7 +49,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Performance comparison of different algorithms for the same problem](./src/main/java/lesson7/MaximumDifferenceAlgorithm.java)
 - [Bubble sort](./src/main/java/lesson7/BubbleSort.java)
 - [Wordplay exercise solution](./src/main/java/lesson7/wordplay/NamesInDictionary.java)
-- [Expanded Wordplay exercise solution](./src/main/java/lesson7/wordplay/ExpandedNamesInDictionarySolution.java)
+- ⭐ Bonus: [Expanded Wordplay exercise solution](./src/main/java/lesson7/wordplay/ExpandedNamesInDictionarySolution.java)
 
 ## Lesson 8: Threads and recursion
 

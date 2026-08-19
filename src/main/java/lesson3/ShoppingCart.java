@@ -8,13 +8,12 @@ public class ShoppingCart {
     private Map<String, Double> items;
 
     public ShoppingCart() {
-        this.items = new HashMap<>();
+        items = new HashMap<>();
     }
 
     // Gets the price of the given item
     public Double getPrice(String itemName) {
-        // TODO
-        return null;
+        return items.get(itemName);
     }
 
     /*
@@ -24,8 +23,7 @@ public class ShoppingCart {
      * otherwise.
      */
     public boolean addItem(String itemName, double price) {
-        // TODO
-        return false;
+        return items.putIfAbsent(itemName, price) == null;
     }
 
     /*
@@ -33,7 +31,13 @@ public class ShoppingCart {
      * Buying more than 3 items comes with 50% discount of the total price.
      */
     public double calculateTotal() {
-        // TODO
-        return -1;
+        double total = 0;
+        for (Double price : items.values()) {
+            total += price;
+        }
+        if (items.size() > 3) {
+            return total / 2;
+        }
+        return total;
     }
 }

@@ -3,47 +3,45 @@ package lesson5;
 import java.util.List;
 import java.util.Optional;
 
-import lesson5.helpers.City;
-
 /**
  * The purpose of this example is to demonstrate usage of the Optional object.
  */
 public class OptionalExamples {
     public static void main(String[] args) {
-        List<City> cities = List.of(
-                new City("Helsinki", 500_000),
-                new City("Tampere", 200_000),
-                new City("Pori", 70_000));
+        List<Book> books = List.of(
+                new Book("The Hobbit", "J.R.R. Tolkien", 310),
+                new Book("Dune", "Frank Herbert", 412),
+                new Book("Foundation", "Isaac Asimov", 255));
 
-        City helsinki = findByName(cities, "Helsinki");
-        System.out.println("Population of Helsinki: " + helsinki.getPopulation());
+        Book theHobbit = findByTitle(books, "The Hobbit");
+        System.out.println("Author of The Hobbit: " + theHobbit.author());
 
-        City turku = findByName(cities, "Turku");
-        // What's the problem here?
-        System.out.println("Population of Turku: " + turku.getPopulation());
+        Book eastOfEden = findByTitle(books, "East of eden");
+        // What's the problem here? The method can return null, which must be checked before use.
+        // System.out.println("Author of East of eden: " + eastOfEden.author());
 
-        // Optional object, either contains City object or is empty
-        Optional<City> maybeTurku = maybeFindByName(cities, "Turku");
+        // Optional object, either contains a Book object or is empty
+        Optional<Book> maybeBook = maybeFindByTitle(books, "East of eden");
 
         // Optional communicates the possibility of a null (or "empty") value
-        if (maybeTurku.isPresent()) {
-            System.out.println("Population of Turku: " + maybeTurku.get().getPopulation());
+        if (maybeBook.isPresent()) {
+            System.out.println("Pages in the book: " + maybeBook.get().pages());
         }
 
-        int populationOfTurku = maybeTurku
-                .map((city) -> city.getPopulation())
+        int pagesOfBook = maybeBook
+                .map(book -> book.pages())
                 .orElse(0);
 
-        System.out.println("Population of Turku: " + populationOfTurku);
+        System.out.println("Pages in the book: " + pagesOfBook);
     }
 
     /*
-     * First implementation: return a City object if found, otherwise return null
+     * First implementation: return a Book if found, otherwise return null
      */
-    private static City findByName(List<City> cities, String cityName) {
-        for (City city : cities) {
-            if (city.getName().equals(cityName)) {
-                return city;
+    private static Book findByTitle(List<Book> books, String title) {
+        for (Book book : books) {
+            if (book.title().equals(title)) {
+                return book;
             }
         }
 
@@ -54,11 +52,11 @@ public class OptionalExamples {
     /*
      * Second implementation: return an Optional object
      */
-    private static Optional<City> maybeFindByName(List<City> cities, String cityName) {
-        for (City city : cities) {
-            if (city.getName().equals(cityName)) {
+    private static Optional<Book> maybeFindByTitle(List<Book> books, String title) {
+        for (Book book : books) {
+            if (book.title().equals(title)) {
                 // Return Optional with a value
-                return Optional.of(city);
+                return Optional.of(book);
             }
         }
 

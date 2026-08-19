@@ -1,12 +1,8 @@
 package lesson5;
 
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import lesson5.helpers.City;
 
 public class StreamBasics {
 
@@ -29,28 +25,49 @@ public class StreamBasics {
 
         System.out.println("Squares of numbers: " + squaresOfNumbers);
 
-        List<City> cities = List.of(
-                new City("Helsinki", 500_000),
-                new City("Tampere", 200_000),
-                new City("Pori", 70_000));
+        List<Book> books = List.of(
+                // title, author, pages
+                new Book("The Hobbit", "J.R.R. Tolkien", 310),
+                new Book("Dune", "Frank Herbert", 412),
+                new Book("War and Peace", "Leo Tolstoy", 1225),
+                new Book("War of the Worlds", "H.G. Wells", 287),
+                new Book("Foundation", "Isaac Asimov", 255));
 
         // Example 3. Using multiple stream operations
-        // to get names of cities with population under 500 000
-        List<String> cityNames = cities.stream()
-                .filter(city -> city.getPopulation() < 500_000)
-                // This is a method reference, same as lambda city -> city.getName()
-                .map(City::getName)
+        // to get titles of books with fewer than 500 pages
+        List<String> shortBookTitles = books.stream()
+                .filter(book -> book.pages() < 500)
+                .map(book -> book.title())
                 .toList();
 
-        System.out.println("City names with population under 500 000: " + cityNames);
+        System.out.println("Book titles with fewer than 500 pages: " + shortBookTitles);
 
         // Example 4: Reusing streams
+        // Get a list of long book titles
+        List<String> longBookTitles = getLongBookStream(books)
+                .map(book -> book.title())
+                .toList();
 
-        // TODO: Create a stream of large cities (population over 100 000)
-        // 1) Get list of names of large cities
-        // 2) Get list of populations of large cities
+        // Get list of long book pages
+        List<Integer> longBookPageCounts = getLongBookStream(books)
+                .map(book -> book.pages())
+                .toList();
 
-        // Example 5. Using a stream and lambda function to find the maximum number
+        System.out.println("Titles of books with more than 300 pages: " + longBookTitles);
+        System.out.println("Page counts of books with more than 300 pages: " + longBookPageCounts);
+
+        // Example 5. Collecting streams
+        long booksCount = books.stream()
+                .filter(book -> book.title().startsWith("War"))
+                // count collects the number of items in the stream
+                .count();
+
+        int totalPages = books.stream()
+                // We need to map the stream values to int or double to collect the sum
+                .mapToInt(book -> book.pages())
+                // sum collects the sum of values in the stream
+                .sum();
+
         int largestNumber = numbers.stream()
                 // max collects the maximum value in the stream using a comparator
                 .max((numA, numB) -> Integer.compare(numA, numB))
@@ -58,41 +75,39 @@ public class StreamBasics {
                 // Optional type
                 .orElse(0);
 
+        System.out.println("Book titles starting with word 'War': " + booksCount);
+        System.out.println("Total pages: " + totalPages);
         System.out.println("Largest number: " + largestNumber);
 
-        // Exampel 6. Comparison of for loop ja stream implementations
-        System.out.println("Sum using for loop = " + countCitiesPopulationUsingForLoop(cities));
-        System.out.println("Sum using stream = " + countCititesPopulationUsingStream(cities));
-
-        // Example 7. Using a stream and lambda function to calculate the sum of numbers
-        int sum = numbers.stream()
-                // Reducer is a function, which reduces the stream into a single value
-                // This could also be written as reduce(0, Integer::sum)
-                .reduce(0, (total, current) -> total + current);
-
-        System.out.println("Sum of numbers: " + sum);
+        // Example 6. Comparison of for loop ja stream implementations
+        System.out.println("Pages in books over 300 pages using for loop = " + sumBookPagesUsingForLoop(books));
+        System.out.println("Pages in books over 300 pages using stream = " + sumBookPagesUsingStream(books));
     }
 
-    private static int countCitiesPopulationUsingForLoop(List<City> cities) {
+    private static int sumBookPagesUsingForLoop(List<Book> books) {
         int sum = 0;
-        for (City city : cities) {
-            int population = city.getPopulation();
-            if (population > 100_000) {
-                sum += population;
+        for (Book book : books) {
+            if (book.pages() > 300) {
+                sum += book.pages();
             }
         }
         return sum;
     }
 
-    private static int countCititesPopulationUsingStream(List<City> cities) {
+    private static int sumBookPagesUsingStream(List<Book> books) {
         // The types of the lambda functions are displayed below
         // (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
-        // Predicate<Boolean> isLargeCity = city -> city.getPopulation() > 100_000;
-        // ToIntFunction<City> toPopulation = City::getPopulation;
-        return cities.stream()
-                .filter(city -> city.getPopulation() > 100_000)
-                // This is a method reference, same as lambda city -> city.getPopulation()
-                .mapToInt(City::getPopulation)
+        // Predicate<Book> isLongBook = book -> book.pages() > 300;
+        // ToIntFunction<Book> toPageCount = Book::pages;
+        return books.stream()
+                .filter(book -> book.pages() > 300)
+                // This is a method reference, same as lambda book -> book.pages()
+                .mapToInt(Book::pages)
                 .sum();
+    }
+
+    // Create a stream of long books to reuse it
+    private static Stream<Book> getLongBookStream(List<Book> books) {
+        return books.stream().filter(book -> book.pages() > 300);
     }
 }

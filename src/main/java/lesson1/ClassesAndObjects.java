@@ -1,0 +1,21 @@
+package lesson1;
+
+public class ClassesAndObjects {
+    public static void main(String[] args) {
+        // Example of objects initialized from the Player class
+        Player mcdavid = new Player("Connor McDavid", 12, 7);
+        Player laine = new Player("Patrik Laine", 18, 4);
+
+        System.out.println(mcdavid.getName() + ": " + mcdavid.getGoals() + " + "
+                + mcdavid.getAssists() + " = " + mcdavid.getPoints());
+
+        System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
+                + laine.getAssists() + " = " + laine.getPoints());
+
+        laine.setGoals(19);
+        laine.setAssists(6);
+
+        System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
+                + laine.getAssists() + " = " + laine.getPoints());
+    }
+}

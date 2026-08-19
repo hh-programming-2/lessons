@@ -1,6 +1,7 @@
 package lesson7;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -11,13 +12,27 @@ import java.util.Random;
 */
 public class MaximumDifferenceAlgorithm {
     public static Integer getMaximumDifferenceA(List<Integer> numbers) {
-        // TODO
-        return -1;
+        if (numbers.isEmpty()) {
+            return -1;
+        }
+
+        List<Integer> sortedNumbers = new ArrayList<>(numbers);
+        Collections.sort(sortedNumbers);
+        return sortedNumbers.get(sortedNumbers.size() - 1) - sortedNumbers.get(0);
     }
 
     public static Integer getMaximumDifferenceB(List<Integer> numbers) {
-        // TODO
-        return -1;
+        if (numbers.isEmpty()) {
+            return -1;
+        }
+
+        int min = numbers.get(0);
+        int max = numbers.get(0);
+        for (int number : numbers) {
+            min = Math.min(min, number);
+            max = Math.max(max, number);
+        }
+        return max - min;
     }
 
     public static void main(String[] args) {

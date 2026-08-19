@@ -11,8 +11,8 @@ import java.util.LinkedList;
 public class SortingCourses {
     public static void main(final String[] args) {
         List<Course> courses = new LinkedList<>();
-        Course sql = new Course("SQL Databases", 10);
-        Course python = new Course("Python Programming", 5);
+        Course sql = new Course("Algorithms", 5);
+        Course python = new Course("Software Development Project 2", 10);
         Course noSql = new Course("NoSQL Databases", 2);
 
         // The compareteTo method compares credits attributes
@@ -30,7 +30,7 @@ public class SortingCourses {
 
 /**
  * Let's add our own Course class to the example and see how we can sort a
- * list of Course objects based on the number of credits.
+ * list of Course objects based on the course name or number or credits.
  * 
  * The class implements the Comparable interface, so Course can be
  * sorted relative to each other. In this case, the sorting is done based on the
@@ -68,7 +68,13 @@ class Course implements Comparable<Course> {
      */
     @Override
     public int compareTo(Course other) {
-        // We can simply use the compareTo implementation of Integer class here
-        return this.name.compareTo(other.name);
+        // We can simply use the compareTo implementation of String class here
+        // Sort by name alphabetically:
+        return this.name.compareTo(other.name); 
+        // Or in case of Integer or double, we can use the compare method
+        // Sort by credits ascending:
+        // return Integer.compare(this.credits, other.credits);
+        // Sort by credits descending: 
+        // return Integer.compare(other.credits, this.credits);
     }
 }

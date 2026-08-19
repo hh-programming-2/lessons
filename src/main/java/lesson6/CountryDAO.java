@@ -165,9 +165,26 @@ public class CountryDAO {
     }
 
     public List<Country> findCountriesInPopulationRange(int minPopulation, int maxPopulation) {
-        // TODO: Find countries that have population larger or equal to minPopulation,
-        // and less than or equal to maxPopulation
-        return List.of();
+        List<Country> countries = new ArrayList<>();
+        String query = "SELECT * FROM countries WHERE population >= ? AND population <= ?";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, minPopulation);
+            preparedStatement.setInt(2, maxPopulation);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    countries.add(new Country(
+                            resultSet.getInt("id"),
+                            resultSet.getString("name"),
+                            resultSet.getInt("population")));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return countries;
     }
 
     public void deleteCountryByNameUNSAFE(String name) {
