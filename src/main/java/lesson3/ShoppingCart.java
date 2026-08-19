@@ -8,7 +8,7 @@ public class ShoppingCart {
     private Map<String, Double> items;
 
     public ShoppingCart() {
-        this.items = new HashMap<>();
+        // TODO
     }
 
     // Gets the price of the given item

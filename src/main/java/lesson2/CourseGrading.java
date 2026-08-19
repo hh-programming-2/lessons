@@ -32,4 +32,10 @@ public class CourseGrading {
         // TODO
         return 0;
     }
+
+    /*
+     * Returns the student number of the student with the highest grade.
+     */
+
+    // TODO
 }
