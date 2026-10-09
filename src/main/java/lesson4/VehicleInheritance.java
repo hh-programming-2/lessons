@@ -24,7 +24,7 @@ public class VehicleInheritance {
         myBike.accelerate(5);
 
         // Note that we can create an instance of the superclass as well
-        Vechicle basicVehicle = new Vehicle(1);
+        Vehicle basicVehicle = new Vehicle(1);
 
         // The isFasterThan method accepts any class that inherits the Vehicle class
         System.out.println("Bike is faster?: " + isFasterThan(myBike, myCar));

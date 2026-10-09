@@ -4,7 +4,10 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 1: Recap
 
-- [Recap examples](./src/main/java/lesson1/Lesson1.java)
+- Control statements: [ControlStatements](./src/main/java/lesson1/ControlStatements.java)
+- Strings: [Strings](./src/main/java/lesson1/Strings.java)
+- Arrays and lists: [ArraysAndLists](./src/main/java/lesson1//ArraysAndLists.java)
+- Classes and objects: [ClassesAndObjects](./src/main/java/lesson1/ClassesAndObjects.java)
 
 ## Lesson 2: Map
 
