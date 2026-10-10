@@ -8,14 +8,6 @@ public class ArraysAndLists {
         // Examples of an array
         int[] numbersArray = { 1, 9, 4, 12, 5, 8 };
 
-        // Examples of loops
-        System.out.println("Numbers from 0 to 4:");
-        int number = 0;
-        while (number < 5) {
-            System.out.println(number);
-            number++;
-        }
-
         System.out.println("All numbers:");
         
         for (int i = 0; i < numbersArray.length; i++) {
