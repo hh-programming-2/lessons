@@ -54,8 +54,8 @@ public class ControlStatements {
             number++;
         }
 
-        System.out.println("Even numbers from 1 to 10:");
-        for(int i=1; i<=10; i+=2) {
+        System.out.println("Even numbers from 0 to 10:");
+        for(int i=0; i<=10; i+=2) {
             System.out.println(i);
         }
         
@@ -72,7 +72,7 @@ public class ControlStatements {
             int result = divide(10, 0);
             System.out.println("Result: " + result);
         } catch (ArithmeticException e) {
-            System.err.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
