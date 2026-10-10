@@ -9,22 +9,19 @@ public class ArraysAndLists {
         int[] numbersArray = { 1, 9, 4, 12, 5, 8 };
 
         System.out.println("All numbers:");
-        
         for (int i = 0; i < numbersArray.length; i++) {
             System.out.println(numbersArray[i]);
         }
 
         System.out.println("Numbers backwards:");
-        
         for (int i = numbersArray.length - 1; i >= 0; i--) {
             System.out.println(numbersArray[i]);
         }
         
         // Example of for each loop
-        System.out.println("All numbers with for each loop:");
-        
-        for (int num : numbersArray) {
-            System.out.println(num);
+        System.out.println("All numbers with for each loop:");   
+        for (int number : numbersArray) {
+            System.out.println(number);
         }
 
         // Example of a list
@@ -36,7 +33,6 @@ public class ArraysAndLists {
         words.remove(0);
 
         System.out.println("All words:");
-
         for (String word : words) {
             System.out.println(word);
         }
