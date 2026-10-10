@@ -11,7 +11,7 @@ public class ClassesAndObjects {
         System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
                 + laine.getAssists() + " = " + laine.getPoints());
 
-        mcdavid.setGoals(14);
+        laine.setGoals(19);
         laine.setAssists(6);
 
         System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
