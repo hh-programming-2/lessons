@@ -10,7 +10,7 @@ public class ControlStatements {
         boolean isJavaFun = true;
         boolean isBestGrade = grade == 5;
 
-        // Examples of control structures
+        // Examples of conditional statements
         if (isJavaFun) {
             System.out.println("Java is fun!");
         } else if (grade == 0) {
@@ -18,8 +18,6 @@ public class ControlStatements {
         } else {
             System.out.println("Java is not fun?");
         }
-
-        // TODO: check if message variable matches "Hello world!"?
 
         int dayOfWeek = 3;
 
@@ -36,19 +34,16 @@ public class ControlStatements {
             case 4:
                 System.out.println("Thursday");
                 break;
-            // TODO: handle Friday
-            // TODO: handle weekend
+            case 5:
+                System.out.println("Friday");
+                break;
             default:
                 System.out.println("Some other day");
         }
 
-        int x = 5;
-        // Example of ternary operator
-        int y = x > 0 ? 1 : -1;
-        System.out.println("y: " + y);
-
         int age = 19;
-        String ageDescription = ""; // TODO: "You are a minor" or "You are an adult"
+        // Example of ? ternary operator
+        String ageDescription = age < 18 ? "Minor" : "Adult";
         System.out.println("Age description: " + ageDescription);
 
         // Examples of methods
