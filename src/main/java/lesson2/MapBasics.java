@@ -44,7 +44,8 @@ public class MapBasics {
 
         System.out.println("1. postalCodes:" + postalCodes);
         System.out.println("1. Size of the map: " + postalCodes.size());
-        System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // prints "Helsinki"
+        System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // "Helsinki"
+        System.out.println("1. Missing key: " + postalCodes.get("007")); // null
 
         // Handling numbers in maps
         Map<String, Integer> credits = new HashMap<String, Integer>();
