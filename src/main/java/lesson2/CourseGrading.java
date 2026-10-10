@@ -26,7 +26,7 @@ public class CourseGrading {
     }
 
     /*
-     * Returns the average grade among all the students.
+     * Returns the average grade of the students.
      */
     public double getAverageGrade() {
         // TODO
@@ -34,8 +34,10 @@ public class CourseGrading {
     }
 
     /*
-     * Returns the student number of the student with the highest grade.
+     * Returns a list of students with a passimg grade.
      */
-
-    // TODO
+    public List<String> getPassingStudents() {
+        // TODO
+        return null;
+    }
 }
