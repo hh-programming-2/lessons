@@ -46,6 +46,19 @@ public class ControlStatements {
         String ageDescription = age < 18 ? "Minor" : "Adult";
         System.out.println("Age description: " + ageDescription);
 
+        // Examples of loops
+        System.out.println("Numbers from 0 to 4:");
+        int number = 0;
+        while (number < 5) {
+            System.out.println(number);
+            number++;
+        }
+
+        System.out.println("Even numbers from 1 to 10:");
+        for(int i=1; i<=10; i+=2) {
+            System.out.println(i);
+        }
+        
         // Examples of methods
         int sum = add(3, 5);
         System.out.println("Sum: " + sum);
