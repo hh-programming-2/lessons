@@ -22,9 +22,6 @@ public class ArraysAndLists {
             System.out.println(numbersArray[i]);
         }
 
-        System.out.println("Even numbers:");
-        // TODO: print even numbers in the array
-
         System.out.println("Numbers backwards:");
         
         for (int i = numbersArray.length - 1; i >= 0; i--) {
@@ -38,11 +35,10 @@ public class ArraysAndLists {
             System.out.println(num);
         }
 
-        // TODO: sum of array values
-
         // Example of a list
         List<String> words = new ArrayList<>();
         words.add("hello");
+        words.add("hej");
         words.add("moi");
         words.add("salut");
         words.remove(0);
