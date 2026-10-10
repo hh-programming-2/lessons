@@ -1,5 +1,7 @@
 package lesson2;
 
+import java.util.List;
+
 /*
 * This class should store student's grades from a course into a hash map in
 * which the key is the student number and value the grade (between 0-5).

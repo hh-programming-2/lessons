@@ -1,12 +1,10 @@
 package lesson2;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 // This file contains examples of using the Map data structure
 public class MapBasics {
@@ -30,92 +28,107 @@ public class MapBasics {
         // ArrayList provides many operations, such as containment check
         namesList.contains("Kalle");
 
-        // HashMap: data structure for storing (key, value) pairs
-        Map<String, String> postalCodes = new HashMap<String, String>();
+        /*
+         * HashMap: data structure for storing (key, value) pairs, e.g. country name
+         * (key) mapping to the capital city (value):
+         * { "Finland" -> "Helsinki", "Sweden" -> "Stockholm", "France" -> "Paris" }
+         */
+
+        // capitalCities is a map with country names (String) as keys and capital cities (String) as values
+        Map<String, String> capitalCities = new HashMap<String, String>();
         // Note that key and value should be an object, not a primitive type (e.g.
         // Integer and not int)!
         // ❌ Map<int, String> badMap = new HashMap<int, String>();
         // ✔️ Map<Integer, String> goodMap = new HashMap<Integer, String>();
 
-        postalCodes.put("00720", "Helsinki");
-        postalCodes.put("90014", "Oulu");
-        postalCodes.put("33720", "Tampere");
-        postalCodes.put("33014", "Tampere");
+        capitalCities.put("Finland", "Helsinki");
+        capitalCities.put("Sweden", "Stockholm");
+        capitalCities.put("France", "Paris");
+        capitalCities.put("Norway", "Oslo");
 
-        System.out.println("1. postalCodes:" + postalCodes);
-        System.out.println("1. Size of the map: " + postalCodes.size());
-        System.out.println("1. Postal code 00710: " + postalCodes.get("00710")); // "Helsinki"
-        System.out.println("1. Missing key: " + postalCodes.get("007")); // null
+        System.out.println("1. capitalCities:" + capitalCities);
+        System.out.println("1. Size of the capitalCities map: " + capitalCities.size());
+        System.out.println("1. Capital city of Finland: " + capitalCities.get("Finland")); // "Helsinki"
 
         // Handling numbers in maps
+        // credits is a map with course codes (String) as keys and credits (Integer) as values
         Map<String, Integer> credits = new HashMap<String, Integer>();
 
         // Adding values for keys
-        credits.put("swd1tn001", 5);
-        credits.put("swd1tn002", 5);
-
+        credits.put("SOF001AS3AE", 5);
+        credits.put("SOF012AS2AE", 2);
+        credits.put("SOF007AS3AE", 10);
+    
         // Getting a value
-        Integer courseCredits = credits.get("swd1tn001");
-        System.out.println("2. Credits swd1tn002: " + courseCredits); // 5
+        Integer programming2Credits = credits.get("SOF001AS3AE");
+        System.out.println("2. Credits of SOF001AS3AE: " + programming2Credits); // 5
 
-        Integer fakeCredits = credits.getOrDefault("fakecourse", 0);
-        System.out.println("2. Credits fakecourse: " + fakeCredits); // 0
+        Integer missingCredits = credits.get("MISSING");
+        System.out.println("2. Credits of MISSING: " + missingCredits); // null
+
+        Integer defaultCredits = credits.getOrDefault("FAKE", 0);
+        System.out.println("2. Credits of FAKE: " + defaultCredits); // 0
 
         // Setting a new value
-        Map<String, String> numbers = new HashMap<>();
-        numbers.put("Uno", "Yksi");
-        numbers.put("Dos", "Zwei");
-        numbers.put("Uno", "Ein"); // replaces the previous value!
-        numbers.putIfAbsent("Dos", "Kaksi"); // doesn't replace anything
-        numbers.replace("Tres", "Drei"); // does not add anything
+        // productPrices is a map with product names (String) as keys and prices (Double) as values
+        Map<String, Double> productPrices = new HashMap<>();
+        productPrices.put("Coffee", 3.49);
+        productPrices.put("Tea", 2.99);
+        productPrices.put("Chips", 1.5);
+        productPrices.put("Milk", 0.99);
 
-        System.out.println("3. Numbers: " + numbers);
+        productPrices.put("Coffee", 3.79); // replaces the previous value!
+        productPrices.putIfAbsent("Tea", 3.25); // doesn't replace anything
+        productPrices.replace("Juice", 4.50); // does not add anything
+
+        System.out.println("3. Product prices: " + productPrices);
 
         // Removing values (remove) and checking existence (containsKey)
-        Map<String, String> countries = new HashMap<>();
-        countries.put("Suomi", "Finland");
-        countries.put("Ruotsi", "Sweden");
-        countries.put("Norja", "Norway");
-        countries.containsKey("Ruotsi"); // true
-        countries.remove("Ruotsi");
-        countries.containsKey("Ruotsi"); // false
+        if (productPrices.containsKey("Tea")) {
+            System.out.println("4. We have tea priced at " + productPrices.get("Tea"));
+        }
 
-        System.out.println("4. Countries:" + countries);
+        productPrices.remove("Tea");
+        productPrices.containsKey("Tea"); // false
+
+        System.out.println("4. Product prices after remove: " + productPrices);
 
         // Setting multiple values for the same key
+        // contryCities is a map with country names (String) as keys and list of cities (List<String>) as values
         Map<String, List<String>> countryCities = new HashMap<>();
 
-        List<String> fi = new ArrayList<String>();
-        fi.add("Helsinki");
-        fi.add("Espoo");
-        fi.add("Vantaa");
+        List<String> citiesOfFinland = new ArrayList<String>();
+        citiesOfFinland.add("Helsinki");
+        citiesOfFinland.add("Espoo");
+        citiesOfFinland.add("Vantaa");
 
-        List<String> sv = new ArrayList<String>();
-        sv.add("Stockholm");
-        sv.add("Visby");
+        List<String> cititesOfSweden = new ArrayList<String>();
+        cititesOfSweden.add("Stockholm");
+        cititesOfSweden.add("Visby");
 
-        countryCities.put("Finland", fi);
-        countryCities.put("Sweden", sv);
+        countryCities.put("Finland", citiesOfFinland);
+        countryCities.put("Sweden", cititesOfSweden);
 
-        System.out.println("5. Citites:" + countryCities);
+        System.out.println("5. Cities of countries:" + countryCities);
+        System.out.println("5. Cities of Sweden: " + countryCities.get("Sweden"));
 
-        fi.add("Tampere");
-        System.out.println("5. Citities including Tampere:" + countryCities);
+        citiesOfFinland.add("Tampere");
+        System.out.println("5. Cities of Finland:" + countryCities.get("Finland"));
 
         // Going through the keys of a map
-        for (String key : numbers.keySet()) {
+        for (String key : productPrices.keySet()) {
             System.out.println("6. key: " + key);
         }
 
         // Go through the values of a map
-        for (String value : numbers.values()) {
+        for (Double value : productPrices.values()) {
             System.out.println("7. value: " + value);
         }
 
         // Go through the key-value pairs of a map
         System.out.println("8. Iterating key-value pairs with for loop:");
 
-        for (Entry<String, String> keyValuePair : numbers.entrySet()) {
+        for (Entry<String, Double> keyValuePair : productPrices.entrySet()) {
             System.out.println("Key: " + keyValuePair.getKey());
             System.out.println("Value: " + keyValuePair.getValue());
         }
@@ -124,7 +137,7 @@ public class MapBasics {
         // lamda function
         System.out.println("9. Iterating key-value pairs with forEach method:");
 
-        numbers.forEach((key, value) -> {
+        productPrices.forEach((key, value) -> {
             System.out.println("Key: " + key);
             System.out.println("Value: " + value);
         });

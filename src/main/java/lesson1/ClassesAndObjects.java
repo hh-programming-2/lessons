@@ -2,6 +2,7 @@ package lesson1;
 
 public class ClassesAndObjects {
     public static void main(String[] args) {
+        // Example of objects initialized from the Player class
         Player mcdavid = new Player("Connor McDavid", 12, 7);
         Player laine = new Player("Patrik Laine", 18, 4);
 
@@ -11,7 +12,7 @@ public class ClassesAndObjects {
         System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
                 + laine.getAssists() + " = " + laine.getPoints());
 
-        mcdavid.setGoals(14);
+        laine.setGoals(19);
         laine.setAssists(6);
 
         System.out.println(laine.getName() + ": " + laine.getGoals() + " + "
