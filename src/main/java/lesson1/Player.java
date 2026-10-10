@@ -35,5 +35,7 @@ public class Player {
         this.assists = assists;
     }
 
-    // TODO: implement getPoints method
+    public int getPoints() {
+        return goals + assists;
+    }
 }
