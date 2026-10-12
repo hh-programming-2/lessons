@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import lesson5.helpers.City;
 
@@ -46,9 +45,21 @@ public class StreamBasics {
 
         // Example 4: Reusing streams
 
-        // TODO: Create a stream of large cities (population over 100 000)
-        // 1) Get list of names of large cities
-        // 2) Get list of populations of large cities
+        Predicate<City> isLargeCity = city -> city.getPopulation() > 100_000;
+        ToIntFunction<City> toPopulation = City::getPopulation;
+
+        List<String> largeCityNames = cities.stream()
+                .filter(isLargeCity)
+                .map(City::getName)
+                .toList();
+        List<Integer> largeCityPopulations = cities.stream()
+                .filter(isLargeCity)
+                .mapToInt(toPopulation)
+                .boxed()
+                .toList();
+
+        System.out.println("Large city names: " + largeCityNames);
+        System.out.println("Large city populations: " + largeCityPopulations);
 
         // Example 5. Using a stream and lambda function to find the maximum number
         int largestNumber = numbers.stream()
