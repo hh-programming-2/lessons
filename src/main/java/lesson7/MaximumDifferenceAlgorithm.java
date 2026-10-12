@@ -11,12 +11,12 @@ import java.util.Random;
 */
 public class MaximumDifferenceAlgorithm {
     public static Integer getMaximumDifferenceA(List<Integer> numbers) {
-        // TODO
+        // TODO: O(nlogn) sorting solution
         return -1;
     }
 
     public static Integer getMaximumDifferenceB(List<Integer> numbers) {
-        // TODO
+        // TODO: O(n) max - min solution
         return -1;
     }
 
