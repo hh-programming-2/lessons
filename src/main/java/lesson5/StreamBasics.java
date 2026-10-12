@@ -2,6 +2,8 @@ package lesson5;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 import lesson5.helpers.City;
 
@@ -41,14 +43,13 @@ public class StreamBasics {
 
         System.out.println("City names with population under 500 000: " + cityNames);
 
-        // Example 4: Reusing filtered stream results
-        List<City> largeCities = cities.stream()
-                .filter(city -> city.getPopulation() > 100_000)
-                .toList();
-        List<String> largeCityNames = largeCities.stream()
+        // Example 4: Reusing a filtered stream pipeline
+        Supplier<Stream<City>> largeCities = () -> cities.stream()
+                .filter(city -> city.getPopulation() > 100_000);
+        List<String> largeCityNames = largeCities.get()
                 .map(City::getName)
                 .toList();
-        List<Integer> largeCityPopulations = largeCities.stream()
+        List<Integer> largeCityPopulations = largeCities.get()
                 .map(City::getPopulation)
                 .toList();
 
