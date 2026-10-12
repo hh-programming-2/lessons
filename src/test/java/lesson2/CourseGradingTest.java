@@ -1,6 +1,7 @@
 package lesson2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.Set;
 
@@ -23,7 +24,7 @@ class CourseGradingTest {
     void returnsNullForUnknownStudentAndZeroAverageWhenEmpty() {
         CourseGrading courseGrading = new CourseGrading();
 
-        assertEquals(null, courseGrading.getStudentGrade("missing"));
+        assertNull(courseGrading.getStudentGrade("missing"));
         assertEquals(0.0, courseGrading.getAverageGrade());
         assertEquals(Set.of(), Set.copyOf(courseGrading.getPassingStudents()));
     }
