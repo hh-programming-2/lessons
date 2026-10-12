@@ -1,7 +1,8 @@
 package lesson2;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -34,19 +35,27 @@ public class CourseGrading {
      * Returns the average grade of the students.
      */
     public double getAverageGrade() {
-        return studentGrades.values().stream()
-                .mapToInt(Integer::intValue)
-                .average()
-                .orElse(0);
+        if (studentGrades.isEmpty()) {
+            return 0;
+        }
+
+        double total = 0;
+        for (Integer grade : studentGrades.values()) {
+            total += grade;
+        }
+        return total / studentGrades.size();
     }
 
     /*
      * Returns a list of students with a passimg grade.
      */
     public List<String> getPassingStudents() {
-        return studentGrades.entrySet().stream()
-                .filter(entry -> entry.getValue() > 0)
-                .map(Map.Entry::getKey)
-                .toList();
+        List<String> passingStudents = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : studentGrades.entrySet()) {
+            if (entry.getValue() > 0) {
+                passingStudents.add(entry.getKey());
+            }
+        }
+        return passingStudents;
     }
 }

@@ -31,7 +31,10 @@ public class ShoppingCart {
      * Buying more than 3 items comes with 50% discount of the total price.
      */
     public double calculateTotal() {
-        double total = items.values().stream().mapToDouble(Double::doubleValue).sum();
+        double total = 0;
+        for (Double price : items.values()) {
+            total += price;
+        }
         return items.size() > 3 ? total / 2 : total;
     }
 }
