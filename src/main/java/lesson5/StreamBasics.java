@@ -44,14 +44,12 @@ public class StreamBasics {
         System.out.println("City names with population under 500 000: " + cityNames);
 
         // Example 4: Reusing a filtered stream pipeline
-        Supplier<Stream<City>> largeCities = () -> cities.stream()
-                .filter(city -> city.getPopulation() > 100_000);
-        List<String> largeCityNames = largeCities.get()
-                .map(City::getName)
-                .toList();
-        List<Integer> largeCityPopulations = largeCities.get()
-                .map(City::getPopulation)
-                .toList();
+        // Create a stream of large cities (population over 100 000)
+        Stream<City> largeCitiesStream = cities.stream().filter(city -> city.getPopulation() > 100_000);
+        // Get list of names of large cities
+        List<String> largeCityNames = largeCitiesStream.map(city -> city.getName()).toList();
+        // Get list of populations of large cities
+        List<Integer> largeCityPopulations = largeCitiesStream.map(city -> city.getPopulation()).toList();
 
         System.out.println("Large city names: " + largeCityNames);
         System.out.println("Large city populations: " + largeCityPopulations);
