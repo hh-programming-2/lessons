@@ -35,6 +35,9 @@ public class ShoppingCart {
         for (Double price : items.values()) {
             total += price;
         }
-        return items.size() > 3 ? total / 2 : total;
+        if (items.size() > 3) {
+            return total / 2;
+        }
+        return total;
     }
 }
