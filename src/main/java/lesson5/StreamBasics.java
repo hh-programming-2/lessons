@@ -1,8 +1,6 @@
 package lesson5;
 
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
 import lesson5.helpers.City;
@@ -43,19 +41,15 @@ public class StreamBasics {
 
         System.out.println("City names with population under 500 000: " + cityNames);
 
-        // Example 4: Reusing streams
-
-        Predicate<City> isLargeCity = city -> city.getPopulation() > 100_000;
-        ToIntFunction<City> toPopulation = City::getPopulation;
-
-        List<String> largeCityNames = cities.stream()
-                .filter(isLargeCity)
+        // Example 4: Reusing filtered stream results
+        List<City> largeCities = cities.stream()
+                .filter(city -> city.getPopulation() > 100_000)
+                .toList();
+        List<String> largeCityNames = largeCities.stream()
                 .map(City::getName)
                 .toList();
-        List<Integer> largeCityPopulations = cities.stream()
-                .filter(isLargeCity)
-                .mapToInt(toPopulation)
-                .boxed()
+        List<Integer> largeCityPopulations = largeCities.stream()
+                .map(City::getPopulation)
                 .toList();
 
         System.out.println("Large city names: " + largeCityNames);
