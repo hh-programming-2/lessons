@@ -1,6 +1,8 @@
 package lesson2;
 
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /*
 * This class should store student's grades from a course into a hash map in
@@ -8,38 +10,43 @@ import java.util.List;
 * For example: { "1234" -> 4, "5678" -> 3, "9876" -> 5 }
 */
 public class CourseGrading {
+    private final Map<String, Integer> studentGrades;
+
     public CourseGrading() {
-        // TODO
+        studentGrades = new HashMap<>();
     }
 
     /*
      * Adds the grade of the given student number.
      */
     public void addStudentGrade(String studentNumber, Integer grade) {
-        // TODO
+        studentGrades.put(studentNumber, grade);
     }
 
     /*
      * Returns the grade of the given student.
      */
     public Integer getStudentGrade(String studentNumber) {
-        // TODO
-        return null;
+        return studentGrades.get(studentNumber);
     }
 
     /*
      * Returns the average grade of the students.
      */
     public double getAverageGrade() {
-        // TODO
-        return 0;
+        return studentGrades.values().stream()
+                .mapToInt(Integer::intValue)
+                .average()
+                .orElse(0);
     }
 
     /*
      * Returns a list of students with a passimg grade.
      */
     public List<String> getPassingStudents() {
-        // TODO
-        return null;
+        return studentGrades.entrySet().stream()
+                .filter(entry -> entry.getValue() > 0)
+                .map(Map.Entry::getKey)
+                .toList();
     }
 }
