@@ -5,15 +5,16 @@ import java.util.Map;
 
 public class ShoppingCart {
     // Item name is key and price is the value, e.g. { "chips" -> 2.5, "milk" -> 0.9 }
-    private Map<String, Double> items;
+     private Map<String, Double> items;
 
     public ShoppingCart() {
-        items = new HashMap<>();
+        this.items = new HashMap<>();
     }
 
     // Gets the price of the given item
     public Double getPrice(String itemName) {
-        return items.get(itemName);
+        // TODO
+        return 0.0;
     }
 
     /*
@@ -23,7 +24,8 @@ public class ShoppingCart {
      * otherwise.
      */
     public boolean addItem(String itemName, double price) {
-        return items.putIfAbsent(itemName, price) == null;
+        // TODO
+        return false;
     }
 
     /*
@@ -31,13 +33,7 @@ public class ShoppingCart {
      * Buying more than 3 items comes with 50% discount of the total price.
      */
     public double calculateTotal() {
-        double total = 0;
-        for (Double price : items.values()) {
-            total += price;
-        }
-        if (items.size() > 3) {
-            return total / 2;
-        }
-        return total;
+        // TODO
+        return 0;
     }
 }

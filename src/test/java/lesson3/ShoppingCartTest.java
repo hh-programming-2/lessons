@@ -15,38 +15,32 @@ public class ShoppingCartTest {
 
     @Test
     void testAddItemAddsNonExistingItem() {
-        assertTrue(cart.addItem("chips", 2.5));
-        assertEquals(2.5, cart.getPrice("chips"));
+        // TODO: adding a NON-EXISTING item should add the item and return true
     }
 
     @Test
     void testAddItemDoesNotAddExistingItem() {
-        cart.addItem("chips", 2.5);
-        assertFalse(cart.addItem("chips", 3.0));
-        assertEquals(2.5, cart.getPrice("chips"));
+        // TODO: adding a EXISTING item should NOT add the item and return false
     }
 
     @Test
     void testCalculateTotalReturnsTotalWithoutDiscountWithThreeItems() {
-        cart.addItem("chips", 2.5);
-        cart.addItem("milk", 0.9);
-        cart.addItem("bread", 1.6);
-
-        assertEquals(5.0, cart.calculateTotal(), 0.001);
+        /*
+         * TODO: calculating the total of a card with three items returns the price
+         * WITHOUT discount
+         */
     }
 
     @Test
     void testCalculateTotalReturnsZeroWhenCartHasNoItems() {
-        assertEquals(0.0, cart.calculateTotal(), 0.001);
+        // TODO: calculating the total of a card WITHOUT items should yield zero
     }
 
     @Test
     void testCalculateTotalReturnsDiscountTotalWhenCartHasFourItems() {
-        cart.addItem("chips", 2.5);
-        cart.addItem("milk", 0.9);
-        cart.addItem("bread", 1.6);
-        cart.addItem("juice", 2.0);
-
-        assertEquals(3.5, cart.calculateTotal(), 0.001);
+        /*
+         * TODO: calculating the total of a card with four items returns the price
+         * WITH discount
+         */
     }
 }
