@@ -2,8 +2,8 @@ package lesson4;
 
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * The purpose of this example is to illustrate the polymorphism of objects and
@@ -12,21 +12,21 @@ import java.util.LinkedList;
 public class GenericsListExample {
 
     public static void main(final String[] args) {
-        List<Integer> numberList = new LinkedList<>();
+        List<Integer> numberList = new ArrayList<>();
         numberList.add(1);
         numberList.add(2);
         numberList.add(3);
         numberList.add(1);
         System.out.println(countOccurences(numberList));
 
-        List<String> textList = new LinkedList<>();
+        List<String> textList = new ArrayList<>();
         textList.add("Pekka");
         textList.add("Maija");
         textList.add("Elina");
         textList.add("Pekka");
         System.out.println(countOccurences(textList));
 
-        List<Student> students = new LinkedList<>();
+        List<Student> students = new ArrayList<>();
         Student kalle = new Student("123", "Kalle Ilves");
         Student john = new Student("456", "John Doe");
         Student otherKalle = new Student("123", "Kalle Ilves");
