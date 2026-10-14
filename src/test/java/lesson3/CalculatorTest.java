@@ -112,23 +112,11 @@ class CalculatorTest {
         assertArrayEquals(expectedArray, resultArray);
     }
 
-    @Test
-    void testFactorialOfNegativeNumberIsOne() {
-        assertEquals(1, calculator.factorial(-1));
-    }
-
-    @Test
-    void testFactorialOfZeroIsOne() {
-        assertEquals(1, calculator.factorial(0));
-    }
-
-    @Test
-    void testFactorialOfOneIsOne() {
-        assertEquals(1, calculator.factorial(1));
-    }
-
-    @Test
-    void testFactorialOfLargerNumber() {
-        assertEquals(24, calculator.factorial(4));
-    }
+    /*
+     * TODO: test the following cases with factorial:
+     * 1. Factorial of a negative number is 1
+     * 2. Factorial of zero is 1
+     * 3. Factorial of 1 is 1
+     * 4. Factorial of a larger number is correct, e.g. factorial(4) = 24
+     */
 }
