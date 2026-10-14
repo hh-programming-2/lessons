@@ -42,15 +42,12 @@ public class StreamBasics {
         System.out.println("Book titles with fewer than 500 pages: " + shortBookTitles);
 
         // Example 4: Reusing streams
-        // Get a list of long book titles
-        List<String> longBookTitles = getLongBookStream(books)
-                .map(book -> book.title())
-                .toList();
+        // TODO: Create a stream of long books to reuse it
+        // TODO: Get a list of long book titles
+        List<String> longBookTitles = List.of();
 
-        // Get list of long book pages
-        List<Integer> longBookPageCounts = getLongBookStream(books)
-                .map(book -> book.pages())
-                .toList();
+        // TODO: Get list of long book pages
+        List<Integer> longBookPageCounts = List.of();
 
         System.out.println("Titles of books with more than 300 pages: " + longBookTitles);
         System.out.println("Page counts of books with more than 300 pages: " + longBookPageCounts);
@@ -105,8 +102,8 @@ public class StreamBasics {
                 .sum();
     }
 
-    // Create a stream of long books to reuse it
     private static Stream<Book> getLongBookStream(List<Book> books) {
-        return books.stream().filter(book -> book.pages() > 300);
+        // TODO: return stream of Book objects with more than 300 pages
+        return null;
     }
 }
