@@ -55,6 +55,7 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 
 ### Generics
 
+<<<<<<< HEAD
 - Generics example, `GenericsExample`:  
   - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
   - Simple example `countOccurencesOfStrings`
@@ -65,3 +66,14 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
     - Be able to check if if two students are equal (based on student number)
     - Be able to use a `Student` object a key in map
   
+=======
+- Generics example, `SimpleListExample` vs. `GenericsListExample`:  
+  - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
+  - Simple example `SimpleListExample` only supports list of integers
+  - Example `CenericsListExample` supports any type of list
+  - We implement methods `equals`, `hashCode` in a `Student` class in order to:
+    - Be able to check if if two students are equal (based on student number)
+    - Be able to use a `Student` object a key in map
+  - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
+- The benefit of generic methods is reusability
+>>>>>>> 60bc798 (di)
