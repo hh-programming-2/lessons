@@ -26,7 +26,6 @@ public class StreamBasics {
         System.out.println("Squares of numbers: " + squaresOfNumbers);
 
         List<Book> books = List.of(
-                // title, author, pages
                 new Book("The Hobbit", "J.R.R. Tolkien", 310),
                 new Book("Dune", "Frank Herbert", 412),
                 new Book("War and Peace", "Leo Tolstoy", 1225),

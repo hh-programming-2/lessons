@@ -26,8 +26,8 @@ Here you can find the lesson examples used during the Programming 2 course.
 - Implementing our own interface: [Shape interface example](./src/main/java/lesson4/ShapeInterface.java)
 - Using Java's ready-made interfaces: [Comparable interface](./src/main/java/lesson4/SortingCourses.java)
 - [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
-- Using interfaces to refactor code: [ImperativeCalculator](./src/main/java/lesson4/ImperativeCalculator.java) class vs. [ObjectCalculator](./src/main/java/lesson4/ObjectCalculator.java) class
-- ⭐ Bonus: Using generic methods to promote method reusability: [SimpleListExample](./src/main/java/lesson4/SimpleListExample.java) class vs. [GenericsListExample](./src/main/java/lesson4/GenericsListExample.java) class
+- Dependency injection: [Dependency injection example](./src/main/java/lesson4/DependencyInjection.java)
+- ⭐ Bonus: Using generic methods to promote method reusability: [Generics example](./src/main/java/lesson4/GenericsExample.java)
 
 ## Lesson 5: Streams, lambdas, and optionals
 

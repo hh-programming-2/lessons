@@ -9,22 +9,22 @@ import java.util.HashMap;
  * The purpose of this example is to illustrate the polymorphism of objects and
  * generic methods.
  */
-public class GenericsListExample {
+public class GenericsExample {
 
     public static void main(final String[] args) {
-        List<Integer> numberList = new ArrayList<>();
-        numberList.add(1);
-        numberList.add(2);
-        numberList.add(3);
-        numberList.add(1);
-        System.out.println(countOccurences(numberList));
-
         List<String> textList = new ArrayList<>();
         textList.add("Pekka");
         textList.add("Maija");
         textList.add("Elina");
         textList.add("Pekka");
-        System.out.println(countOccurences(textList));
+        System.out.println("Occurences in String list: " + countOccurencesOfStrings(textList));
+
+        List<Integer> numberList = new ArrayList<>();
+        numberList.add(1);
+        numberList.add(2);
+        numberList.add(3);
+        numberList.add(1);
+        System.out.println("Occurences in Integer list: " + countOccurences(numberList));
 
         List<Student> students = new ArrayList<>();
         Student kalle = new Student("123", "Kalle Ilves");
@@ -40,31 +40,42 @@ public class GenericsListExample {
         students.add(otherKalle);
         students.add(mary);
 
-        System.out.println(countOccurences(students));
+        System.out.println("Occurences in Student list: " + countOccurences(students));
+    }
+
+    /**
+     * Counts the number of times each string is present in a list
+     */
+    private static Map<String, Integer> countOccurencesOfStrings(List<String> list) {
+        // The parameter type is List<String>, but we don't actually need to know the
+        // type of the list item to perform these hash map operations
+        Map<String, Integer> result = new HashMap<>();
+        for (String item : list) {
+            if (result.containsKey(item)) {
+                result.put(item, result.get(item) + 1);
+            } else {
+                result.put(item, 1);
+            }
+        }
+        return result;
     }
 
     /**
      * Counts the number of times each object is present in a list
-     * 
-     * @param list
-     * @return The method returns a Map where the key is an object from the given
-     *         List
-     *         and the value is the count of how many times the same object appeared
-     *         in the list.
      */
     private static <T> Map<T, Integer> countOccurences(List<T> list) {
         // Now the method accepts any kind of list, so it is called a generic method.
         // This makes the method much more reusable
         Map<T, Integer> result = new HashMap<>();
-        for (T object : list) {
-            if (result.containsKey(object)) {
-                result.put(object, result.get(object) + 1);
+        for (T item : list) {
+            if (result.containsKey(item)) {
+                result.put(item, result.get(item) + 1);
             } else {
-                result.put(object, 1);
+                result.put(item, 1);
             }
         }
         return result;
-    }
+    }  
 }
 
 /**

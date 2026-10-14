@@ -11,16 +11,18 @@ import java.util.LinkedList;
 public class SortingCourses {
     public static void main(final String[] args) {
         List<Course> courses = new LinkedList<>();
-        Course sql = new Course("Algorithms", 5);
-        Course python = new Course("Software Development Project 2", 10);
+        Course algorithms = new Course("Algorithms", 5);
+        Course project = new Course("Software Development Project 2", 10);
         Course noSql = new Course("NoSQL Databases", 2);
+        Course python = new Course("Python Programming", 5);
 
         // The compareteTo method compares credits attributes
-        System.out.println("Compare SQL Databases and Python Programming: " + sql.compareTo(python));
+        System.out.println("Compare NoSQL Databases and Python Programming: " + noSql.compareTo(python));
 
-        courses.add(sql);
-        courses.add(python);
+        courses.add(algorithms);
+        courses.add(project);
         courses.add(noSql);
+        courses.add(python);
 
         // Sorting using the Comparable interface's compareTo method
         Collections.sort(courses);
@@ -49,7 +51,7 @@ class Course implements Comparable<Course> {
 
     @Override
     public String toString() {
-        return this.name + " (" + this.credits + " credits)";
+        return this.name + " (" + this.credits + "cr.)";
     }
 
     public Integer getCredits() {
@@ -61,20 +63,20 @@ class Course implements Comparable<Course> {
     }
 
     /**
-     * The compareTo method returns the following:
+     * The compareTo method returns the following integer:
      * - 0 if this object matches the other object
      * - integer larger than 0 if this object is greater than the other object
      * - integer less than 0 if this object is less than the other object
      */
     @Override
     public int compareTo(Course other) {
-        // We can simply use the compareTo implementation of String class here
-        // Sort by name alphabetically:
-        return this.name.compareTo(other.name); 
-        // Or in case of Integer or double, we can use the compare method
+        // With Integer or Double, we can use the Integer.compare 
+        // or Double.compare method, which compare two values
         // Sort by credits ascending:
-        // return Integer.compare(this.credits, other.credits);
-        // Sort by credits descending: 
-        // return Integer.compare(other.credits, this.credits);
+        return Integer.compare(this.credits, other.credits);
+        
+        // With String, we can use the String's compareTo method
+        // Sort by name alphabetically:
+        // return this.name.compareTo(other.name); 
     }
 }

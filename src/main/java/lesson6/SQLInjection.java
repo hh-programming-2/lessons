@@ -1,7 +1,5 @@
 package lesson6;
 
-import lesson6.helpers.Country;
-
 public class SQLInjection {
     public static void main(String[] args) {
         CountryDAO countryDAO = new CountryDAO();

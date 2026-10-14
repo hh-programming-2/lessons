@@ -26,7 +26,7 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 - Example `ShapeInterface`: simple usage of interfaces
   - `Shape` interface's methods don't define the implementation itself, just the method names, parameters and return types
   - Implementation of the methods is done by the classes which implement the interface
-  - Interfaces provide reusability to the code: we can implement methods that operate on objects implementing an interface (e.g. `totalPerimeter(Shape a, Shape b)`) so it can use objects from many classes
+  - Interfaces provide reusability to the code: we can implement methods that operate on objects implementing an interface (e.g. `isLargerThan(Shape a, Shape b)`) so it can use objects from many classes
 - Java has many ready-made interfaces, such as `List`, which is implement by e.g. `ArrayList` and `LinkedList`
 - The `Comparable` interface is one of Java's ready-made interfaces. It provides comparison using the `compareTo` method. This is useful for e.g. sorting, which is based on comparing the orde of items on a list
 - If we want to be able to sort objects of our own class in a meaningful way, the class needs to implement the `Comparable` interface  
@@ -44,26 +44,24 @@ https://github.com/hh-programming-2/junit-Kaltsoon-1
 
 - Example: `VehicleInheritance`
 
-### Generics
-
-- Generics example, `SimpleListExample` vs. `GenericsListExample`:  
-  - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
-  - Simple example `SimpleListExample` only supports list of integers
-  - Example `CenericsListExample` supports any type of list
-  - We implement methods `equals`, `hashCode` in a `Student` class in order to:
-    - Be able to check if if two students are equal (based on student number)
-    - Be able to use a `Student` object a key in map
-  - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
-- The benefit of generic methods is reusability
-
-### Clean code using interfaces
-
-- Using objects and interfaces to refactor code
-- Example `ObjectCalculator` vs `ImperativeCalculator`: using interfaces to simplify code
-
 ### Dependency injection
 
 - In programming we have design patterns which are reusable solutions to a common problem
 - Dependency injection is one design pattern which purpose to promote loose coupling between components and to make code more maintainable, testable, and flexible
 - Loose coupling means that components interact through clear, minimal interfaces and don’t know too much about each other
-- Example `AirplaneConfig`: usage of dependency injection with interfaces
+- Example `DependencyInjection`: usage of dependency injection with interfaces
+  - A class implementing the `PaymentMethod` interface is provided for the `ShoppingCart` class
+  - Now, the `ShoppingCart` doesn't neet to know how the payment is processed, making it easier to add new payment methods without changing the `ShoppingCart` class
+
+### Generics
+
+- Generics example, `GenericsExample`:  
+  - Let's consider example where we want to implement a `countOccurences` which returns a map containing how many times a certain item occurs in a list (key item, value number of occurences)
+  - Simple example `countOccurencesOfStrings`
+  - Example `countOccurences` supports any type of list
+  - In this example `countOccurences` is a "generic method" and accepts any type for `T`. Here `T` is sort of an type parameter
+  - The benefit of generic methods is reusability
+  - We implement methods `equals`, `hashCode` in a `Student` class in order to:
+    - Be able to check if if two students are equal (based on student number)
+    - Be able to use a `Student` object a key in map
+  

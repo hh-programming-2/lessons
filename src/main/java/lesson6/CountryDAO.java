@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import lesson6.helpers.Country;
-
 /**
  * This DAO class handles country related database operations. The data is
  * presented as Country objects.

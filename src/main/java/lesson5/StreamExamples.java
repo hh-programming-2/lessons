@@ -96,10 +96,10 @@ public class StreamExamples {
     // Example 5: Sorting a stream
     private static List<Book> getSortedBooks(List<Book> books) {
         return books.stream()
-                // Sort by title: (bookA, bookB) -> bookA.title().compareTo(bookB.title())
-                // Sort by title length: (bookA, bookB) ->
-                // Integer.compare(bookA.title().length(), bookB.title().length())
+                // Sort by pages:
                 .sorted((bookA, bookB) -> Integer.compare(bookA.pages(), bookB.pages()))
+                // Sort by title: 
+                // .sorted((bookA, bookB) -> bookA.title().compareTo(bookB.title()))
                 .toList();
     }
 

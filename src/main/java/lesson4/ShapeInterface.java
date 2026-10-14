@@ -13,6 +13,8 @@ public class ShapeInterface {
         Shape rectangle = new Rectangle(4.0, 6.0);
         // Note that we can't create an instance of an interface!
         // Shape randomShape = new Shape();
+        // List of objects implementing the Shape interface
+        List<Shape> shapes = List.of(circle, rectangle);
 
         System.out.println("Circle area: " + circle.calculateArea());
         System.out.println("Rectangle area: " + rectangle.calculateArea());
@@ -22,9 +24,10 @@ public class ShapeInterface {
 
         // isLargerThan and totalPerimeter methods accept any kind of Shape interface object
         System.out.println("Is circle larger?: " + isLargerThan(circle, rectangle));
-        System.out.println("Total perimeter: " + totalPerimeter(circle, rectangle));
+        System.out.println("Total perimeter: " + totalPerimeter(shapes));
 
         // List is a built-in interface in Java, with methods such as add, get and remove
+        // Both ArrayList and LinkedList implement the List interface
         List<String> arrayList = new ArrayList<>();
         arrayList.add("ArrayList item");
         List<String> linkedList = new LinkedList<>();
@@ -37,8 +40,14 @@ public class ShapeInterface {
         return a.calculateArea() > b.calculateArea();
     }
 
-    public static double totalPerimeter(Shape a, Shape b) {
-        return a.calculatePerimeter() + b.calculatePerimeter();
+    public static double totalPerimeter(List<Shape> shapes) {
+        double total = 0;
+
+        for(Shape shape : shapes) {
+            total += shape.calculatePerimeter();
+        }
+
+        return total;
     }
 }
 

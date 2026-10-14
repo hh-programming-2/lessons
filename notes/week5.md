@@ -21,14 +21,23 @@ https://github.com/hh-programming-2/interfaces-and-inheritance-Kaltsoon
 - Streams allow us to process collections of data (like lists, sets, etc.)
 - Streams rely heavily on _functional programming_, using functions instead of objects in object-oriented programming
 - There are purely functional languages, such as Haskell, which don't have objects at all, but most languages are "hybrid", having both OP ja functional aspects
-- Streams are a good example on declarative programming: instead of providing the computer exact step-by-step instructions on _how_ to achieve the solution, we instead describe _what_ we want to achieve => for example, SQL is very declarative `SELECT firstname FROM students WHERE studentnumber = '123'`
+- Streams are a good example on declarative programming: instead of providing the computer exact step-by-step instructions on _how_ to achieve the solution, we instead describe _what_ we want to achieve => for example, SQL is very declarative `SELECT firstname, surname FROM students WHERE studentnumber = '123'`
 - Example: `ImpretiveDeclarative.java`
 - On top being declarative, streams rely heavily on functional programming, which focuses on use of functions
 - Java supports definitions of simple functions with lambda expressions
 - Example: `FunctionalCalculator.java`
-- Example: `OptionalExamples.java`
+
+### Optional
+
 - Optional objects are commonly used in methods that either return some object or null
 - Optional communicates the possibility of a null (or "empty") value and provides methods for handling this case
+- Optional object either has a value of it is empty (the value is missing)
+- For example a method finding a item in a list could return an Optional object, which either contains the item we are looking for it is empty in case it is not on the list
+- Optional class provides many useful methods for e.g. providing a default value for a missing value or safely accessing the value if it exists
+- Example: `OptionalExamples.java`
+
+### Streams
+
 - Streams are used to process sequence of objects
 - Stream starts with an _input_ which is any kind of object sequence, e.g. a list
 - We can define specific _operations_ that each object in the stream goes through
@@ -36,5 +45,14 @@ https://github.com/hh-programming-2/interfaces-and-inheritance-Kaltsoon
 - Finally, _terminal operation_ creates a stream output. These operations are also called "collectors", they collect the stream into e.g. a list or a single average value or maximum value of the stream
 - Steams provide many useful methods for processing collections of data, for example filtering and mapping (transforming each value of the collection)
 - Example: `StreamBasics.java`
-- Records and `Person.java` example
 - Example: `StreamExamples.java`
+
+### Records
+
+- Defining classes requires somewhat boilerplate code, e.g. construtor, getter methods and setter methods
+- Record allows us to define a class like structure, which has specific attributes
+- Constructor and getter methods among other common methods for these attributes are automatically generated
+- We can optionally define additional methods as well
+- Records don't have setter methods and their attributes aren't supposed to change after initialization
+- Records and `Book.java` example
+

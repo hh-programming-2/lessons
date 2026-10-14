@@ -1,4 +1,4 @@
-package lesson6.helpers;
+package lesson6;
 
 public class Country {
     private int id;
