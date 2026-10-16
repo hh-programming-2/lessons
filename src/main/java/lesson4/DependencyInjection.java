@@ -23,24 +23,29 @@ public class DependencyInjection {
 }
 
 interface PaymentMethod {
-    void pay(double amount);
+    // Returns true if the amount is paid successfully, otherwise false
+    boolean pay(double amount);
 }
 
 // Each payment option implements the same interface, so the cart can use it
 // without depending on the details of a particular payment provider.
 class CreditCardPayment implements PaymentMethod {
     @Override
-    public void pay(double amount) {
+    public boolean pay(double amount) {
         // Here we would send a payment request to the credit card system...
         System.out.println("Paid " + amount + " euros using credit card");
+        // Credit card payment was successful
+        return true;
     }
 }
 
  class PayPalPayment implements PaymentMethod {
     @Override
-    public void pay(double amount) {
+    public boolean pay(double amount) {
         // Here we would send a payment request to PayPal...
         System.out.println("Paid " + amount + " euros using PayPal");
+        // PayPal payment was successful
+        return true;
     }
 }
 
@@ -54,8 +59,16 @@ class ShoppingCart {
         this.paymentMethod = paymentMethod;
     }
 
-    public void checkout(double total) {
+    public boolean checkout(double total) {
         // Dispatches to the implementation that was injected into this cart.
-        paymentMethod.pay(total);
+        boolean paymentWasSuccessful = paymentMethod.pay(total);
+
+        if (paymentWasSuccessful) {
+            System.out.println("Checkout completed successfully");
+            return true;
+        } else {
+            System.out.println("Error with the checkout");
+            return false;
+        }
     }
 }
