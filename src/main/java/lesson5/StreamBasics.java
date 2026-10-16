@@ -74,7 +74,7 @@ public class StreamBasics {
                 // Optional type
                 .orElse(0);
 
-        System.out.println("Book titles starting with word 'War': " + booksCount);
+        System.out.println("Number of books starting with word 'War': " + booksCount);
         System.out.println("Total pages: " + totalPages);
         System.out.println("Largest number: " + largestNumber);
 

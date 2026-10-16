@@ -4,14 +4,15 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 1: Recap
 
-- Control statements: [ControlStatements](./src/main/java/lesson1/ControlStatements.java)
-- Strings: [Strings](./src/main/java/lesson1/Strings.java)
-- Arrays and lists: [ArraysAndLists](./src/main/java/lesson1//ArraysAndLists.java)
-- Classes and objects: [ClassesAndObjects](./src/main/java/lesson1/ClassesAndObjects.java)
+- [Control statements](./src/main/java/lesson1/ControlStatements.java)
+- [Strings](./src/main/java/lesson1/Strings.java)
+- [Arrays and lists](./src/main/java/lesson1//ArraysAndLists.java)
+- [Classes and Objects](./src/main/java/lesson1/ClassesAndObjects.java)
 
 ## Lesson 2: Map
 
-- Basic usage of the map data structure: [MapBasics](./src/main/java/lesson2/MapBasics.java)
+- [Introduction to the map data structure](./materials/map.md)
+- [Basic usage of map](./src/main/java/lesson2/MapBasics.java)
 - Applying the map data structure: [CourseGrading](./src/main/java/lesson2/CourseGrading.java) class and [CourseGradingApp](./src/main/java/lesson2/CourseGradingApp.java) application
 - [Performance comparison of ArrayList and HashMap](./src/main/java/lesson2/LotsOfData.java)
 
@@ -23,11 +24,11 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 4: Object modelling, inheritance, and interfaces
 
-- Implementing our own interface: [Shape interface example](./src/main/java/lesson4/ShapeInterface.java)
-- Using Java's ready-made interfaces: [Comparable interface](./src/main/java/lesson4/SortingCourses.java)
+- [Interface examples](./src/main/java/lesson4/ShapeInterface.java)
+- [Sorting with Comparable interface](./src/main/java/lesson4/SortingCourses.java)
 - [Inheritance examples](./src/main/java/lesson4/VehicleInheritance.java)
-- Dependency injection: [Dependency injection example](./src/main/java/lesson4/DependencyInjection.java)
-- ⭐ Bonus: Using generic methods to promote method reusability: [Generics example](./src/main/java/lesson4/GenericsExample.java)
+- [Dependency injection](./src/main/java/lesson4/DependencyInjection.java)
+- ⭐ Bonus: [Using generic methods to promote method reusability](./src/main/java/lesson4/GenericsExample.java)
 
 ## Lesson 5: Streams, lambdas, and optionals
 
@@ -36,11 +37,11 @@ Here you can find the lesson examples used during the Programming 2 course.
 - [Optional examples](./src/main/java/lesson5/OptionalExamples.java)
 - [Stream basics](./src/main/java/lesson5/StreamBasics.java)
 - [Stream examples](./src/main/java/lesson5/StreamExamples.java)
-- ⭐ Bonus: [Records](./src/main/java/lesson5/helpers/Person.java)
+- ⭐ Bonus: [Records](./src/main/java/lesson5/Book.java)
 
 ## Lesson 6: Database connection with Java (JDBC)
 
-- [CountryDAO](./src/main/java/lesson6/CountryDAO.java) class and [examples](./src/main/java/lesson6/DAOBasics.java)
+- Database programming and DAO pattern: [CountryDAO](./src/main/java/lesson6/CountryDAO.java) class and [examples](./src/main/java/lesson6/DAOBasics.java)
 - [SQL Injection](./src/main/java/lesson6/SQLInjection.java)
 
 ## Lesson 7: Data structures and algorithms

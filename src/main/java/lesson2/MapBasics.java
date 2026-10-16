@@ -32,6 +32,7 @@ public class MapBasics {
          * HashMap: data structure for storing (key, value) pairs, e.g. country name
          * (key) mapping to the capital city (value):
          * { "Finland" -> "Helsinki", "Sweden" -> "Stockholm", "France" -> "Paris" }
+         * Duplicate keys are not allowed!
          */
 
         // capitalCities is a map with country names (String) as keys and capital cities (String) as values

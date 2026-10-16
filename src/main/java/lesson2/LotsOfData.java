@@ -7,16 +7,9 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * This example demonstrate the difference between using the HashMap and ArrayList data structures
- * with a large amount of data
+ * This example demonstrate the performance difference between the HashMap 
+ * and ArrayList data structures in checking if they contain a value
  */
-
-
-/*
-* (1, 2, 3, 4, 5, 6, 8)
-*
-*/
-
 public class LotsOfData {
 
     public static void main(String[] args) {
