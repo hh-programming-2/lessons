@@ -30,7 +30,12 @@ public class ArraysAndLists {
         words.add("hej");
         words.add("moi");
         words.add("salut");
+        words.add("hallo");
         words.remove(0);
+        String firstWord = words.get(0);
+        
+        System.out.println("Number of words: " + words.size());
+        System.out.println("First word: " + firstWord);
 
         System.out.println("All words:");
         for (String word : words) {
