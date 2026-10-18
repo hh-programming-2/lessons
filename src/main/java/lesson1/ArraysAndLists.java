@@ -5,9 +5,8 @@ import java.util.List;
 
 public class ArraysAndLists {
     public static void main(String[] args) {
-        // Examples of an array
+        // Example of an array
         int[] numbersArray = { 1, 9, 4, 12, 5, 8 };
-        numbersArray[0] = 99;
         int firstNumber = numbersArray[0];
         System.out.println("First number: " + firstNumber);
         
