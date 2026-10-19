@@ -5,7 +5,7 @@ public class ControlStatements {
     public static void main(String[] args) {
         // Examples of variables
         int grade = 5;
-        double price = 2.5;
+        double price = 5.5;
         String message = "Hello world!";
         boolean isJavaFun = true;
         boolean isBestGrade = grade == 5;
