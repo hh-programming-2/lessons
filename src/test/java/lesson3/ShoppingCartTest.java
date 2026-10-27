@@ -10,7 +10,7 @@ public class ShoppingCartTest {
 
     @BeforeEach
     void setUp() {
-        cart = new ShoppingCart();
+        // TODO: initialize a new ShoppingCart object before each test
     }
 
     @Test
