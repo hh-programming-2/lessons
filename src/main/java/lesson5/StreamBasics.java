@@ -11,6 +11,7 @@ public class StreamBasics {
 
         // Example 1. Using a stream and lambda function to filter out odd numbers
         List<Integer> evenNumbers = numbers.stream()
+                // Only elements matching the condition are kept on the stream
                 .filter(n -> n % 2 == 0)
                 // Stream must be "collected", in order it to be "executed", that is evaluated
                 .collect(Collectors.toList());
@@ -20,6 +21,7 @@ public class StreamBasics {
         // Example 2. Using a stream and labmda function to transform each number into
         // its square
         List<Integer> squaresOfNumbers = numbers.stream()
+                // Each element on the stream is transformed, e.g. 3 => 9
                 .map(n -> n * n)
                 .toList(); // same as collect(Collectors.toList())
 
@@ -35,7 +37,9 @@ public class StreamBasics {
         // Example 3. Using multiple stream operations
         // to get titles of books with fewer than 500 pages
         List<String> shortBookTitles = books.stream()
+                // Only keep books with less than 500 pages in the stream
                 .filter(book -> book.pages() < 500)
+                // Transfrom the Book object into its title (String)
                 .map(book -> book.title())
                 .toList();
 

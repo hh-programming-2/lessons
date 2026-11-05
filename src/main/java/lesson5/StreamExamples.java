@@ -46,9 +46,8 @@ public class StreamExamples {
         return strings.stream()
                 // Or .map(String::length) in short
                 .map(value -> value.length())
-                // Collect the results using the Collectors.toList method
-                // Same as .toList()
-                .collect(Collectors.toList());
+                // Collect the stream elements as a list
+                .toList();
     }
 
     // Example 2: Using reduce collector to combine list of strings
