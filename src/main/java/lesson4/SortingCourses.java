@@ -1,8 +1,8 @@
 package lesson4;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 
 /**
  * The purpose of this example is to illustrate the use of the Comparable
@@ -10,19 +10,19 @@ import java.util.LinkedList;
  */
 public class SortingCourses {
     public static void main(final String[] args) {
-        List<Course> courses = new LinkedList<>();
+        List<Course> courses = new ArrayList<>();
         Course algorithms = new Course("Algorithms", 5);
         Course project = new Course("Software Development Project 2", 10);
         Course noSql = new Course("NoSQL Databases", 2);
         Course python = new Course("Python Programming", 5);
 
-        // The compareteTo method compares credits attributes
-        System.out.println("Compare NoSQL Databases and Python Programming: " + noSql.compareTo(python));
-
         courses.add(algorithms);
         courses.add(project);
         courses.add(noSql);
         courses.add(python);
+
+        // The compareteTo method compares credits attributes
+        System.out.println("Compare NoSQL Databases and Python Programming: " + noSql.compareTo(python));
 
         // Sorting using the Comparable interface's compareTo method
         Collections.sort(courses);
