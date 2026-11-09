@@ -54,7 +54,7 @@ public class VehicleInheritance {
     }
 }
 
-// Superclass, defines the basic attributes and methods of a vehicle
+// Vehichle superclass. Defines the basic attributes and methods of a vehicle
 class Vehicle {
     private int speed;
 
@@ -95,9 +95,9 @@ class Vehicle {
     }
 }
 
-// Subclass. A car is a vehicle, but it also has a model and can honk
+// Car subclass. A car is a vehicle, but it also has a model and can honk
 class Car extends Vehicle {
-    //Subclasses can have their own attributes
+    // Subclasses can have their own attributes
     private String model;
 
     public Car(String model, int speed) {
@@ -119,8 +119,8 @@ class Car extends Vehicle {
 }
 
 /**
- * Subclass. A bicycle is a vehicle, but it also might have a bell, and it can
- * ring its bell. The bicycle can't accelerate above 20 km/h.
+ * Bicycle subclass. A bicycle is a vehicle, but it also might have a bell, and
+ * it can ring its bell. The bicycle can't accelerate above 20 km/h.
  */
 class Bicycle extends Vehicle {
     private boolean hasBell;
