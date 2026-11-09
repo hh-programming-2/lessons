@@ -70,13 +70,24 @@ class Course implements Comparable<Course> {
      */
     @Override
     public int compareTo(Course other) {
-        // With Integer or Double, we can use the Integer.compare 
+        // With Integer or Double, we can use the Integer.compare
         // or Double.compare method, which compare two values
         // Sort by credits ascending:
         return Integer.compare(this.credits, other.credits);
-        
+        /*
+         * Same as:
+         *
+         * if (this.credits.equals(other.credits)) {
+         *     return 0;
+         * } else if (this.credits > other.credits) {
+         *     return 1;
+         * } else {
+         *     return -1;
+         * }
+         */
+
         // With String, we can use the String's compareTo method
         // Sort by name alphabetically:
-        // return this.name.compareTo(other.name); 
+        // return this.name.compareTo(other.name);
     }
 }
