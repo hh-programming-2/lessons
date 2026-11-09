@@ -54,7 +54,7 @@ public class VehicleInheritance {
     }
 }
 
-// Super class, defines the basic attributes and methods of a vehicle
+// Superclass, defines the basic attributes and methods of a vehicle
 class Vehicle {
     private int speed;
 
@@ -95,13 +95,13 @@ class Vehicle {
     }
 }
 
-//Subclass. A car is a vehicle, but it also has a model and can honk
+// Subclass. A car is a vehicle, but it also has a model and can honk
 class Car extends Vehicle {
     //Subclasses can have their own attributes
     private String model;
 
     public Car(String model, int speed) {
-        // Call the super class constructor and provide its parameters
+        // Call the superclass constructor and provide its parameters
         super(speed);
         // Set car-specific attributes
         this.model = model;
