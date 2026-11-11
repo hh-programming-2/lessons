@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440" font-family="Arial, sans-serif" font-size="13">
+  <rect width="640" height="440" fill="#ffffff"/>
+  <text x="320" y="24" text-anchor="middle" font-size="16" font-weight="bold">Time complexity: execution time vs input size</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="370" x2="570" y2="370" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="370" x2="70" y2="40" stroke="#333" stroke-width="2"/>
+
+  <!-- X axis ticks and labels -->
+  <g stroke="#333">
+    <line x1="70" y1="370" x2="70" y2="375"/>
+    <line x1="168" y1="370" x2="168" y2="375"/>
+    <line x1="266" y1="370" x2="266" y2="375"/>
+    <line x1="364" y1="370" x2="364" y2="375"/>
+    <line x1="462" y1="370" x2="462" y2="375"/>
+    <line x1="560" y1="370" x2="560" y2="375"/>
+  </g>
+  <text x="70" y="390" text-anchor="middle">0</text>
+  <text x="168" y="390" text-anchor="middle">2</text>
+  <text x="266" y="390" text-anchor="middle">4</text>
+  <text x="364" y="390" text-anchor="middle">6</text>
+  <text x="462" y="390" text-anchor="middle">8</text>
+  <text x="560" y="390" text-anchor="middle">10</text>
+  <text x="320" y="415" text-anchor="middle" font-size="14">Input size (n)</text>
+
+  <!-- Y axis label (no tick values, since only the shape matters) -->
+  <text x="22" y="205" text-anchor="middle" font-size="14" transform="rotate(-90 22 205)">Execution time</text>
+
+  <!-- Functions -->
+  <!-- O(1): constant -->
+  <polyline fill="none" stroke="#2e7d32" stroke-width="3" points="70,304 560,304"/>
+  <!-- O(log n) -->
+  <polyline fill="none" stroke="#1565c0" stroke-width="3" points="70,370 119,277.6 168,223.5 217,185.2 266,155.5 315,131.1 364,110.6 413,92.8 462,77 511,63.1 560,50.2"/>
+  <!-- O(n) -->
+  <polyline fill="none" stroke="#f9a825" stroke-width="3" points="70,370 119,343.6 168,317.2 217,290.8 266,264.4 315,238 364,211.6 413,185.2 462,158.8 511,132.4 560,106"/>
+  <!-- O(n²) -->
+  <polyline fill="none" stroke="#c62828" stroke-width="3" points="70,370 119,366.7 168,356.8 217,340.3 266,317.2 315,287.5 364,251.2 413,208.3 462,158.8 511,102.7 560,40"/>
+
+  <!-- Legend -->
+  <rect x="88" y="50" width="170" height="92" fill="#ffffff" stroke="#999"/>
+  <line x1="100" y1="68" x2="130" y2="68" stroke="#2e7d32" stroke-width="3"/>
+  <text x="140" y="72">O(1) constant</text>
+  <line x1="100" y1="88" x2="130" y2="88" stroke="#1565c0" stroke-width="3"/>
+  <text x="140" y="92">O(log n) logarithmic</text>
+  <line x1="100" y1="108" x2="130" y2="108" stroke="#f9a825" stroke-width="3"/>
+  <text x="140" y="112">O(n) linear</text>
+  <line x1="100" y1="128" x2="130" y2="128" stroke="#c62828" stroke-width="3"/>
+  <text x="140" y="132">O(n²) quadratic</text>
+</svg>
