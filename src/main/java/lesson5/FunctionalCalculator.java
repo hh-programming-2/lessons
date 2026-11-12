@@ -4,8 +4,7 @@ import java.util.function.*;
 
 /**
  * The purpose of this example is to illustrate functional programming and
- * lambda functions at a general level. As a comparison to the corresponding
- * object counter from the previous lesson (1+(2*(3+2)))² = 121.
+ * lambda functions at a general level.
  */
 public class FunctionalCalculator {
 
