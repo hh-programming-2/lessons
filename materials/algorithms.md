@@ -14,7 +14,7 @@
 - Instead, we usually analyze how **the running time grows when the input grows** (e.g. the number of elements in the argument array)
 - The input size is usually called `n` and the **time complexity** "big O" notation describes the worst case running time based on the `n`
 - Here are examples of time complexities of common operations with the big O notation:
-  - A single statement, arithmetic operation, or array access results in `O(1)` time complexity
+  - A single statement, arithmetic operation, or array access results in `O(1)` time complexity. In such operations, **input size doesn't affect the running time**
   - A loop over all `n` items results in `O(n)` time complexity
   - A loop inside another loop, both over `n` items, results in `O(n²)` time complexity
   - Halving the input size in each iteration results in `O(log n)` time complexity. For example, [binary search](https://www.geeksforgeeks.org/dsa/binary-search/) eliminates half of the remaining search space in each iteration
@@ -49,7 +49,7 @@ public int sumOfAllProducts(int[] arr) {
 
 ## Comparing the time complexity
 
-- The time complexity of an algorithm describes its performance. For example, `O(n)` algorithms are more performant than `O(n²)` algorithms
+- The time complexity of an algorithm describes its performance. For example, `O(n)` algorithms are more performant than `O(n²)` algorithms, because **input size has lesser effect on the running time**
 - Algorithms with poor performance can still have a reasonable execution time with a small input size. However, **we want algorithms to scale well**, so that when the input size grows, the execution time doesn't grow rapidly
 - The graph below shows how execution time grows as the input size grows. The constant factors are chosen only to make the shapes visible, so the exact crossing points are not meaningful
 - `O(1)` stays flat, `O(log n)` grows slowly and eventually goes below `O(n)` and `O(n²)`, `O(n)` grows in a straight line, and `O(n²)` grows much faster as `n` increases

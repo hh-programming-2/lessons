@@ -1,11 +1,11 @@
 package lesson5;
 
+import java.util.List;
 import java.util.function.*;
 
 /**
  * The purpose of this example is to illustrate functional programming and
- * lambda functions at a general level. As a comparison to the corresponding
- * object counter from the previous lesson (1+(2*(3+2)))² = 121.
+ * lambda functions at a general level.
  */
 public class FunctionalCalculator {
 
@@ -41,5 +41,12 @@ public class FunctionalCalculator {
                 sum.apply(1, mul.apply(2, sum.apply(3, 2))));
 
         System.out.println(result);
+
+        List<String> names = List.of("John", "Mary", "James");
+
+        // Some methods, like forEach accept a lambda function parameter
+        names.forEach(name -> {
+            System.out.println(name);
+        });
     }
 }
