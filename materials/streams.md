@@ -52,7 +52,7 @@ A stream pipeline usually has three parts:
 List<Integer> grades = List.of(3, 0, 5, 4, 0);
 
 // grades list is the stream source, turned into a stream using the stream() method
-List<String> passingGrades = grades.stream()
+List<Integer> passingGrades = grades.stream()
         // filter is a intermediate operation   
         .filter(grade -> grade > 0)
         // toList is the terminal operation returning the stream elements as a list
