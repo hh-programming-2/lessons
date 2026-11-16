@@ -25,7 +25,7 @@ public class FunctionalCalculator {
          */
         BiFunction<Integer, Integer, Integer> sum = (x1, x2) -> x1 + x2;
         // We can use brackets to implement multi line lambda functions
-        BiFunction<Integer, Integer, Integer> mul = (x1, x2) -> {
+        BiFunction<Integer, Integer, Integer> multiply = (x1, x2) -> {
             return x1 * x2;
         };
 
@@ -37,8 +37,8 @@ public class FunctionalCalculator {
          * lambda function (1+(2*(3+2)))²
          */
         int result = square.apply(
-                sum.apply(1, mul.apply(2, sum.apply(3, 2))));
+                sum.apply(1, multiply.apply(2, sum.apply(3, 2))));
 
-        System.out.println(result);
+        System.out.println("(1+(2*(3+2)))² = " + result);
     }
 }

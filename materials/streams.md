@@ -29,57 +29,70 @@ WHERE grade > 0;
 
 ## Lambdas and streams
 
+```java
+filter(grade -> grade > 0)
+```
+
 - A **lambda expression** is a short way to represent a function
 - Stream operations receive lambdas to describe what to do with each element
 - In `grade -> grade > 0`, `grade` is the input and `grade > 0` is the result
 - The lambda is applied to each element in the stream
 - Common stream operations, such as `filter` and `map`, receive one lambda and apply it to the stream elements
+- Lambdas in streams promote **functional programming** style, using functions to implement program logic
 
-## Operations of streams
+## Anatomy of a stream
 
 A stream pipeline usually has three parts:
 
 1. A **source** initializes the stream, for example a list
-2. **Intermediate operations** process the stream, for example `filter`
+2. **Intermediate operations** process the stream, for example `filter`. The pipeline can consist of **multiple intermediate operations** applied in the specified order
 3. A **terminal operation** finishes the pipeline, for example `toList`
-
-```java
-List<String> names = List.of("Ada", "Linus", "Grace");
-
-// names list is the stream source
-List<String> longNames = names.stream()
-        // filter is a intermediate operation   
-        .filter(name -> name.length() > 3)
-        // toList is the terminal operation
-        .toList();                            
-```
-
-## Filter stream elements
-
-$$
-\underbrace{\texttt{grade}}_{\text{Element on stream}}
-\quad\longrightarrow\quad
-\underbrace{\texttt{grade > 0}}_{\text{Condition for keeping an element}}
-$$
-
-- The `filter` operation keeps the elements for which its lambda returns `true`. Elements for which the lambda returns `false` are removed from the stream
 
 ```java
 List<Integer> grades = List.of(3, 0, 5, 4, 0);
 
+// grades list is the stream source, turned into a stream using the stream() method
 List<Integer> passingGrades = grades.stream()
-        // Only keep grades larger than 0 on the stream
+        // filter is a intermediate operation   
         .filter(grade -> grade > 0)
+        // toList is the terminal operation returning the stream elements as a list
+        .toList();                            
+```
+
+## Filtering stream elements
+
+```java
+filter(name -> name.length() < 4)
+```
+
+$$
+\underbrace{\texttt{name}}_{\text{Element on stream}}
+\quad\longrightarrow\quad
+\underbrace{\texttt{name.length() < 4}}_{\text{Condition for keeping an element}}
+$$
+
+- The `filter` operation **keeps the elements** for which its lambda returns `true`. Elements for which the lambda returns `false` are removed from the stream
+
+```java
+List<String> names = List.of("Ada", "James", "Grace", "Ben");
+
+List<String> shortNames = names.stream()
+        // Only keep names which are less than 4 characters long on the stream
+        .filter(name -> name.length() < 4)
         .toList();
 ```
 
 ```mermaid
 flowchart LR
-    A["[3, 0, 5, 4, 0]"] --> B["filter(grade -><br/>grade > 0)"]
-    B --> C["[3, 5, 4]"]
+    A["['Ada', 'James', 'Grace', 'Ben']"] --> B["filter(name -><br/>name.length() < 4)"]
+    B --> C["['Ada', 'Ben']"]
 ```
 
-## Map (transform) stream elements
+## Mapping (transforming) stream elements
+
+```java
+map(points -> points / 20)
+```
 
 $$
 \underbrace{\texttt{points}}_{\text{Element on stream}}
@@ -87,7 +100,7 @@ $$
 \underbrace{\texttt{points / 20}}_{\text{How to transform an element}}
 $$
 
-- The `map` operation transforms every element by applying its lambda. Unlike `filter`, `map` does not remove elements: one input element produces one output element
+- The `map` operation **transforms every element** by applying its lambda. Unlike `filter`, `map` does not remove elements: one input element produces one output element
 
 ```java
 List<Integer> examPoints = List.of(50, 70, 90, 100, 80);
