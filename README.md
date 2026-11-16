@@ -42,6 +42,7 @@ Here you can find the lesson examples used during the Programming 2 course.
 
 ## Lesson 6: Database connection with Java (JDBC)
 
+- [Introduction to database programming](./materials/databases.md)
 - Database programming and DAO pattern: [CountryDAO](./src/main/java/lesson6/CountryDAO.java) class and [examples](./src/main/java/lesson6/DAOBasics.java)
 - [SQL Injection](./src/main/java/lesson6/SQLInjection.java)
 
