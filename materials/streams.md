@@ -89,7 +89,7 @@ config:
         wrappingWidth: 1000
 ---
 flowchart TB
-    A["['Ada', 'James',<br/>'Grace', 'Ben']"] --> B["filter(name -><br/>name.length() < 4)"]
+    A["['Ada', 'James', 'Grace', 'Ben']"] --> B["filter(name -> name.length() < 4)"]
     B --> C["['Ada', 'Ben']"]
 ```
 
@@ -117,7 +117,12 @@ List<Integer> grades = examPoints.stream()
 ```
 
 ```mermaid
+---
+config:
+    flowchart:
+        wrappingWidth: 1000
+---
 flowchart TB
-    A["[50, 70, 90,<br/>100, 80]"] --> B["map(points -><br/>points / 20)"]
-    B --> C["[2, 3, 4,<br/>5, 4]"]
+    A["[50, 70, 90, 100, 80]"] --> B["map(points -> points / 20)"]
+    B --> C["[2, 3, 4, 5, 4]"]
 ```
