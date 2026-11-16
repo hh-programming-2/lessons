@@ -87,6 +87,11 @@ public class StreamBasics {
         System.out.println("Pages in books over 300 pages using stream = " + sumBookPagesUsingStream(books));
     }
 
+    // Create a stream of long books to reuse it
+    private static Stream<Book> getLongBookStream(List<Book> books) {
+        return books.stream().filter(book -> book.pages() > 300);
+    }
+
     private static int sumBookPagesUsingForLoop(List<Book> books) {
         int sum = 0;
         for (Book book : books) {
@@ -107,10 +112,5 @@ public class StreamBasics {
                 // This is a method reference, same as lambda book -> book.pages()
                 .mapToInt(Book::pages)
                 .sum();
-    }
-
-    // Create a stream of long books to reuse it
-    private static Stream<Book> getLongBookStream(List<Book> books) {
-        return books.stream().filter(book -> book.pages() > 300);
     }
 }
