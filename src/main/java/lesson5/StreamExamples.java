@@ -43,7 +43,7 @@ public class StreamExamples {
     // Example 1: Usage of streams and lambdas to get the lengths of strings
     public static List<Integer> getLengthsOfStrings(List<String> strings) {
         return strings.stream()
-                // Or .map(String::length) in short
+                // Or .map(String::length) in short as a method reference
                 .map(value -> value.length())
                 // Collect the stream elements as a list
                 .toList();
@@ -52,6 +52,7 @@ public class StreamExamples {
     // Example 2: Using reduce collector to combine list of strings
     public static String createMarkdownList(List<String> items) {
         return items.stream()
+                // "Ham" => "- Ham\n"
                 .map(item -> "- " + item + "\n")
                 // The reduce operation combines all elements into a single string by starting
                 // with an empty string ("") and appending each element (current) to the
