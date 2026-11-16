@@ -1,5 +1,6 @@
 package lesson5;
 
+import java.util.List;
 import java.util.function.*;
 
 /**
@@ -40,5 +41,14 @@ public class FunctionalCalculator {
                 sum.apply(1, multiply.apply(2, sum.apply(3, 2))));
 
         System.out.println("(1+(2*(3+2)))² = " + result);
+
+        List<String> names = List.of("James", "Ben", "Jenny");
+
+        // Some methods, like forEach has a lambda parameter
+        // Same as for (String name : names)
+        names.forEach(name -> {
+            // The lambda function is called with the each element on the list
+            System.out.println(name);
+        });
     }
 }
