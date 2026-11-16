@@ -83,6 +83,11 @@ List<String> shortNames = names.stream()
 ```
 
 ```mermaid
+---
+config:
+    flowchart:
+        wrappingWidth: 1000
+---
 flowchart TB
     A["['Ada', 'James',<br/>'Grace', 'Ben']"] --> B["filter(name -><br/>name.length() < 4)"]
     B --> C["['Ada', 'Ben']"]
