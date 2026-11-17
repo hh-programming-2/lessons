@@ -6,7 +6,19 @@
 - A **database** stores data permanently, so it is still available the next time the program starts
 - Databases also help us organize large amounts of data, share it between many programs or users, and search it efficiently
 - **Database programming** means writing programs that read data from a database, write new data to it, and update or delete existing data
-- We use database programming to **implement more complex logic that interacts with databases**. Almost every application we use, such as Moodle and Microsoft Teams, relies on programs that communicate with databases to store, retrieve, and manage data.
+- We use database programming to **implement more complex logic that interacts with databases**. Almost every application we use, such as Moodle and Microsoft Teams, relies on programs that communicate with databases to store, retrieve, and manage data
+
+## SQLite
+
+```mermaid
+flowchart LR
+    A["Java application"] --> B[("Database")]
+```
+
+- To connect to a database, we typically need a database management system, such as PostgreSQL, running either on our computer or on an external server
+- In our examples, we will use **SQLite**, a lightweight relational database management system that supports SQL
+- Unlike PostgreSQL, SQLite does not require a separate database server. The entire database is stored in a single file on our computer
+- SQLite is well suited for local data storage, and applications that don't require multiple users to access the database simultaneously
 
 ## Database communication with Java
 
