@@ -51,7 +51,7 @@ https://github.com/hh-programming-2/streams-and-lambdas-Kaltsoon-1
   - Usually we have a separate DAO class for each table in the database. The DAO class is responsible for operations related to that specific table
   - Before starting to send database queries to a database we need to establish a database connection. Database servers can be located in e.g. different country and the connection is like the "pipe" between our computer and the database server
   - Making sure that database tables are created
-    - Show that the table is created in SQLLite: `usql db.sqlite` and command `\d` for listing tables
+    - Show that the table is created in SQLLite: `usql db.sqlite` and command `\d` for listing tables, `\d countries` describing table
   - Example of `findAllCountries`
   - Example of `addCountry`
     - Show in `usql` how rows are added to the database `SELECT * from persons;`
