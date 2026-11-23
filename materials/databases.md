@@ -43,15 +43,21 @@ flowchart LR
 - JDBC defines the common interfaces that our code uses, such as `Connection`, `Statement` and `ResultSet`. The actual database driver implements them
 - Because the interfaces are the same for every database, we can switch from one database to another with little change in our code. Only the connection URL and the driver dependency change
 - A typical JDBC program follows these steps:
-  1. Open a connection with `DriverManager.getConnection(url)`
+  1. Open a connection with `DriverManager.getConnection(connectionString)`
   2. Create a statement with the SQL query
   3. Execute the query
   4. Read the results, if the query returns any
   5. Close the connection
 
 ```java
+// Connection string specifies where the database is located and how to connect to it
+// With SQLite, the connection string is the path to the database file
+String connectionString = "jdbc:sqlite:src/main/java/lesson6/data/db.sqlite";
+// With e.g. MySQL it specifies the database server address, database name and the credentials:
+// jdbc:mysql://localhost:3306/my_database?user=myUser&password=myPassword
+
 // 1. Open a connection
-Connection connection = DriverManager.getConnection(/* ... */);
+Connection connection = DriverManager.getConnection(connectionString);
 
 try {
     // 2. Create a statement
