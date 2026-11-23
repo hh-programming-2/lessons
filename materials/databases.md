@@ -73,7 +73,7 @@ try {
 }
 ```
 
-## Database Access Object (DAO) pattern
+## Data Access Object (DAO) pattern
 
 - A **DAO** (Data Access Object) is a class that hides the database details behind simple methods. The rest of the program calls methods such as `addCountry` or `findAllCountries` and does not need to know any SQL or JDBC
 - A DAO class usually handles one database table. For example, a `CountryDAO` handles the `countries` table
